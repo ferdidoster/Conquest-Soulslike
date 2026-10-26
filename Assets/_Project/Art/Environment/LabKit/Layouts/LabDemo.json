@@ -20677,13 +20677,13 @@
       ]
     },
     {
-      "piece": "Shelf_Storage",
+      "piece": "Kitchen_Counter",
       "group": "Kitchen",
       "id": "",
       "position": [
-        -16.7137,
+        -16.6876,
         0.0,
-        -19.3886
+        -19.3583
       ],
       "yaw": 40.763,
       "scale": [
@@ -20696,13 +20696,13 @@
       ]
     },
     {
-      "piece": "Terminal_Wall",
+      "piece": "Fridge",
       "group": "Kitchen",
       "id": "",
       "position": [
-        -13.3798,
+        -13.5922,
         0.0,
-        -21.3525
+        -21.6914
       ],
       "yaw": 32.072,
       "scale": [
@@ -20715,13 +20715,13 @@
       ]
     },
     {
-      "piece": "Shelf_Storage",
+      "piece": "Kitchen_Counter",
       "group": "Kitchen",
       "id": "",
       "position": [
-        -10.1586,
+        -10.1427,
         0.0,
-        -23.4961
+        -23.4594
       ],
       "yaw": 23.381,
       "scale": [
@@ -20753,13 +20753,13 @@
       ]
     },
     {
-      "piece": "Terminal_Wall",
+      "piece": "Kitchen_Counter",
       "group": "Kitchen",
       "id": "",
       "position": [
-        -2.6339,
+        -2.6716,
         0.0,
-        -25.0601
+        -25.4181
       ],
       "yaw": 6.0,
       "scale": [
@@ -21144,6 +21144,462 @@
       "yaw": 230.0,
       "scale": [
         1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Generator_Unit",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        6.7738,
+        0.0,
+        27.1683
+      ],
+      "yaw": 14.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Crate_Stack",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        1.1517,
+        0.0,
+        32.9799
+      ],
+      "yaw": 347.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Crate_Storage",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        3.8676,
+        0.0,
+        36.7973
+      ],
+      "yaw": 26.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Server_Rack",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        19.607,
+        0.0,
+        31.3778
+      ],
+      "yaw": 32.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Server_Rack",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        18.7232,
+        0.0,
+        31.913
+      ],
+      "yaw": 30.4,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Pipe_Elbow",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        23.3951,
+        0.0,
+        29.9444
+      ],
+      "yaw": 38.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Barrel",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        29.9336,
+        0.0,
+        21.7481
+      ],
+      "yaw": 54.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Barrel",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        29.7902,
+        0.0,
+        22.612
+      ],
+      "yaw": 12.8,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Barrel",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        30.9079,
+        0.0,
+        22.7873
+      ],
+      "yaw": 333.6,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Debris_Scrap",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        24.0979,
+        0.0,
+        23.2711
+      ],
+      "yaw": 46.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Sofa",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -18.1738,
+        0.0,
+        -26.9437
+      ],
+      "yaw": 214.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Crate_Storage",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -17.1113,
+        0.0,
+        -25.3685
+      ],
+      "yaw": 214.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Crate_Stack",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -24.8954,
+        0.0,
+        -22.4159
+      ],
+      "yaw": 198.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Barrel",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -25.7508,
+        0.0,
+        -24.4366
+      ],
+      "yaw": 226.5,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Debris_Scrap",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -7.9935,
+        0.0,
+        -27.8766
+      ],
+      "yaw": 196.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Crate_Storage",
+      "group": "Sleeping",
+      "id": "",
+      "position": [
+        -9.6473,
+        0.0,
+        33.6442
+      ],
+      "yaw": 334.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Sleeping"
+      ]
+    },
+    {
+      "piece": "Crate_Storage",
+      "group": "Sleeping",
+      "id": "",
+      "position": [
+        -29.5212,
+        0.0,
+        19.1713
+      ],
+      "yaw": 318.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Sleeping"
+      ]
+    },
+    {
+      "piece": "Barrel",
+      "group": "Sleeping",
+      "id": "",
+      "position": [
+        -34.4683,
+        0.0,
+        6.0777
+      ],
+      "yaw": 280.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Sleeping"
+      ]
+    },
+    {
+      "piece": "Barrel",
+      "group": "Sleeping",
+      "id": "",
+      "position": [
+        -34.9833,
+        0.0,
+        5.4157
+      ],
+      "yaw": 278.8,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Sleeping"
+      ]
+    },
+    {
+      "piece": "Locker_Single",
+      "group": "Sleeping",
+      "id": "",
+      "position": [
+        -23.4196,
+        0.0,
+        26.0101
+      ],
+      "yaw": 318.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Sleeping"
+      ]
+    },
+    {
+      "piece": "Debris_Scrap",
+      "group": "Sleeping",
+      "id": "",
+      "position": [
+        -33.6442,
+        0.0,
+        9.6473
+      ],
+      "yaw": 286.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Sleeping"
+      ]
+    },
+    {
+      "piece": "Crate_Storage",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        9.4056,
+        0.0,
+        -25.8415
+      ],
+      "yaw": 155.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Crate_Storage",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        10.3391,
+        0.0,
+        -25.5903
+      ],
+      "yaw": 166.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Cable_Hanging_4m",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        19.1831,
+        0.0,
+        30.6993
+      ],
+      "yaw": 22.0,
+      "scale": [
+        1.6,
         1.0,
         1.0
       ],

@@ -571,13 +571,13 @@ ROOM_WALLS = (
     ("Technical", "ring", (66, 92), ("Pipe_Wall_Run_4m", "Terminal_Wall", "Shelf_Storage", "Crate_Stack"), ()),
     ("Kitchen", "outer", (222, 268), ("Shelf_Storage", "Locker_Single", "Shelf_Storage", "Vent_Wall"),
      (238, 244, 250)),
-    ("Kitchen", "ring", (226, 268), ("Shelf_Storage", "Terminal_Wall", "Pipe_Wall_Run_4m"), ()),
+    ("Kitchen", "ring", (226, 268), ("Kitchen_Counter", "Fridge", "Kitchen_Counter", "Shelf_Storage"), ()),
     ("Storage", "outer", (272, 360), ("Shelf_Storage", "Crate_Stack", "Shelf_Storage", "Pipe_Wall_Run_4m"), ()),
     ("Storage", "ring", (272, 328), ("Shelf_Storage", "Crate_Stack", "Server_Rack"), (310,)),
 )
 # depth from the wall face to the piece's pivot (wall-mounted pieces have their back at 0)
 WALL_INSET = {"Server_Rack": 0.55, "Generator_Unit": 0.8, "Shelf_Storage": 0.4, "Crate_Stack": 0.75,
-              "Locker_Single": 0.3}
+              "Locker_Single": 0.3, "Kitchen_Counter": 0.36, "Fridge": 0.4}
 TALL_ON_WALL = {"Pipe_Wall_Run_4m", "Vent_Wall"}   # would run into the wall lamps
 
 
@@ -609,6 +609,34 @@ def dress_room_walls(L, lab_meet):
     L.put("Crane_Gantry", "Technical", polar(62, (R2 + R_OUT) / 2), rot=62)
     L.put("Machine_Column", "Technical", polar(80, 36.0), rot=80 + 90)
     L.put("Machine_Column", "Technical", polar(40, 31.5), rot=40 + 90)
+    fill_room_floors(L)
+
+
+# props for the open middle of the big rooms (the size stays; the floor fills up like the
+# paintings), each as (group, angle, radius, piece, extra turn), leaving the enemy posts and
+# the walking lines between doors clear
+ROOM_FLOOR = (
+    ("Technical", 76, 28.0, "Generator_Unit", 0),
+    ("Technical", 88, 33.0, "Crate_Stack", 15), ("Technical", 84, 37.0, "Crate_Storage", -20),
+    ("Technical", 58, 37.0, "Server_Rack", 0), ("Technical", 59.6, 37.0, "Server_Rack", 0),
+    ("Technical", 52, 38.0, "Pipe_Elbow", 0), ("Technical", 36, 37.0, "Barrel", 0),
+    ("Technical", 37.2, 37.4, "Barrel", 40), ("Technical", 36.4, 38.4, "Barrel", 80),
+    ("Technical", 44, 33.5, "Debris_Scrap", 0),
+    ("Kitchen", 236, 32.5, "Sofa", 0), ("Kitchen", 236, 30.6, "Crate_Storage", 0),
+    ("Kitchen", 222, 33.5, "Crate_Stack", 30), ("Kitchen", 223.5, 35.5, "Barrel", 0),
+    ("Kitchen", 254, 29.0, "Debris_Scrap", 0),
+    ("Sleeping", 106, 35.0, "Crate_Storage", 10), ("Sleeping", 147, 35.2, "Crate_Storage", -15),
+    ("Sleeping", 170, 35.0, "Barrel", 0), ("Sleeping", 171.2, 35.4, "Barrel", 0),
+    ("Sleeping", 132, 35.0, "Locker_Single", 0), ("Sleeping", 164, 35.0, "Debris_Scrap", 0),
+    ("Storage", 290, 27.5, "Crate_Storage", 5), ("Storage", 292, 27.6, "Crate_Storage", -8),
+)
+
+
+def fill_room_floors(L):
+    for group, a, r, piece, turn in ROOM_FLOOR:
+        L.put(piece, group, polar(a, r), rot=a - 90 + turn)
+    # cables slung between the technical room's machines
+    L.put("Cable_Hanging_4m", "Technical", polar(58, 36.2), rot=58 - 90 + 10, sx=1.6)
 
 
 # grime decals and loose floor cables per section: (decals, cable runs)
