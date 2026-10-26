@@ -22687,6 +22687,120 @@
       ]
     },
     {
+      "piece": "Machine_Column",
+      "group": "Lab/Centre",
+      "id": "",
+      "position": [
+        62.5,
+        0.03,
+        0.0
+      ],
+      "yaw": 270.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Lab"
+      ]
+    },
+    {
+      "piece": "Machine_Column",
+      "group": "Lab/Centre",
+      "id": "",
+      "position": [
+        57.25,
+        0.03,
+        9.0933
+      ],
+      "yaw": 210.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Lab"
+      ]
+    },
+    {
+      "piece": "Machine_Column",
+      "group": "Lab/Centre",
+      "id": "",
+      "position": [
+        46.75,
+        0.03,
+        9.0933
+      ],
+      "yaw": 150.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Lab"
+      ]
+    },
+    {
+      "piece": "Machine_Column",
+      "group": "Lab/Centre",
+      "id": "",
+      "position": [
+        41.5,
+        0.03,
+        0.0
+      ],
+      "yaw": 90.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Lab"
+      ]
+    },
+    {
+      "piece": "Machine_Column",
+      "group": "Lab/Centre",
+      "id": "",
+      "position": [
+        46.75,
+        0.03,
+        -9.0933
+      ],
+      "yaw": 30.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Lab"
+      ]
+    },
+    {
+      "piece": "Machine_Column",
+      "group": "Lab/Centre",
+      "id": "",
+      "position": [
+        57.25,
+        0.03,
+        -9.0933
+      ],
+      "yaw": 330.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Lab"
+      ]
+    },
+    {
       "piece": "Containment_Tube",
       "group": "Lab/Tubes",
       "id": "",

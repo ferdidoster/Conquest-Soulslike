@@ -3,6 +3,7 @@
 import math
 
 from . import palette as P
+from . import detail as D
 from .kit import piece
 
 WALL_T = 0.5     # wall thickness
@@ -44,49 +45,53 @@ def bolts(b, x, y, z0, z1, step=0.42, size=0.07, mat=P.METAL):
 
 
 def wall_face(b, width, side, height=WALL_H, vent=False, pipes=False, marking=None):
-    """Heavy riveted plate wall from the concept sheet. One face of a wall running along X;
-    side=-1 front (-Y), +1 back."""
+    """The concept's wall section, one face of a wall running along X (side=-1 front (-Y), +1 back):
+    a dark kick plinth, tall gunmetal plates in bolted frames with seams, heavy ribs between them,
+    a top band, small orange status lights and a conduit."""
     y = side * (WALL_T / 2)
-    # grimy kick plate, then three rows of big plates between bolted ribs
-    b.box((width, 0.14, 0.55), (0, y + side * 0.05, 0), P.METAL_DARK)
-    b.box((width, 0.06, 0.05), (0, y + side * 0.12, 0.55), P.RUST)
+    b.box((width, 0.16, 0.45), (0, y + side * 0.06, 0), P.METAL_DARK, bevel=0.02)
+    b.box((width, 0.04, 0.04), (0, y + side * 0.15, 0.42), P.RUST)
     cols = max(1, int(round(width / 2)))
     pw = width / cols
-    rows = ((0.6, 1.55, P.WALL_DARK), (1.65, 2.3, P.WALL), (3.95, 0.5, P.WALL_DARK))
     for i in range(cols):
         cx = -width / 2 + (i + 0.5) * pw
-        for z0, h, mat in rows:
-            b.box((pw - 0.2, 0.07, h), (cx, y + side * 0.035, z0), mat, bevel=0.015)
-        # plate seams and rivet rows along them
-        for z in (1.6, 3.9):
-            b.box((pw - 0.2, 0.09, 0.05), (cx, y + side * 0.045, z), P.METAL_DARK)
-            for k in range(5):
-                b.box((0.06, 0.05, 0.06), (cx - pw * 0.38 + k * pw * 0.19, y + side * 0.08, z + 0.1), P.METAL)
+        D.framed_plate(b, pw - 0.24, 3.75, cx, y, 0.5, depth=0.07, frame=0.1, mat=P.WALL,
+                       frame_mat=P.GUNMETAL, seams=1 if marking is None else 0, bolts=True, face=side)
+        # horizontal plate joint with a rivet row
+        if marking is None:
+            b.box((pw - 0.44, 0.09, 0.04), (cx, y + side * 0.06, 1.55), P.WALL_DARK)
+            D.bolts_row(b, cx - pw * 0.36, cx + pw * 0.36, y + side * 0.11, 1.62, 6, size=0.045, mat=P.METAL)
+        # top band of small plates
+        b.box((pw - 0.24, 0.1, 0.5), (cx, y + side * 0.05, 4.3), P.WALL_DARK, bevel=0.01)
+        for k in (-1, 1):
+            b.box((pw * 0.38, 0.03, 0.34), (cx + k * pw * 0.21, y + side * 0.1, 4.38), P.WALL)
         if vent and i == 0:
-            b.box((pw * 0.62, 0.12, 0.95), (cx, y + side * 0.06, 2.3), P.METAL_DARK)
+            b.box((pw * 0.62, 0.14, 0.95), (cx, y + side * 0.08, 2.3), P.METAL_DARK, bevel=0.02)
+            b.box((pw * 0.54, 0.04, 0.8), (cx, y + side * 0.15, 2.38), P.VOID)
             for k in range(6):
-                b.box((pw * 0.56, 0.06, 0.05), (cx, y + side * 0.13, 2.38 + k * 0.14), P.METAL, rot_x=-20 * side)
-        elif marking is None and not pipes and (i % 2 == 1):
-            # access hatch with a small amber status light
-            b.box((0.7, 0.06, 0.9), (cx, y + side * 0.07, 2.1), P.WALL_LIGHT, bevel=0.01)
-            b.box((0.5, 0.04, 0.05), (cx, y + side * 0.1, 2.75), P.METAL_DARK)
-            b.box((0.1, 0.05, 0.06), (cx + 0.22, y + side * 0.1, 2.05), P.LAMP_WARM)
-    # ribs: heavy vertical I-beams with bolts, at every plate joint
+                b.box((pw * 0.52, 0.12, 0.04), (cx, y + side * 0.18, 2.42 + k * 0.13), P.GUNMETAL,
+                      rot_x=-28 * side)
+        elif marking is None and not pipes and i % 2 == 1:
+            # small access hatch with a tag, like the concept's
+            b.box((0.62, 0.05, 0.8), (cx + 0.2, y + side * 0.1, 2.2), P.WALL, bevel=0.01)
+            b.box((0.5, 0.03, 0.04), (cx + 0.2, y + side * 0.13, 2.85), P.METAL_DARK)
+            b.box((0.16, 0.03, 0.1), (cx - 0.45, y + side * 0.12, 3.6), P.SCREEN)
+        b.box((0.11, 0.05, 0.09), (cx + pw * 0.32, y + side * 0.15, 0.58), P.METAL_DARK)
+        b.box((0.07, 0.05, 0.05), (cx + pw * 0.32, y + side * 0.17, 0.6), P.LAMP_WARM)
     for i in range(cols + 1):
         x = -width / 2 + i * pw
-        b.box((0.26, 0.18, height - 0.55), (x, y + side * 0.07, 0.55), P.METAL_DARK)
-        b.box((0.12, 0.24, height - 0.55), (x, y + side * 0.09, 0.55), P.METAL)
-        bolts(b, x, y + side * 0.22, 0.8, height - 0.6, mat=P.METAL_DARK)
-    # conduit along the top
-    b.cylinder(0.07, width, (-width / 2, y + side * 0.18, 4.55), P.METAL_DARK, segments=6, rot_y=90, base=False)
+        b.box((0.24, 0.2, height - 0.45), (x, y + side * 0.08, 0.45), P.METAL_DARK, bevel=0.02)
+        b.box((0.1, 0.06, height - 0.9), (x, y + side * 0.19, 0.65), P.WALL_DARK)
+        bolts(b, x, y + side * 0.22, 0.75, height - 0.7, step=0.55, size=0.05, mat=P.METAL)
+    b.cylinder(0.06, width, (0, y + side * 0.2, 4.85), P.METAL_DARK, segments=6, rot_y=90, base=False)
     if pipes:
-        for z, r, mat in ((3.05, 0.16, P.METAL), (3.42, 0.1, P.RUST), (2.8, 0.07, P.METAL_DARK)):
-            b.cylinder(r, width, (-width / 2, y + side * (0.3 + r), z), mat, segments=8, rot_y=90, base=False)
+        for z, r, mat in ((3.05, 0.16, P.GUNMETAL), (3.42, 0.1, P.RUST), (2.8, 0.07, P.METAL_DARK)):
+            b.cylinder(r, width, (0, y + side * (0.3 + r), z), mat, segments=10, rot_y=90, base=False)
         for x in (-width / 2 + 0.6, width / 2 - 0.6):
             b.box((0.14, 0.55, 0.9), (x, y + side * 0.3, 2.6), P.METAL_DARK)
             b.box((0.3, 0.1, 0.3), (x, y + side * 0.42, 3.3), P.METAL_DARK)
     if marking:
-        draw_marking(b, marking, y + side * 0.075, side, height=1.9, z0=1.75)
+        draw_marking(b, marking, y + side * 0.112, side, height=1.9, z0=1.6)
 
 
 # blocky 5x7 glyphs for wall markings ("B-3", sector letters)
@@ -102,23 +107,51 @@ GLYPHS = {
     "5": ["1111", "1000", "1000", "1110", "0001", "0001", "1110"],
 }
 
+# stencil strokes on the same 4 x 7 cell grid: ("r", x0, z0, x1, z1) bars, ("d", x0, z0, x1, z1)
+# 45 degree corners, so the concept's "B-3" reads as painted lettering rather than pixels
+STROKES = {
+    "B": [("r", 0, 0, 1, 7), ("r", 0, 6, 2.6, 7), ("r", 0, 3, 2.6, 4), ("r", 0, 0, 2.6, 1),
+          ("r", 3, 4.4, 4, 5.6), ("r", 3, 1.4, 4, 2.6),
+          ("d", 2.5, 6.5, 3.5, 5.5), ("d", 3.5, 4.5, 2.5, 3.5), ("d", 2.5, 3.5, 3.5, 2.5), ("d", 3.5, 1.5, 2.5, 0.5)],
+    "3": [("r", 0, 6, 2.6, 7), ("r", 1, 3, 2.6, 4), ("r", 0, 0, 2.6, 1),
+          ("r", 3, 4.4, 4, 5.6), ("r", 3, 1.4, 4, 2.6),
+          ("d", 2.5, 6.5, 3.5, 5.5), ("d", 3.5, 4.5, 2.5, 3.5), ("d", 2.5, 3.5, 3.5, 2.5), ("d", 3.5, 1.5, 2.5, 0.5)],
+    "-": [("r", 0.2, 3, 2.8, 4)],
+}
+
 
 def draw_marking(b, text, y, side, height=1.5, z0=1.2, mat=P.MARKING):
+    """Big stencil lettering: glyphs from STROKES (straight bars and 45 degree corners) when there
+    is one, else the blocky GLYPHS grid."""
     cell = height / 7
     gw = cell * 4
-    total = len(text) * gw + (len(text) - 1) * cell
+    widths = [(cell * 3 if ch == "-" else gw) for ch in text]
+    total = sum(widths) + (len(text) - 1) * cell * 1.2
     x = -total / 2
-    for ch in text:
-        rows = GLYPHS[ch]
-        for r, row in enumerate(rows):
-            for c, bit in enumerate(row):
-                if bit == "1":
-                    # mirror on the back face so the text reads correctly from both sides
-                    cx = x + (c + 0.5) * cell
-                    if side > 0:
-                        cx = -cx
-                    b.box((cell * 1.02, 0.03, cell * 1.02), (cx, y, z0 + (6 - r) * cell), mat)
-        x += gw + cell
+    count = [0]
+    for ch, w in zip(text, widths):
+        def put(cx, cz, sx, sz, rot=0.0):
+            px = x + cx * cell
+            if side > 0:
+                px, rot = -px, -rot
+            # stagger overlapping strokes a little in depth so their faces never coincide
+            count[0] += 1
+            b.box((sx * cell, 0.03, sz * cell), (px, y + side * 0.0012 * count[0], z0 + cz * cell), mat,
+                  rot_y=rot, base=False)
+        if ch in STROKES:
+            for kind, a, c, d, e in STROKES[ch]:
+                if kind == "r":
+                    put((a + d) / 2, (c + e) / 2, d - a, e - c)
+                else:
+                    # 45 degree corner from (a, c) to (d, e), one cell thick
+                    ang = math.degrees(math.atan2(e - c, d - a))
+                    put((a + d) / 2, (c + e) / 2, math.hypot(d - a, e - c) + 0.42, 1.0, -ang)
+        else:
+            for r, row in enumerate(GLYPHS[ch]):
+                for c, bit in enumerate(row):
+                    if bit == "1":
+                        put(c + 0.5, 6.5 - r, 1.02, 1.02)
+        x += w + cell * 1.2
 
 
 def wall(b, width, vent=False, pipes=False, marking=None):
@@ -133,12 +166,28 @@ def wall(b, width, vent=False, pipes=False, marking=None):
 @piece("Floor_Tile_4m", "Floors", collider="box", box=((0, 0, -0.1), (4, 4, 0.2)),
        notes="4 x 4 m steel deck plate, top at 0. Tile it on a 4 m grid.")
 def floor_tile(b):
-    b.box((4, 4, 0.18), (0, 0, -0.2), P.FLOOR_DARK)
+    # the concept's floor tile: a raised bolted border, four plates with a cross seam and small
+    # orange corner markers. Walking surface at 0.
+    b.box((4, 4, 0.2), (0, 0, -0.24), P.FLOOR_DARK)
+    for s in (-1, 1):
+        b.box((4.0, 0.1, 0.06), (0, s * 1.95, -0.04), P.GRIME_DARK, bevel=0.01)
+        b.box((0.1, 3.8, 0.06), (s * 1.95, 0, -0.04), P.GRIME_DARK, bevel=0.01)
     shades = (P.FLOOR, P.FLOOR_LIGHT, P.FLOOR_LIGHT, P.FLOOR)
     for i, (sx, sy) in enumerate(((-1, -1), (1, -1), (-1, 1), (1, 1))):
-        b.box((1.94, 1.94, 0.04), (sx * 1.0, sy * 1.0, -0.04), shades[i], bevel=0.015)
-        for bx, by in ((-0.82, -0.82), (0.82, -0.82), (-0.82, 0.82), (0.82, 0.82)):
-            b.box((0.08, 0.08, 0.02), (sx * 1.0 + bx, sy * 1.0 + by, 0.0), P.METAL_DARK)
+        b.box((1.84, 1.84, 0.04), (sx * 0.95, sy * 0.95, -0.04), shades[i], bevel=0.012)
+        b.box((1.2, 0.03, 0.01), (sx * 0.95, sy * 0.95, 0.0), P.FLOOR_DARK)
+        for bx, by in ((-0.78, -0.78), (0.78, -0.78), (-0.78, 0.78), (0.78, 0.78)):
+            b.box((0.06, 0.06, 0.015), (sx * 0.95 + bx, sy * 0.95 + by, 0.0), P.METAL)
+    b.box((3.8, 0.06, 0.05), (0, 0, -0.04), P.GRIME_DARK)
+    b.box((0.06, 3.8, 0.05), (0, 0, -0.04), P.GRIME_DARK)
+    for sx in (-1, 1):
+        for sy in (-1, 1):
+            b.box((0.14, 0.14, 0.02), (sx * 1.95, sy * 1.95, 0.02), P.METAL)
+            b.box((0.2, 0.05, 0.015), (sx * 1.76, sy * 1.95, 0.02), P.HAZARD)
+    for x in (-1.4, -0.5, 0.5, 1.4):
+        for s in (-1, 1):
+            b.box((0.05, 0.05, 0.015), (x, s * 1.95, 0.02), P.METAL)
+            b.box((0.05, 0.05, 0.015), (s * 1.95, x, 0.02), P.METAL)
 
 
 @piece("Floor_Tile_Clean_4m", "Floors", collider="box", box=((0, 0, -0.1), (4, 4, 0.2)),
@@ -272,22 +321,29 @@ def wall_b3(b):
        notes="Structural steel pillar, 1 m square and 5.4 m tall: riveted flanges, collars and a small "
              "amber service light near the foot. Put one on every wall joint.")
 def wall_pillar(b):
-    b.box((1.2, 1.2, 0.5), (0, 0, 0), P.METAL_DARK, bevel=0.03)
-    b.box((1.05, 1.05, 0.12), (0, 0, 0.5), P.RUST)
-    b.box((0.86, 0.86, 4.5), (0, 0, 0.5), P.WALL_DARK)
-    for sx, sy in ((-1, -1), (1, -1), (-1, 1), (1, 1)):
-        b.box((0.2, 0.2, 4.5), (sx * 0.43, sy * 0.43, 0.5), P.METAL)
+    # the concept's pillar: a chamfered dark column on a heavy base block, panel lines, collars,
+    # a cap, a small tag and an orange light at the foot
+    def octagon(r, c):
+        return [(r, -r + c), (r, r - c), (r - c, r), (-r + c, r), (-r, r - c), (-r, -r + c), (-r + c, -r),
+                (r - c, -r)]
+    b.prism(octagon(0.6, 0.18), 0.0, 0.55, P.METAL_DARK)
+    b.prism(octagon(0.54, 0.16), 0.55, 0.62, P.RUST)
+    b.prism(octagon(0.46, 0.14), 0.62, 4.9, P.GUNMETAL)
+    for z in (1.7, 3.4):
+        b.prism(octagon(0.5, 0.15), z, z + 0.14, P.METAL_DARK)
     for side in (-1, 1):
-        # recessed web with bolt rows, like the concept's riveted columns
-        b.box((0.5, 0.05, 4.1), (0, side * 0.44, 0.7), P.WALL)
-        b.box((0.05, 0.5, 4.1), (side * 0.44, 0, 0.7), P.WALL)
-        for x in (-0.17, 0.17):
-            bolts(b, x, side * 0.47, 0.9, 4.6, step=0.5, size=0.06, mat=P.METAL_DARK)
-        b.box((0.22, 0.05, 0.08), (0, side * 0.48, 0.78), P.LAMP_WARM)
-    for z in (2.0, 3.6):
-        b.box((1.04, 1.04, 0.16), (0, 0, z), P.METAL_DARK)
-    b.box((1.14, 1.14, 0.4), (0, 0, 5.0), P.METAL, bevel=0.03)
-    b.box((0.7, 0.7, 0.12), (0, 0, 5.4), P.METAL_DARK)
+        for axis in ("x", "y"):
+            if axis == "y":
+                b.box((0.05, 0.04, 4.0), (0, side * 0.465, 0.75), P.WALL_DARK)
+                b.box((0.03, 0.035, 4.0), (-0.16, side * 0.465, 0.75), P.WALL_DARK)
+            else:
+                b.box((0.04, 0.05, 4.0), (side * 0.465, 0, 0.75), P.WALL_DARK)
+        bolts(b, 0.18, side * 0.48, 0.8, 4.7, step=0.55, size=0.045, mat=P.METAL)
+        b.box((0.14, 0.04, 0.07), (0, side * 0.61, 0.3), P.LAMP_WARM)
+    b.box((0.16, 0.02, 0.1), (0.0, -0.47, 3.85), P.MARKING)
+    b.box((0.05, 0.02, 0.05), (0.0, -0.48, 3.7), P.LAMP_WARM)
+    b.prism(octagon(0.56, 0.17), 4.9, 5.3, P.METAL_DARK)
+    b.prism(octagon(0.42, 0.12), 5.3, 5.42, P.GUNMETAL)
 
 
 @piece("Wall_Pillar_Large", "Walls", collider="box", box=((0, 0, 4.0), (1.8, 1.8, 8.0)), fade=True,
@@ -351,6 +407,43 @@ def door_frame(b, total_w, open_w, open_h, height=WALL_H, heavy=False):
     return side_w
 
 
+def portal(b, open_w, open_h, y, face, post=0.55, chamfer=0.55, depth=0.22, lights=True):
+    """The concept's heavy door surround on one face: thick bolted posts, a lintel, chamfered inner
+    corners and small orange lights down the posts."""
+    yy = y + face * depth / 2
+    for s in (-1, 1):
+        x = s * (open_w / 2 + post / 2)
+        b.box((post, depth, open_h + post), (x, yy, 0), P.METAL_DARK, bevel=0.03)
+        b.box((post * 0.55, 0.05, open_h - 0.4), (x, yy + face * depth / 2, 0.35), P.WALL, bevel=0.01)
+        for k in range(5):
+            z = 0.5 + k * (open_h - 0.6) / 4
+            b.box((0.05, 0.03, 0.05), (x - s * post * 0.36, yy + face * (depth / 2 + 0.02), z), P.METAL)
+        if lights:
+            for z in (0.9, open_h * 0.55):
+                b.box((0.09, 0.04, 0.16), (x + s * post * 0.32, yy + face * (depth / 2 + 0.02), z), P.LAMP_WARM)
+        # chamfered top corner, the concept's angled shoulders
+        b.box((post * 1.3, depth, post * 0.9), (x - s * post * 0.05, yy, open_h + post * 0.55), P.METAL_DARK,
+              rot_y=s * 40, base=False, bevel=0.02)
+        b.box((chamfer * 1.35, depth * 0.9, 0.18), (s * (open_w / 2 - chamfer / 2 + 0.05), yy, open_h - chamfer / 2),
+              P.METAL_DARK, rot_y=-s * 45, base=False, bevel=0.015)
+    b.box((open_w + 0.2, depth, post), (0, yy, open_h), P.METAL_DARK, bevel=0.03)
+    b.box((open_w - 0.4, 0.05, post * 0.5), (0, yy + face * depth / 2, open_h + post * 0.25), P.WALL, bevel=0.01)
+
+
+def leaf_panels(leaf, cx, w, h, face, y, brace=False):
+    """Door leaf face: framed plates with panel lines, X braces on the event gates."""
+    leaf.box((w - 0.16, 0.04, h - 0.3), (cx, y + face * 0.02, 0.15), P.WALL, bevel=0.01)
+    for z in (h * 0.33, h * 0.66):
+        leaf.box((w - 0.16, 0.05, 0.05), (cx, y + face * 0.04, z), P.METAL_DARK)
+    leaf.box((0.05, 0.05, h - 0.3), (cx, y + face * 0.04, 0.15), P.METAL_DARK)
+    if brace:
+        import math as _m
+        L = _m.hypot(w - 0.3, h * 0.6)
+        ang = _m.degrees(_m.atan2(h * 0.6, w - 0.3))
+        for sgn in (-1, 1):
+            leaf.box((L, 0.06, 0.12), (cx, y + face * 0.06, h * 0.5), P.METAL_DARK, rot_y=sgn * ang, base=False)
+
+
 @piece("Door_Sliding", "Doors", parts=("Leaf_L", "Leaf_R"),
        gate={"travel": 1.45, "auto": True, "startsOpen": False, "sensor": (0, 0, 1.5, 3.4, 6.0, 3.0)},
        lights=[{"offset": (0, -0.55, 3.75), "color": "#9ED8FF", "range": 5.0, "intensity": 1.6}],
@@ -359,18 +452,16 @@ def door_frame(b, total_w, open_w, open_h, height=WALL_H, heavy=False):
 def door_sliding(b, parts):
     door_frame(b, 6.0, DOOR_W, DOOR_H)
     for face in (-1, 1):
-        y = face * 0.36
-        b.box((0.9, 0.06, 0.18), (0, y, DOOR_H + 0.3), P.METAL_DARK)
-        b.box((0.7, 0.04, 0.1), (0, y + face * 0.03, DOOR_H + 0.34), P.LIGHT_GREEN)
+        portal(b, DOOR_W, DOOR_H, face * (WALL_T / 2 + 0.06), face, post=0.5)
     floor_hazard(b, -DOOR_W / 2, DOOR_W / 2, -0.4, 0.4)
     for name, s in (("Leaf_L", -1), ("Leaf_R", 1)):
         leaf = parts[name]
         cx = s * DOOR_W / 4
-        leaf.box((DOOR_W / 2 + 0.04, 0.16, DOOR_H), (cx, 0, 0), P.WALL_LIGHT, bevel=0.02)
+        leaf.box((DOOR_W / 2 + 0.04, 0.16, DOOR_H), (cx, 0, 0), P.METAL_DARK, bevel=0.02)
         for face in (-1, 1):
-            leaf.box((DOOR_W / 2 - 0.3, 0.04, 1.4), (cx, face * 0.09, 1.7), P.WALL)
-            leaf.box((0.12, 0.05, 2.6), (s * 0.08, face * 0.09, 0.4), P.METAL_DARK)
-            leaf.box((DOOR_W / 2 - 0.3, 0.04, 0.12), (cx, face * 0.1, 1.0), P.HAZARD)
+            leaf_panels(leaf, cx, DOOR_W / 2, DOOR_H, face, face * 0.08)
+            # half of the concept's red centre strip on each leaf
+            leaf.box((0.07, 0.06, 1.5), (s * 0.06, face * 0.1, 0.95), P.LIGHT_RED)
 
 
 @piece("Gate_Blast", "Gates", parts=("Leaf_L", "Leaf_R"),
@@ -382,31 +473,25 @@ def door_sliding(b, parts):
 def gate_blast(b, parts):
     side = door_frame(b, 8.0, GATE_W, GATE_H, height=6.0, heavy=True)
     for face in (-1, 1):
-        y = face * 0.58
-        # status bar over the opening and hazard frames on the housings
-        b.box((2.4, 0.12, 0.3), (0, y, 4.6), P.METAL_DARK)
-        b.box((2.2, 0.06, 0.16), (0, y + face * 0.06, 4.67), P.LIGHT_RED)
+        y = face * (WALL_T / 2 + 0.2)
+        portal(b, GATE_W, GATE_H, y, face, post=0.7, chamfer=0.7, depth=0.3)
+        # the concept's red bar across the top of the gate (status lights turn it green when open)
+        b.box((2.6, 0.12, 0.3), (0, y + face * 0.34, GATE_H - 0.55), P.METAL_DARK)
+        b.box((2.4, 0.06, 0.14), (0, y + face * 0.4, GATE_H - 0.47), P.LIGHT_RED)
         for s in (-1, 1):
-            x_in, x_out = s * (GATE_W / 2 + 0.45), s * (GATE_W / 2 + side - 0.55)
-            hazard_stripes(b, min(x_in, x_out), max(x_in, x_out), 0.3, 0.9, y, face=face)
-            b.box((0.5, 0.1, 0.7), (s * (GATE_W / 2 + 1.0), y, 2.4), P.METAL_DARK)
-            b.box((0.3, 0.06, 0.18), (s * (GATE_W / 2 + 1.0), y + face * 0.05, 2.75), P.LIGHT_RED)
-        for s in (-1, 1):
+            x_in, x_out = s * (GATE_W / 2 + 0.8), s * (GATE_W / 2 + side - 0.4)
+            hazard_stripes(b, min(x_in, x_out), max(x_in, x_out), 0.3, 0.8, y + face * 0.1, face=face)
             b.cylinder(0.16, 5.2, (s * (GATE_W / 2 + side - 0.3), y + face * 0.1, 0), P.METAL, segments=8)
     floor_hazard(b, -GATE_W / 2, GATE_W / 2, -0.7, 0.7)
     for name, s in (("Leaf_L", -1), ("Leaf_R", 1)):
         leaf = parts[name]
         cx = s * GATE_W / 4
-        leaf.box((GATE_W / 2 + 0.06, 0.42, GATE_H), (cx, 0, 0), P.METAL, bevel=0.03)
+        leaf.box((GATE_W / 2 + 0.06, 0.42, GATE_H), (cx, 0, 0), P.METAL_DARK, bevel=0.03)
         for face in (-1, 1):
-            y = face * 0.22
-            for z in (0.5, 1.6, 2.7):
-                leaf.box((GATE_W / 2 - 0.35, 0.08, 0.7), (cx, y, z), P.WALL)
-            leaf.box((0.22, 0.1, GATE_H - 0.4), (s * 0.12, y, 0.2), P.METAL_DARK)
-            leaf.box((GATE_W / 2 - 0.25, 0.09, 0.22), (cx, y, 3.75), P.HAZARD)
-            # interlocking teeth on the meeting edge
+            leaf_panels(leaf, cx, GATE_W / 2, GATE_H, face, face * 0.21, brace=True)
             for z in (0.8, 2.0, 3.2):
-                leaf.box((0.18, 0.12, 0.4), (s * 0.04, y, z), P.METAL_DARK)
+                leaf.box((0.18, 0.12, 0.4), (s * 0.04, face * 0.22, z), P.METAL)
+            leaf.box((0.1, 0.05, 0.22), (cx + s * 0.55, face * 0.26, 1.2), P.LAMP_WARM)
 
 
 @piece("Gate_Shutter", "Gates", parts=("Leaf_Down",),
@@ -416,38 +501,57 @@ def gate_blast(b, parts):
 def gate_shutter(b, parts):
     door_frame(b, 6.0, 4.0, 4.0)
     for face in (-1, 1):
-        y = face * 0.38
-        b.box((1.6, 0.06, 0.16), (0, y, 4.32), P.LIGHT_RED)
-        for s in (-1, 1):
-            hazard_stripes(b, s * 2.25 - 0.25, s * 2.25 + 0.25, 0.4, 3.9, y, stripe=0.25, face=face)
+        y = face * (WALL_T / 2 + 0.06)
+        portal(b, 4.0, 4.0, y, face, post=0.5, chamfer=0.5)
+        b.box((1.8, 0.08, 0.14), (0, y + face * 0.24, 4.2), P.LIGHT_RED)
+    floor_hazard(b, -2.0, 2.0, -0.4, 0.4)
     leaf = parts["Leaf_Down"]
     leaf.box((4.0, 0.24, 4.0), (0, 0, 0), P.METAL_DARK)
     for face in (-1, 1):
-        for i in range(8):
-            leaf.box((3.9, 0.06, 0.32), (0, face * 0.13, 0.1 + i * 0.48), P.METAL if i % 2 else P.WALL)
-        leaf.box((3.9, 0.07, 0.25), (0, face * 0.14, 3.7), P.HAZARD)
+        for i in range(10):
+            leaf.box((3.92, 0.05, 0.3), (0, face * 0.13, 0.08 + i * 0.39), P.GUNMETAL if i % 2 else P.WALL,
+                     bevel=0.01)
+        leaf.box((3.92, 0.07, 0.22), (0, face * 0.14, 0.02), P.HAZARD)
+        for s in (-1, 1):
+            leaf.box((0.12, 0.08, 3.9), (s * 1.9, face * 0.15, 0.05), P.METAL_DARK)
 
 
 @piece("Door_Airlock_Locked", "Doors", fade=True,
        notes="Decoration: a sealed round vault door set into a 4 m wall panel (never opens).")
 def door_airlock(b):
+    # the concept's locked airlock: a round vault door with a spoked wheel in a heavy square frame
     b.box((4, WALL_T - 0.16, WALL_H), (0, 0, 0), P.WALL_DARK)
     wall_face(b, 4, +1)
     b.box((4, WALL_T + 0.12, 0.25), (0, 0, WALL_H - 0.25), P.METAL, bevel=0.02)
-    # front: the vault door
     y = -WALL_T / 2
-    b.box((4, 0.12, 0.35), (0, y - 0.04, 0), P.METAL_DARK)
-    b.cylinder(1.75, 0.3, (0, y, 2.1), P.METAL_DARK, segments=24, rot_x=90, base=False)
-    b.cylinder(1.5, 0.3, (0, y - 0.12, 2.1), P.METAL, segments=24, rot_x=90, base=False)
-    b.cylinder(1.15, 0.2, (0, y - 0.28, 2.1), P.WALL, segments=20, rot_x=90, base=False)
+    cz = 2.35
+    b.box((4, 0.16, 0.45), (0, y - 0.06, 0), P.METAL_DARK, bevel=0.02)
+    b.box((4, 0.16, 0.5), (0, y - 0.06, WALL_H - 0.75), P.METAL_DARK, bevel=0.02)
+    for s in (-1, 1):
+        b.box((0.42, 0.24, WALL_H - 0.7), (s * 1.79, y - 0.1, 0.45), P.METAL_DARK, bevel=0.03)
+        bolts(b, s * 1.79, y - 0.24, 0.7, 4.1, step=0.5, size=0.06, mat=P.METAL)
+        b.box((0.9, 0.2, 0.9), (s * 1.35, y - 0.08, 0.45), P.METAL_DARK, rot_y=s * 45, base=False)
+    b.box((3.2, 0.1, 3.9), (0, y - 0.03, 0.45), P.GUNMETAL)
+    b.cylinder(1.78, 0.22, (0, y - 0.12, cz), P.METAL_DARK, segments=32, rot_x=90, base=False, bevel=0.03)
+    b.cylinder(1.55, 0.2, (0, y - 0.24, cz), P.GUNMETAL, segments=32, rot_x=90, base=False)
+    b.cylinder(1.38, 0.08, (0, y - 0.35, cz), P.WALL_DARK, segments=32, rot_x=90, base=False)
+    for k in range(16):
+        a = math.radians(k * 22.5)
+        b.box((0.1, 0.06, 0.1), (math.cos(a) * 1.66, y - 0.25, cz + math.sin(a) * 1.66), P.METAL, base=False)
+    # wheel: rim, eight spokes, hub
+    for k in range(24):
+        a0 = math.radians(k * 15)
+        b.box((0.33, 0.12, 0.13), (math.cos(a0) * 1.22, y - 0.45, cz + math.sin(a0) * 1.22), P.METAL_DARK,
+              rot_y=-(k * 15 + 90), base=False)
     for k in range(8):
-        a = math.radians(k * 45)
-        b.box((0.25, 0.18, 0.25), (math.cos(a) * 1.6, y - 0.18, 2.1 - 0.125 + math.sin(a) * 1.6), P.METAL_DARK)
-    for k in range(3):
-        a = k * 120
-        b.box((0.16, 0.12, 1.0), (0, y - 0.4, 2.1), P.METAL_DARK, rot_y=a)
-    b.cylinder(0.25, 0.25, (0, y - 0.42, 2.1), P.RUST, segments=10, rot_x=90, base=False)
-    b.box((0.4, 0.08, 0.14), (0, y - 0.1, 4.15), P.LIGHT_RED)
+        a = k * 45
+        r = math.radians(a)
+        b.box((1.1, 0.08, 0.09), (math.cos(r) * 0.68, y - 0.43, cz + math.sin(r) * 0.68), P.METAL_DARK,
+              rot_y=-a, base=False)
+    b.cylinder(0.26, 0.22, (0, y - 0.5, cz), P.METAL_DARK, segments=12, rot_x=90, base=False)
+    b.cylinder(0.12, 0.1, (0, y - 0.62, cz), P.METAL, segments=10, rot_x=90, base=False)
+    b.box((0.4, 0.05, 0.12), (0, y - 0.15, 4.45), P.LIGHT_RED)
+    b.box((0.28, 0.03, 0.12), (0, y - 0.15, 4.15), P.MARKING)
 
 
 # ---------------------------------------------------------------------------------- vertical
@@ -459,28 +563,35 @@ STAIR_RUN = 5.4
        notes="4 m wide stairs climbing 3 m over 5.4 m toward +Z (Unity), with railings. Meets Catwalk_4m. "
              "An invisible ramp gives smooth walking.")
 def stairs_wide(b, parts):
+    # the concept's stairs: heavy side stringers, grated treads with a lit nosing, posts and rails
     steps = 12
     rise, run = STAIR_RISE / steps, STAIR_RUN / steps
     for i in range(steps):
         z = i * rise
         y = -STAIR_RUN / 2 + (i + 0.5) * run
-        b.box((3.6, run + 0.02, 0.08), (0, y, z + rise - 0.08), P.GRATE)
-        b.box((3.6, 0.06, 0.06), (0, y - run / 2 + 0.03, z + rise - 0.06), P.HAZARD)
+        b.box((3.6, run + 0.02, 0.06), (0, y, z + rise - 0.06), P.GRATE)
+        for k in range(5):
+            b.box((3.6, 0.025, 0.03), (0, y - run / 2 + (k + 0.5) * run / 5, z + rise - 0.03), P.METAL_DARK)
+        b.box((3.6, 0.06, 0.08), (0, y - run / 2 + 0.03, z + rise - 0.08), P.METAL)
+        b.box((3.6, 0.03, 0.02), (0, y - run / 2 + 0.01, z + rise - 0.005), P.HAZARD)
+    ang = math.degrees(math.atan2(STAIR_RISE, STAIR_RUN))
+    L = math.hypot(STAIR_RISE, STAIR_RUN)
     for s in (-1, 1):
-        x = s * 1.9
-        pts = [(x, -STAIR_RUN / 2, 0.0), (x, STAIR_RUN / 2, STAIR_RISE)]
-        b.tube(pts, 0.14, P.METAL_DARK, sides=4)
-        rail = [(x, -STAIR_RUN / 2, 1.0), (x, STAIR_RUN / 2, STAIR_RISE + 1.0)]
-        b.tube(rail, 0.05, P.METAL, sides=6)
-        mid = [(x, -STAIR_RUN / 2, 0.55), (x, STAIR_RUN / 2, STAIR_RISE + 0.55)]
-        b.tube(mid, 0.03, P.METAL_DARK, sides=5)
-        for t in (0.0, 0.5, 1.0):
-            y = -STAIR_RUN / 2 + t * STAIR_RUN
-            z = t * STAIR_RISE
-            b.box((0.08, 0.08, 1.0), (x, y, z), P.METAL)
+        x = s * 1.86
+        b.box((0.14, L + 0.3, 0.42), (x, 0, STAIR_RISE / 2 - 0.12), P.METAL_DARK, rot_x=ang, base=False,
+              bevel=0.015)
+        b.box((0.03, L, 0.06), (x + s * 0.075, 0, STAIR_RISE / 2), P.GUNMETAL, rot_x=ang, base=False)
+        for t in (0.04, 0.5, 0.96):
+            yy = -STAIR_RUN / 2 + t * STAIR_RUN
+            zz = t * STAIR_RISE
+            b.box((0.07, 0.07, 1.05), (x, yy, zz), P.METAL_DARK)
+        b.box((0.06, L, 0.06), (x, 0, STAIR_RISE / 2 + 1.02), P.METAL_DARK, rot_x=ang, base=False)
+        b.box((0.03, L, 0.03), (x, 0, STAIR_RISE / 2 + 0.55), P.STEEL, rot_x=ang, base=False)
     for y in (-0.8, 1.6):
         z = (y + STAIR_RUN / 2) / STAIR_RUN * STAIR_RISE
-        b.box((0.2, 0.2, z), (0, y, 0), P.METAL_DARK)
+        for s in (-1, 1):
+            b.box((0.16, 0.16, z - 0.2), (s * 1.6, y, 0), P.METAL_DARK)
+        b.box((3.4, 0.12, 0.12), (0, y, z - 0.3), P.METAL_DARK)
     ramp = parts["COL_Ramp"]
     ramp.prism([(-STAIR_RUN / 2, 0), (STAIR_RUN / 2, 0), (STAIR_RUN / 2, STAIR_RISE)], -1.8, 1.8, P.VOID,
                matrix=_side_matrix())
@@ -503,13 +614,21 @@ def stairs_short(b, parts):
 
 
 def railing(b, length, y=0.0, z=0.0):
-    posts = max(2, int(round(length / 1.0)) + 1)
-    for i in range(posts):
-        x = -length / 2 + i * length / (posts - 1)
-        b.box((0.07, 0.07, 1.05), (x, y, z), P.METAL)
-    b.cylinder(0.045, length, (-length / 2, y, z + 1.05), P.METAL, segments=6, rot_y=90, base=False)
-    b.cylinder(0.03, length, (-length / 2, y, z + 0.6), P.METAL_DARK, segments=5, rot_y=90, base=False)
-    b.box((length, 0.03, 0.14), (0, y, z + 0.02), P.HAZARD)
+    """The concept's railing: framed panels between posts, a top and a mid rail and vertical bars."""
+    bays = max(1, int(round(length / 2.0)))
+    bw = length / bays
+    for i in range(bays + 1):
+        x = -length / 2 + i * bw
+        b.box((0.09, 0.09, 1.1), (x, y, z), P.METAL_DARK, bevel=0.01)
+        b.box((0.13, 0.13, 0.05), (x, y, z), P.METAL_DARK)
+    b.box((length, 0.07, 0.07), (0, y, z + 1.04), P.METAL_DARK, bevel=0.01)
+    b.box((length, 0.05, 0.05), (0, y, z + 0.1), P.METAL_DARK)
+    b.box((length, 0.04, 0.04), (0, y, z + 0.58), P.GUNMETAL)
+    for i in range(bays):
+        x0 = -length / 2 + i * bw
+        n = 4
+        for k in range(1, n + 1):
+            b.box((0.025, 0.025, 0.92), (x0 + k * bw / (n + 1), y, z + 0.13), P.STEEL)
 
 
 @piece("Railing_4m", "Railings", collider="box", box=((0, 0, 0.55), (4.0, 0.15, 1.1)),
@@ -528,20 +647,32 @@ CATWALK_H = 3.0
 
 
 def catwalk_deck(b, length, width, rails):
+    # the concept's bridge: dark plank deck on steel edge beams, trestle legs with diagonal knee
+    # braces, wire railings
     z = CATWALK_H
-    b.box((length, width, 0.12), (0, 0, z - 0.12), P.GRATE)
     for s in (-1, 1):
-        b.box((length, 0.14, 0.3), (0, s * (width / 2 - 0.07), z - 0.3), P.METAL_DARK)
-    for i in range(int(length / 0.5)):
-        x = -length / 2 + 0.25 + i * 0.5
-        b.box((0.05, width - 0.3, 0.05), (x, 0, z - 0.02), P.METAL_DARK)
-    for x in (-length / 2 + 0.3, length / 2 - 0.3):
+        b.box((length, 0.14, 0.34), (0, s * (width / 2 - 0.07), z - 0.34), P.METAL_DARK, bevel=0.01)
+        b.box((length, 0.05, 0.05), (0, s * (width / 2 - 0.05), z - 0.2), P.GUNMETAL)
+    n = int(length / 0.4)
+    for i in range(n):
+        x = -length / 2 + (i + 0.5) * length / n
+        b.box((length / n - 0.035, width - 0.28, 0.07), (x, 0, z - 0.08),
+              (P.WOOD_GREY, P.GRATE, P.WOOD_GREY)[i % 3], bevel=0.006)
+    b.box((length, width - 0.3, 0.06), (0, 0, z - 0.3), P.METAL_DARK)
+    for x in (-length / 2 + 0.35, length / 2 - 0.35):
         for s in (-1, 1):
-            b.box((0.18, 0.18, z - 0.3), (x, s * (width / 2 - 0.2), 0), P.METAL_DARK)
-        b.tube([(x, -width / 2 + 0.2, 0.3), (x, width / 2 - 0.2, z - 0.4)], 0.04, P.METAL, sides=4)
-        b.box((0.4, width, 0.12), (x, 0, z - 0.42), P.METAL_DARK)
+            yy = s * (width / 2 - 0.25)
+            b.box((0.22, 0.22, z - 0.34), (x, yy, 0), P.METAL_DARK, bevel=0.015)
+            b.box((0.34, 0.34, 0.12), (x, yy, 0), P.METAL_DARK)
+            # knee braces up to the deck beam
+            for d in (-1, 1):
+                if -length / 2 < x + d * 0.6 < length / 2:
+                    b.box((0.9, 0.1, 0.1), (x + d * 0.32, yy, z - 0.7), P.METAL_DARK, rot_y=d * 45, base=False)
+        b.box((0.18, width - 0.5, 0.16), (x, 0, z - 0.5), P.METAL_DARK)
+        b.box((0.12, 0.12, math.hypot(width - 0.5, z - 1.0)), (x, 0, (z - 0.4) / 2), P.METAL_DARK,
+              rot_x=math.degrees(math.atan2(width - 0.5, z - 1.0)), base=False)
     for s in rails:
-        railing(b, length, y=s * (width / 2 - 0.05), z=z)
+        wire_railing(b, length, y=s * (width / 2 - 0.05), z=z)
 
 
 @piece("Catwalk_4m", "Catwalks", notes="4 m long, 2.4 m wide grated walkway 3 m up on legs, railings both sides.")
@@ -582,9 +713,28 @@ def platform_dais(b, parts):
        notes="4 x 4 m ceiling panel with a recessed light; its pivot is the underside. Put it at wall height "
              "for third-person interiors (the isometric demo leaves ceilings off so the camera can see in).")
 def ceiling_panel(b):
+    # the concept's ceiling panel: a thick slab with a raised frame, four lighter plates, cross
+    # seams, corner bolts and a recessed light strip
     b.box((4, 4, 0.3), (0, 0, 0), P.WALL_DARK)
+    for s in (-1, 1):
+        b.box((4.0, 0.16, 0.06), (0, s * 1.92, -0.06), P.METAL_DARK)
+        b.box((0.16, 3.68, 0.06), (s * 1.92, 0, -0.06), P.METAL_DARK)
     for sx in (-1, 1):
         for sy in (-1, 1):
-            b.box((1.9, 1.9, 0.05), (sx, sy, -0.05), P.WALL)
-    b.box((1.6, 0.5, 0.06), (0, 0, -0.08), P.LAMP_COLD)
-    b.box((4, 0.16, 0.12), (0, 0, -0.12), P.METAL_DARK)
+            b.box((1.78, 1.78, 0.04), (sx * 0.93, sy * 0.93, -0.05), P.WALL)
+            for bx, by in ((-0.78, -0.78), (0.78, -0.78), (-0.78, 0.78), (0.78, 0.78)):
+                b.box((0.06, 0.06, 0.02), (sx * 0.93 + bx, sy * 0.93 + by, -0.07), P.METAL)
+    b.box((1.6, 0.4, 0.06), (0, 0, -0.1), P.METAL_DARK)
+    b.box((1.4, 0.26, 0.04), (0, 0, -0.12), P.LAMP_COLD)
+    b.box((3.7, 0.08, 0.05), (0, 0, -0.08), P.METAL_DARK)
+
+
+def wire_railing(b, length, y=0.0, z=0.0):
+    """Catwalk railing from the concept: slim posts with three taut wires."""
+    posts = max(2, int(round(length / 1.33)) + 1)
+    for i in range(posts):
+        x = -length / 2 + i * length / (posts - 1)
+        b.box((0.06, 0.06, 1.1), (x, y, z), P.METAL_DARK)
+    b.box((length, 0.05, 0.05), (0, y, z + 1.08), P.METAL_DARK)
+    for h in (0.38, 0.72):
+        b.cylinder(0.012, length, (0, y, z + h), P.STEEL, segments=4, rot_y=90, base=False)

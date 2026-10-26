@@ -508,6 +508,9 @@ def furnish_lab(L):
     c = LAB_C
     L.put("Containment_Tube_Large", "Lab/Centre", (c[0], c[1], 0.03))
     for k in range(6):
+        a = k * 60
+        L.put("Machine_Column", "Lab/Centre", polar(a, 10.5, c, 0.03), rot=a + 90)
+    for k in range(6):
         a = 30 + k * 60
         piece = "Containment_Tube_Broken" if k in (1, 4) else "Containment_Tube"
         L.put(piece, "Lab/Tubes", polar(a, 15.0, c, 0.03), rot=a + 90)

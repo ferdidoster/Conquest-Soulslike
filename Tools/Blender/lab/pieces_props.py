@@ -3,6 +3,7 @@
 import math
 
 from . import palette as P
+from . import detail as D
 from .kit import piece
 
 
@@ -16,27 +17,46 @@ def legs(b, w, d, h, t=0.06, mat=P.METAL_DARK, inset=0.05):
 @piece("Crate_Storage", "Storage", collider="box", box=((0, 0, 0.4), (1.2, 0.9, 0.8)),
        notes="Steel supply crate with ribs, latches and a label.")
 def crate_storage(b):
-    b.box((1.2, 0.9, 0.8), (0, 0, 0), P.METAL, bevel=0.04)
-    b.box((1.26, 0.96, 0.1), (0, 0, 0.0), P.METAL_DARK)
-    b.box((1.26, 0.96, 0.1), (0, 0, 0.7), P.METAL_DARK)
-    for x in (-0.45, 0.45):
-        b.box((0.08, 0.96, 0.8), (x, 0, 0), P.METAL_DARK)
-    for x in (-0.2, 0.2):
-        b.box((0.12, 0.06, 0.14), (x, -0.47, 0.6), P.STEEL)
-    b.box((0.3, 0.02, 0.18), (0, -0.46, 0.3), P.MARKING)
+    # the concept's steel case: thick chamfered body, raised lid, corner guards, side handles,
+    # orange latches and a small label
+    b.box((1.2, 0.9, 0.62), (0, 0, 0.04), P.GUNMETAL, bevel=0.05)
+    b.box((1.24, 0.94, 0.06), (0, 0, 0.0), P.METAL_DARK, bevel=0.015)
+    b.box((1.26, 0.96, 0.08), (0, 0, 0.6), P.METAL_DARK, bevel=0.02)
+    b.box((1.14, 0.84, 0.1), (0, 0, 0.66), P.WALL, bevel=0.04)
+    b.box((0.9, 0.6, 0.03), (0, 0, 0.76), P.GUNMETAL, bevel=0.01)
+    D.corner_guards(b, 1.24, 0.94, 0.78, size=0.14)
+    for x in (-0.3, 0.3):
+        b.box((0.1, 0.05, 0.16), (x, -0.475, 0.5), P.HAZARD, bevel=0.01)
+        b.box((0.05, 0.03, 0.08), (x, -0.5, 0.46), P.METAL_DARK)
+    for s in (-1, 1):
+        b.box((0.05, 0.3, 0.06), (s * 0.63, 0, 0.42), P.METAL_DARK)
+        b.box((0.03, 0.3, 0.12), (s * 0.66, 0, 0.36), P.METAL)
+    b.box((0.28, 0.02, 0.16), (0.05, -0.46, 0.22), P.MARKING)
+    b.box((0.08, 0.02, 0.16), (-0.12, -0.461, 0.22), P.HAZARD)
 
 
 @piece("Crate_Large", "Storage", collider="box", box=((0, 0, 0.7), (2.0, 1.4, 1.4)),
        notes="Large cargo container with hazard band and corner guards.")
 def crate_large(b):
-    b.box((2.0, 1.4, 1.4), (0, 0, 0), P.WALL, bevel=0.05)
+    # the concept's supply crate: weathered planks in a steel-strapped frame
+    b.box((1.96, 1.36, 1.3), (0, 0, 0.04), P.WOOD_GREY, bevel=0.02)
+    for i in range(5):
+        z = 0.06 + i * 0.26
+        b.box((1.98, 1.38, 0.02), (0, 0, z), P.METAL_DARK)
     for sx in (-1, 1):
         for sy in (-1, 1):
-            b.box((0.14, 0.14, 1.44), (sx * 0.95, sy * 0.65, 0), P.METAL_DARK)
-    for i in range(5):
-        b.box((0.06, 1.42, 1.2), (-0.7 + i * 0.35, 0, 0.1), P.WALL_DARK)
-    b.box((2.02, 1.42, 0.18), (0, 0, 0.95), P.HAZARD)
-    b.box((0.5, 0.02, 0.3), (0.55, -0.71, 0.45), P.MARKING)
+            b.box((0.16, 0.16, 1.42), (sx * 0.93, sy * 0.63, 0.0), P.WOOD_GREY, bevel=0.02)
+            b.box((0.18, 0.18, 0.12), (sx * 0.93, sy * 0.63, 0.0), P.METAL_DARK, bevel=0.01)
+            b.box((0.18, 0.18, 0.12), (sx * 0.93, sy * 0.63, 1.3), P.METAL_DARK, bevel=0.01)
+    for z in (0.0, 1.3):
+        for sy in (-1, 1):
+            b.box((1.7, 0.12, 0.12), (0, sy * 0.66, z), P.WOOD_GREY, bevel=0.015)
+        for sx in (-1, 1):
+            b.box((0.12, 1.1, 0.12), (sx * 0.95, 0, z), P.WOOD_GREY, bevel=0.015)
+    for x in (-0.45, 0.45):
+        b.box((0.08, 1.4, 1.36), (x, 0, 0.02), P.METAL_DARK)
+    b.box((1.7, 1.1, 0.04), (0, 0, 1.34), P.WOOD_GREY)
+    b.box((0.5, 0.02, 0.28), (0.0, -0.69, 0.55), P.MARKING)
 
 
 @piece("Crate_Stack", "Storage", fade=True, collider="box", box=((0, 0, 0.8), (2.4, 1.4, 1.6)),
@@ -90,14 +110,18 @@ def locker_single(b):
     locker(b, 0.0)
 
 
-def locker(b, x, open_door=False):
-    b.box((0.58, 0.55, 1.95), (x, 0, 0.05), P.WALL_LIGHT, bevel=0.015)
-    b.box((0.6, 0.57, 0.08), (x, 0, 0), P.METAL_DARK)
-    for i in range(4):
-        b.box((0.36, 0.02, 0.03), (x, -0.285, 1.6 + i * 0.07), P.METAL_DARK)
-        b.box((0.36, 0.02, 0.03), (x, -0.285, 0.25 + i * 0.07), P.METAL_DARK)
-    b.box((0.04, 0.04, 0.22), (x + 0.2, -0.29, 1.0), P.STEEL)
-    b.box((0.16, 0.02, 0.08), (x - 0.1, -0.285, 1.82), P.MARKING)
+def locker(b, x, open_door=False, w=0.58):
+    # the concept's locker: dark steel, recessed doors with louvres top and bottom, a handle
+    b.box((w, 0.55, 1.98), (x, 0, 0.04), P.WALL_DARK, bevel=0.012)
+    b.box((w + 0.02, 0.57, 0.06), (x, 0, 0), P.METAL_DARK)
+    b.box((w + 0.02, 0.57, 0.05), (x, 0, 1.97), P.METAL_DARK)
+    b.box((w - 0.08, 0.02, 1.8), (x, -0.28, 0.12), P.GUNMETAL, bevel=0.006)
+    for z0 in (1.52, 0.2):
+        b.box((w - 0.2, 0.02, 0.28), (x, -0.29, z0), P.METAL_DARK)
+        for i in range(5):
+            b.box((w - 0.24, 0.03, 0.025), (x, -0.3, z0 + 0.03 + i * 0.05), P.WALL_DARK, rot_x=-25)
+    b.box((0.035, 0.05, 0.24), (x + w / 2 - 0.1, -0.31, 0.95), P.STEEL)
+    b.box((0.14, 0.02, 0.07), (x - 0.08, -0.295, 1.88), P.MARKING)
 
 
 @piece("Locker_Row", "Storage", fade=True, collider="box", box=((0, 0, 1.0), (1.85, 0.55, 2.0)),
@@ -112,18 +136,28 @@ def locker_row(b):
 @piece("Bed_Bunk", "Furniture", fade=True, collider="box", box=((0, 0, 0.95), (2.1, 1.0, 1.9)),
        notes="Steel bunk bed with two mattresses, pillows, blankets and a ladder.")
 def bed_bunk(b):
+    # the concept's bunk: dark tube frame, ladder at one end, grey mattresses, rolled blankets
     for sx in (-1, 1):
         for sy in (-1, 1):
-            b.box((0.07, 0.07, 1.9), (sx * 1.0, sy * 0.45, 0), P.METAL_DARK)
-    for z, blanket in ((0.35, P.FABRIC_BLUE), (1.35, P.FABRIC_BLUE)):
-        b.box((2.06, 0.96, 0.08), (0, 0, z), P.METAL)
-        b.box((1.95, 0.85, 0.16), (0, 0, z + 0.08), P.MATTRESS, bevel=0.03)
-        b.box((1.3, 0.88, 0.05), (0.28, 0, z + 0.23), blanket, bevel=0.01)
-        b.box((0.42, 0.6, 0.12), (-0.72, 0, z + 0.24), P.PORCELAIN, bevel=0.04)
-    for z in (0.6, 1.6):
-        b.box((2.06, 0.04, 0.05), (0, 0.47, z), P.METAL_DARK)
-    for z in (0.55, 0.85, 1.15):
-        b.box((0.04, 0.4, 0.04), (1.02, -0.2, z), P.METAL)
+            b.cylinder(0.045, 1.95, (sx * 1.0, sy * 0.45, 0), P.METAL_DARK, segments=8)
+            b.cylinder(0.06, 0.04, (sx * 1.0, sy * 0.45, 0), P.METAL_DARK, segments=8)
+        for z in (0.32, 1.32, 1.9):
+            b.cylinder(0.03, 0.9, (sx * 1.0, 0, z), P.METAL_DARK, segments=6, rot_x=90, base=False)
+    for z in (0.32, 1.32):
+        for sy in (-1, 1):
+            b.cylinder(0.035, 2.0, (0, sy * 0.45, z), P.METAL_DARK, segments=6, rot_y=90, base=False)
+        b.box((1.96, 0.86, 0.04), (0, 0, z), P.METAL)
+        b.box((1.9, 0.8, 0.14), (0, 0, z + 0.04), P.MATTRESS, bevel=0.035)
+        b.box((1.05, 0.84, 0.05), (0.4, 0, z + 0.17), P.FABRIC_BLUE, bevel=0.02)
+        b.cylinder(0.09, 0.8, (-0.15, 0, z + 0.25), P.FABRIC_BLUE, segments=8, rot_x=90, base=False)
+        b.box((0.4, 0.55, 0.1), (-0.7, 0, z + 0.18), P.PORCELAIN, bevel=0.04)
+    for z in (1.9,):
+        b.cylinder(0.03, 2.0, (0, 0.45, z), P.METAL_DARK, segments=6, rot_y=90, base=False)
+    # ladder
+    for y in (-0.42, -0.12):
+        b.cylinder(0.025, 1.5, (-1.08, y, 0.25), P.METAL_DARK, segments=6)
+    for z in (0.55, 0.85, 1.15, 1.45):
+        b.cylinder(0.02, 0.32, (-1.08, -0.27, z), P.STEEL, segments=6, rot_x=90, base=False)
 
 
 @piece("Bed_Medical", "Furniture", collider="box", box=((0, 0, 0.5), (2.1, 0.9, 1.0)),
@@ -248,17 +282,28 @@ def toilet_stall(b):
 @piece("Lab_Table", "Furniture", collider="box", box=((0, 0, 0.5), (2.0, 0.9, 1.0)),
        notes="Lab bench with drawers, sample jars, a microscope and a tablet.")
 def lab_table(b):
-    b.box((2.0, 0.85, 0.06), (0, 0, 0.86), P.MATTRESS)
-    b.box((0.6, 0.78, 0.86), (-0.65, 0, 0), P.WALL_LIGHT)
+    # the concept's lab table: pale worn top, drawer pedestal left, cabinet right, legs on casters
+    b.box((2.0, 0.85, 0.06), (0, 0, 0.86), P.MATTRESS, bevel=0.015)
+    b.box((2.04, 0.89, 0.03), (0, 0, 0.84), P.METAL_DARK)
+    b.box((0.55, 0.75, 0.74), (-0.68, 0, 0.1), P.WALL_DARK, bevel=0.01)
     for i in range(3):
-        b.box((0.54, 0.02, 0.24), (-0.65, -0.4, 0.06 + i * 0.27), P.WALL)
-        b.box((0.16, 0.03, 0.03), (-0.65, -0.42, 0.22 + i * 0.27), P.METAL_DARK)
-    legs(b, 1.9, 0.75, 0.86, t=0.06)
-    for i, x in enumerate((0.2, 0.35, 0.5)):
-        b.cylinder(0.06, 0.18 + i * 0.03, (x, 0.2, 0.92), P.GLOW_SOFT if i != 1 else P.LIGHT_GREEN, segments=8)
-    b.box((0.2, 0.25, 0.04), (0.75, 0.0, 0.92), P.METAL_DARK)
-    b.box((0.05, 0.05, 0.35), (0.75, 0.08, 0.95), P.METAL_DARK)
-    b.box((0.08, 0.2, 0.08), (0.75, -0.02, 1.25), P.METAL_DARK, rot_x=30)
+        b.box((0.49, 0.02, 0.21), (-0.68, -0.38, 0.15 + i * 0.23), P.GUNMETAL, bevel=0.005)
+        b.box((0.14, 0.03, 0.025), (-0.68, -0.4, 0.3 + i * 0.23), P.STEEL)
+    b.box((0.6, 0.75, 0.74), (0.66, 0, 0.1), P.WALL_DARK, bevel=0.01)
+    for x in (0.52, 0.8):
+        b.box((0.26, 0.02, 0.62), (x, -0.38, 0.15), P.GUNMETAL, bevel=0.005)
+    for x in (0.6, 0.72):
+        b.box((0.025, 0.03, 0.14), (x, -0.4, 0.5), P.STEEL)
+    b.box((0.7, 0.7, 0.12), (0, 0, 0.7), P.WALL_DARK, bevel=0.01)
+    b.box((0.2, 0.03, 0.025), (0, -0.36, 0.76), P.STEEL)
+    for x in (-0.68, 0.66):
+        for sy in (-1, 1):
+            for sx in (-1, 1):
+                b.box((0.05, 0.05, 0.08), (x + sx * 0.22, sy * 0.3, 0.02), P.METAL_DARK)
+                b.cylinder(0.04, 0.04, (x + sx * 0.22, sy * 0.3 - 0.02, 0.0), P.PLASTIC, segments=8,
+                           rot_y=90, base=False)
+    for i, x in enumerate((0.2, 0.32, 0.44)):
+        b.cylinder(0.05, 0.16 + i * 0.03, (x, 0.22, 0.92), P.GLOW_SOFT if i != 1 else P.LIGHT_GREEN, segments=8)
     b.box((0.4, 0.28, 0.02), (-0.3, -0.1, 0.92), P.PLASTIC)
     b.box((0.34, 0.22, 0.01), (-0.3, -0.1, 0.94), P.SCREEN)
 

@@ -341,19 +341,19 @@ PrefabInstance:
     - target: {fileID: -4988497446514088565, guid: c59f69d70feb0544f958e88935fe6905, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c10aa26aace5d524cb1da3cd57b862fe, type: 2}
+      objectReference: {fileID: 2100000, guid: 41f7ae36f1892f344bec1fb01b62d9a0, type: 2}
     - target: {fileID: -4988497446514088565, guid: c59f69d70feb0544f958e88935fe6905, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 2100000, guid: 4125e95aec230b942921c434ee22625b, type: 2}
+      objectReference: {fileID: 2100000, guid: c10aa26aace5d524cb1da3cd57b862fe, type: 2}
     - target: {fileID: -4988497446514088565, guid: c59f69d70feb0544f958e88935fe6905, type: 3}
       propertyPath: 'm_Materials.Array.data[2]'
       value: 
-      objectReference: {fileID: 2100000, guid: 41f7ae36f1892f344bec1fb01b62d9a0, type: 2}
+      objectReference: {fileID: 2100000, guid: 4125e95aec230b942921c434ee22625b, type: 2}
     - target: {fileID: -4988497446514088565, guid: c59f69d70feb0544f958e88935fe6905, type: 3}
       propertyPath: 'm_Materials.Array.data[3]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2ec1de53947bcbd4b884a1f9b76fd0ec, type: 2}
+      objectReference: {fileID: 2100000, guid: 001fa5a9c9af61845bed02d5be44e76e, type: 2}
     - target: {fileID: -2602906865409112577, guid: c59f69d70feb0544f958e88935fe6905, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 257
@@ -361,19 +361,19 @@ PrefabInstance:
     - target: {fileID: -2602906865409112577, guid: c59f69d70feb0544f958e88935fe6905, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c10aa26aace5d524cb1da3cd57b862fe, type: 2}
+      objectReference: {fileID: 2100000, guid: 41f7ae36f1892f344bec1fb01b62d9a0, type: 2}
     - target: {fileID: -2602906865409112577, guid: c59f69d70feb0544f958e88935fe6905, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 2100000, guid: 4125e95aec230b942921c434ee22625b, type: 2}
+      objectReference: {fileID: 2100000, guid: c10aa26aace5d524cb1da3cd57b862fe, type: 2}
     - target: {fileID: -2602906865409112577, guid: c59f69d70feb0544f958e88935fe6905, type: 3}
       propertyPath: 'm_Materials.Array.data[2]'
       value: 
-      objectReference: {fileID: 2100000, guid: 41f7ae36f1892f344bec1fb01b62d9a0, type: 2}
+      objectReference: {fileID: 2100000, guid: 4125e95aec230b942921c434ee22625b, type: 2}
     - target: {fileID: -2602906865409112577, guid: c59f69d70feb0544f958e88935fe6905, type: 3}
       propertyPath: 'm_Materials.Array.data[3]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2ec1de53947bcbd4b884a1f9b76fd0ec, type: 2}
+      objectReference: {fileID: 2100000, guid: 001fa5a9c9af61845bed02d5be44e76e, type: 2}
     - target: {fileID: 919132149155446097, guid: c59f69d70feb0544f958e88935fe6905, type: 3}
       propertyPath: m_Name
       value: Model
@@ -401,9 +401,13 @@ PrefabInstance:
     - target: {fileID: 6321369189224590663, guid: c59f69d70feb0544f958e88935fe6905, type: 3}
       propertyPath: 'm_Materials.Array.data[4]'
       value: 
-      objectReference: {fileID: 2100000, guid: 68b92bfd68a34a84fb614e177314e51d, type: 2}
+      objectReference: {fileID: 2100000, guid: 001fa5a9c9af61845bed02d5be44e76e, type: 2}
     - target: {fileID: 6321369189224590663, guid: c59f69d70feb0544f958e88935fe6905, type: 3}
       propertyPath: 'm_Materials.Array.data[5]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 68b92bfd68a34a84fb614e177314e51d, type: 2}
+    - target: {fileID: 6321369189224590663, guid: c59f69d70feb0544f958e88935fe6905, type: 3}
+      propertyPath: 'm_Materials.Array.data[6]'
       value: 
       objectReference: {fileID: 2100000, guid: 2ec1de53947bcbd4b884a1f9b76fd0ec, type: 2}
     m_RemovedComponents: []
@@ -476,7 +480,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.08, y: 0.56, z: 4.2}
+  m_Size: {x: 2.08, y: 0.6, z: 4.2}
   m_Center: {x: -0.99, y: 0, z: -2.1}
 --- !u!1 &7678070598735491766 stripped
 GameObject:
@@ -502,5 +506,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.08, y: 0.56, z: 4.2}
+  m_Size: {x: 2.08, y: 0.6, z: 4.2}
   m_Center: {x: 0.99, y: 0, z: -2.1}

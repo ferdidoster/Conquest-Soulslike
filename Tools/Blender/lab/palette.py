@@ -47,6 +47,8 @@ GRIME_DARK = "Lab_GrimeDark"
 PUDDLE = "Lab_Puddle"
 TANK = "Lab_TankGlass"
 CARDBOARD = "Lab_Cardboard"
+GUNMETAL = "Lab_Gunmetal"
+WOOD_GREY = "Lab_WoodGrey"
 
 # Aliases so the shared MeshBuilder defaults (written for the desert kit) resolve to lab materials.
 STONE = CONCRETE
@@ -97,6 +99,8 @@ ENTRIES = {
     PUDDLE:      dict(color="#2A323C", emission="#0A1420", emission_intensity=0.4, grit=0.05),
     TANK:        dict(color="#21506F", emission="#11528C", emission_intensity=0.85, grit=0.0),
     CARDBOARD:   dict(color="#6A5741", grit=0.3, shadow=COLD),
+    GUNMETAL:    dict(color="#3A4048", grit=0.26, shadow=COLD),
+    WOOD_GREY:   dict(color="#4A4640", grit=0.34, shadow=COLD),
     SPECIMEN:    dict(color="#162E3E", emission="#0C2A40", emission_intensity=0.7, grit=0.0),
 }
 
