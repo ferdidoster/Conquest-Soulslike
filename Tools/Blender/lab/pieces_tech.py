@@ -253,41 +253,65 @@ def server_rack(b):
        lights=[{"offset": (0, -1.1, 1.0), "color": WARM, "range": 4.5, "intensity": 1.6, "flicker": 0.15}],
        notes="Boxy power unit with fan housings, gauges and warm status lamps.")
 def generator_unit(b):
-    b.box((2.4, 1.4, 1.4), (0, 0, 0), P.METAL_DARK, bevel=0.05)
-    b.box((2.5, 1.5, 0.15), (0, 0, 1.4), P.METAL)
+    # the concept's generator: a dark gunmetal cabinet with a round fan grille, side vents, a
+    # control strip with orange lights and a cable off the back
+    b.box((2.5, 1.5, 0.14), (0, 0, 0), P.METAL_DARK, bevel=0.02)
+    b.box((2.4, 1.4, 1.3), (0, 0, 0.14), P.GUNMETAL, bevel=0.04)
+    b.box((2.46, 1.46, 0.12), (0, 0, 1.44), P.METAL_DARK, bevel=0.02)
+    D.corner_guards(b, 2.42, 1.42, 1.3, z0=0.14, size=0.12)
     for x in (-0.6, 0.6):
-        b.cylinder(0.42, 0.1, (x, -0.72, 0.75), P.METAL, segments=12, rot_x=90, base=False)
-        for k in range(3):
-            b.box((0.78, 0.04, 0.06), (x, -0.78, 0.75), P.METAL_DARK, rot_y=k * 60)
-    for i in range(3):
-        b.box((0.12, 0.05, 0.12), (-0.3 + i * 0.3, -0.72, 1.28), P.LAMP_WARM if i != 1 else P.LIGHT_RED)
-    b.tube([(1.2, 0.2, 0.4), (1.6, 0.3, 0.3), (1.9, 0.1, 0.05)], 0.09, P.PLASTIC)
-    b.box((0.6, 0.04, 0.4), (0.0, -0.72, 0.2), P.HAZARD)
+        b.cylinder(0.46, 0.08, (x, -0.72, 0.8), P.METAL_DARK, segments=16, rot_x=90, base=False)
+        b.cylinder(0.38, 0.04, (x, -0.77, 0.8), P.VOID, segments=16, rot_x=90, base=False)
+        for k in range(4):
+            b.box((0.74, 0.03, 0.05), (x, -0.79, 0.8), P.METAL, rot_y=k * 45, base=False)
+        b.cylinder(0.09, 0.05, (x, -0.8, 0.8), P.METAL, segments=8, rot_x=90, base=False)
+    for s in (-1, 1):
+        for k in range(5):
+            b.box((0.03, 0.9, 0.05), (s * 1.21, 0, 0.45 + k * 0.16), P.METAL_DARK, rot_y=0)
+    b.box((1.6, 0.05, 0.16), (0, -0.72, 1.24), P.METAL_DARK)
+    for i in range(4):
+        b.box((0.1, 0.05, 0.07), (-0.45 + i * 0.3, -0.75, 1.28), P.LAMP_WARM if i != 2 else P.LIGHT_RED)
+    b.tube([(0.9, 0.7, 0.5), (1.4, 0.9, 0.2), (1.9, 0.6, 0.03)], 0.07, P.PLASTIC, sides=5)
+    b.box((0.5, 0.03, 0.2), (0.0, -0.72, 0.22), P.HAZARD)
 
 
-@piece("Machine_Pump", "Tech", collider="box", box=((0, 0, 2.0), (3.0, 3.0, 4.0)), fade=True,
+@piece("Machine_Pump", "Tech", collider="box", box=((0, 0, 3.1), (3.4, 3.4, 6.2)), fade=True,
        lights=[{"offset": (0, -1.8, 1.6), "color": WARM, "range": 7.0, "intensity": 2.4, "flicker": 0.2}],
        notes="Big boiler / pump tank with gauges, pipes into the floor and orange work lights (technical room centrepiece).")
 def machine_pump(b):
-    b.box((3.0, 3.0, 0.4), (0, 0, 0), P.METAL_DARK, bevel=0.04)
-    b.cylinder(1.25, 3.2, (0, 0, 0.4), P.METAL, segments=16)
-    for z in (0.9, 2.0, 3.1):
-        b.cylinder(1.33, 0.16, (0, 0, z), P.METAL_DARK, segments=16)
-    b.cylinder(1.25, 0.5, (0, 0, 3.6), P.METAL_DARK, segments=16, radius_top=0.6)
-    b.cylinder(0.3, 0.6, (0, 0, 4.1), P.RUST, segments=8)
-    for k, a in enumerate((200, 250, 300)):
+    # the concept's technical-room centrepiece: a tall dark machine of stacked drums on a heavy
+    # plinth, ringed by machinery boxes, gauges and pipes, with orange work lights
+    b.prism(octagon(1.75), 0.0, 0.45, P.METAL_DARK)
+    b.prism(octagon(1.55), 0.45, 0.55, P.RUST)
+    for k in range(4):
+        a = k * 90 + 45
         r = math.radians(a)
-        b.cylinder(0.16, 0.08, (math.cos(r) * 1.3, math.sin(r) * 1.3, 2.5 - k * 0.3), P.STEEL, segments=8,
-                   rot_x=90, rot_z=a - 270, base=False)
-    b.box((0.5, 0.06, 0.5), (0, -1.3, 1.4), P.METAL_DARK)
-    b.box((0.3, 0.04, 0.15), (0, -1.34, 1.55), P.LAMP_WARM)
-    for a in (30, 150):
+        b.box((0.9, 0.7, 0.9), (math.cos(r) * 1.35, math.sin(r) * 1.35, 0.45), P.GUNMETAL, rot_z=a, bevel=0.03)
+        b.box((0.5, 0.05, 0.08), (math.cos(r) * 1.72, math.sin(r) * 1.72, 1.1), P.LAMP_WARM, rot_z=a + 90)
+    sections = ((1.2, 0.55, 1.9), (1.0, 2.45, 1.5), (1.15, 3.95, 0.5), (0.8, 4.45, 1.2), (0.5, 5.65, 0.6))
+    for i, (rad, z, h) in enumerate(sections):
+        b.cylinder(rad, h, (0, 0, z), P.GUNMETAL if i % 2 == 0 else P.METAL_DARK, segments=16)
+        b.cylinder(rad + 0.08, 0.14, (0, 0, z), P.METAL_DARK, segments=16)
+        for k in range(8):
+            a = math.radians(k * 45 + 22.5)
+            b.box((0.08, 0.06, h - 0.2), (math.cos(a) * rad, math.sin(a) * rad, z + 0.14), P.METAL_DARK,
+                  rot_z=k * 45 + 22.5 + 90)
+    b.box((0.6, 0.05, 0.08), (0, -1.21, 1.6), P.STEEL)
+    b.cylinder(0.08, 3.4, (0.55, -0.98, 0.55), P.STEEL, segments=6)
+    for k, a in enumerate((240, 270, 300)):
         r = math.radians(a)
-        p0 = (math.cos(r) * 1.25, math.sin(r) * 1.25, 2.6)
-        p1 = (math.cos(r) * 2.0, math.sin(r) * 2.0, 2.4)
+        b.cylinder(0.15, 0.06, (math.cos(r) * 1.02, math.sin(r) * 1.02, 3.1 - k * 0.25), P.PORCELAIN,
+                   segments=10, rot_x=90, rot_z=a - 270, base=False)
+    b.box((0.7, 0.08, 0.5), (-0.3, -1.22, 1.1), P.METAL_DARK)
+    b.box((0.5, 0.04, 0.2), (-0.3, -1.27, 1.25), P.LAMP_WARM)
+    for a in (20, 160, 200):
+        r = math.radians(a)
+        p0 = (math.cos(r) * 1.0, math.sin(r) * 1.0, 3.2)
+        p1 = (math.cos(r) * 2.0, math.sin(r) * 2.0, 3.0)
         p2 = (math.cos(r) * 2.1, math.sin(r) * 2.1, 0.0)
-        b.tube([p0, p1, p2], 0.18, P.METAL, sides=8)
-    hazard_band(b, 1.27, 0.45, 0.25)
+        b.tube([p0, p1, p2], 0.16, P.GUNMETAL, sides=8)
+        b.cylinder(0.24, 0.12, (math.cos(r) * 2.1, math.sin(r) * 2.1, 0.0), P.METAL_DARK, segments=8)
+    hazard_band(b, 1.21, 0.75, 0.2)
 
 
 def hazard_band(b, r, z, h):
