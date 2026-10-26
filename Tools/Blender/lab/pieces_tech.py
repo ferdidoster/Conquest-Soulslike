@@ -433,6 +433,34 @@ def containment_tube_large(b):
                 (math.cos(a) * 1.9, math.sin(a) * 1.9, 7.6)], 0.04, P.PLASTIC, sides=4)
 
 
+@piece("Crane_Gantry", "Tech", collider="none", fade=True,
+       lights=[{"offset": (0, 0, 3.9), "color": WARM, "range": 9.0, "intensity": 1.6, "flicker": 0.06}],
+       notes="Overhead crane from the technical-room concept: a 19.6 m yellow girder along X at 4.3 m, "
+             "end trucks with wall brackets, a trolley with a chain and hook. Span it from wall to wall.")
+def crane_gantry(b):
+    L = 19.6
+    b.box((L, 0.45, 0.55), (0, 0, 4.3), P.HAZARD, bevel=0.015)
+    for z in (4.22, 4.85):
+        b.box((L, 0.62, 0.08), (0, 0, z), P.METAL_DARK)
+    for i in range(int(L / 1.4)):
+        x = -L / 2 + 0.7 + i * 1.4
+        b.box((0.06, 0.47, 0.5), (x, 0, 4.32), P.METAL_DARK)
+    for s in (-1, 1):
+        x = s * (L / 2 - 0.35)
+        b.box((0.7, 1.3, 0.6), (x, 0, 4.1), P.METAL_DARK, bevel=0.03)
+        b.box((0.16, 1.5, 1.3), (s * (L / 2 - 0.08), 0, 3.7), P.GUNMETAL, bevel=0.02)
+        for k in range(4):
+            b.box((0.22, 0.5, 0.06), (s * (L / 2 - 1.2 - k * 0.3), 0, 4.95 if k % 2 else 4.9), P.HAZARD)
+    tx = -3.2
+    b.box((1.0, 0.9, 0.42), (tx, 0, 3.8), P.GUNMETAL, bevel=0.03)
+    b.box((0.3, 0.05, 0.1), (tx, -0.47, 3.95), P.LAMP_WARM)
+    b.box((0.05, 0.05, 1.5), (tx, 0, 2.3), P.METAL_DARK)
+    b.box((0.28, 0.16, 0.3), (tx, 0, 2.0), P.METAL, bevel=0.02)
+    b.box((0.08, 0.08, 0.28), (tx + 0.1, 0, 1.75), P.METAL_DARK)
+    b.box((0.2, 0.08, 0.07), (tx, 0, 1.72), P.METAL_DARK)
+    b.box((0.5, 0.12, 0.08), (0.0, 0, 4.12), P.LAMP_WARM)
+
+
 @piece("Machine_Column", "Containment", collider="box", box=((0, 0, 4.5), (1.4, 1.4, 9.0)), fade=True,
        lights=[{"offset": (0, -0.9, 1.2), "color": WARM, "range": 4.0, "intensity": 1.2, "flicker": 0.08}],
        notes="9 m dark machinery column from the lab concept: a plated core with brackets, a pipe bundle, "

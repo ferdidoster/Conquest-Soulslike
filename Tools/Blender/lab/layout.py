@@ -300,18 +300,19 @@ def build():
     L.arc(R2, c2, 55 - g2, "OuterRing/Walls")
     L.door_on_arc("Gate_Blast", "OuterRing/Gates", 55, R2, GATE, id="Gate_Technical")
     starts = [55 + g2]
+    L.room_side = []
     for a in doors:
-        L.arc(R2, starts[-1], a - d2, "OuterRing/Walls",
-              variants=["Wall_Panel_4m", "Wall_Panel_4m_Vent", "Wall_Panel_4m_Pipes", "Wall_Panel_4m"])
+        L.room_side += L.arc(R2, starts[-1], a - d2, "OuterRing/Walls",
+                             variants=["Wall_Panel_4m", "Wall_Panel_4m_Vent", "Wall_Panel_4m_Pipes", "Wall_Panel_4m"])
         L.door_on_arc("Door_Sliding", "OuterRing/Doors", a, R2, DOOR)
         starts.append(a + d2)
-    L.arc(R2, starts[-1], 360 - c2, "OuterRing/Walls")
+    L.room_side += L.arc(R2, starts[-1], 360 - c2, "OuterRing/Walls")
     # divider between the two halves of the outer ring (south), so the ring is not one loop
     L.line(polar(270, R1)[:2], polar(270, R2)[:2], "OuterRing/Walls")
 
     # ----------------------------------------------------------------- outer boundary + rooms
     lab_meet = math.degrees(math.atan2(*reversed(_outer_lab_meet())))
-    L.arc(R_OUT, lab_meet, 360 - lab_meet, "Rooms/OuterWall", backfill=True,
+    L.outer_wall = L.arc(R_OUT, lab_meet, 360 - lab_meet, "Rooms/OuterWall", backfill=True,
           variants=["Wall_Panel_4m", "Wall_Panel_4m", "Wall_Panel_4m_Pipes", "Wall_Panel_4m_Vent"])
     for a in range(int(lab_meet) + 8, int(360 - lab_meet), 16):
         kind = "Lamp_Emergency" if a % 3 == 0 else "Lamp_Wall_Cold"
@@ -334,6 +335,7 @@ def build():
     furnish_bathroom(L)
     furnish_kitchen(L)
     furnish_storage(L)
+    dress_room_walls(L, lab_meet)
     furnish_rings(L)
 
     # ----------------------------------------------------------------- laboratory / boss arena
@@ -488,6 +490,17 @@ def furnish_kitchen(L):
     for a in (232, 248, 262):
         L.facing_out("Lamp_Emergency", "Kitchen", a, R2 + 0.3)
     L.put("Light_Post", "Kitchen", (-20.0, -36.0, 0.0))
+    # the painting's living area is packed: a work island, a second dining spot, crates by the wall
+    for k, side in enumerate((-1, 1)):
+        n = math.radians(135 + 90)
+        L.put("Lab_Table", "Kitchen", (-21.5 + side * 0.44 * math.cos(n), -27.5 + side * 0.44 * math.sin(n), 0.0),
+              rot=135 if side > 0 else 315)
+    L.put("Table_Dining", "Kitchen", polar(258, 33.5), rot=258, sx=0.7)
+    for side in (-1, 1):
+        L.put("Chair", "Kitchen", polar(258 + side * 1.9, 33.5), rot=258 + (90 if side > 0 else -90) - 90)
+    for a, r, piece in ((264, 29.0, "Crate_Storage"), (265.5, 30.5, "Barrel"), (229, 28.5, "Crate_Stack"),
+                        (246, 28.0, "Debris_Scrap")):
+        L.put(piece, "Kitchen", polar(a, r), rot=a + 20)
 
 
 def furnish_storage(L):
@@ -547,6 +560,55 @@ def furnish_lab(L):
             L.put(piece, "Lab/Catwalks", polar(am, r * math.cos(math.radians(d / 2)), c, 0.03), rot=am - 90, sx=sx)
             if piece == "Catwalk_Landing":
                 L.put("Stairs_Wide", "Lab/Catwalks", polar(am, r - 1.2 - 2.7, c, 0.03), rot=am - 90)
+
+
+# wall dressing that fills the rooms' walls like the concept paintings: per room, the angle span on
+# the outer wall (R_OUT) and on the room side of the ring wall (R2), the pieces to cycle through,
+# and angles to keep clear (doors, radial walls, things already standing by the wall)
+ROOM_WALLS = (
+    ("Technical", "outer", (0, 93), ("Server_Rack", "Pipe_Wall_Run_4m", "Generator_Unit", "Vent_Wall",
+                                     "Shelf_Storage", "Pipe_Wall_Run_4m"), (36, 52, 76, 84, 88)),
+    ("Technical", "ring", (66, 92), ("Pipe_Wall_Run_4m", "Terminal_Wall", "Shelf_Storage", "Crate_Stack"), ()),
+    ("Kitchen", "outer", (222, 268), ("Shelf_Storage", "Locker_Single", "Shelf_Storage", "Vent_Wall"),
+     (238, 244, 250)),
+    ("Kitchen", "ring", (226, 268), ("Shelf_Storage", "Terminal_Wall", "Pipe_Wall_Run_4m"), ()),
+    ("Storage", "outer", (272, 360), ("Shelf_Storage", "Crate_Stack", "Shelf_Storage", "Pipe_Wall_Run_4m"), ()),
+    ("Storage", "ring", (272, 328), ("Shelf_Storage", "Crate_Stack", "Server_Rack"), (310,)),
+)
+# depth from the wall face to the piece's pivot (wall-mounted pieces have their back at 0)
+WALL_INSET = {"Server_Rack": 0.55, "Generator_Unit": 0.8, "Shelf_Storage": 0.4, "Crate_Stack": 0.75,
+              "Locker_Single": 0.3}
+TALL_ON_WALL = {"Pipe_Wall_Run_4m", "Vent_Wall"}   # would run into the wall lamps
+
+
+def dress_room_walls(L, lab_meet):
+    lamps_out = [a + 4 for a in range(int(lab_meet) + 8, int(360 - lab_meet), 16)]
+    lamps_ring = (40, 66, 80, 232, 248, 262, 285, 315)
+    for group, wall, (a0, a1), kinds, keep_clear in ROOM_WALLS:
+        panels = L.outer_wall if wall == "outer" else L.room_side
+        r = R_OUT if wall == "outer" else R2
+        lamps = lamps_out if wall == "outer" else lamps_ring
+        k = 0
+        for am, chord in panels:
+            am_n = am % 360
+            if not (a0 <= am_n <= a1) or any(abs(am_n - c) < 3.0 for c in keep_clear):
+                continue
+            if any(abs(am_n - rad) < 2.5 for rad in (94, 180, 270)):
+                continue
+            piece = kinds[k % len(kinds)]
+            k += 1
+            if piece in TALL_ON_WALL and any(abs(am_n - la) < 2.6 for la in lamps):
+                piece = "Shelf_Storage"
+            rm = math.sqrt(r * r - (chord / 2) ** 2)
+            inset = WALL_INSET.get(piece, 0.0) + 0.02
+            if wall == "outer":
+                L.facing_in(piece, group, am, rm - WALL_HALF - inset)
+            else:
+                L.facing_out(piece, group, am, rm + WALL_HALF + inset)
+    # the technical room's overhead crane and two more machines, after the concept painting
+    L.put("Crane_Gantry", "Technical", polar(62, (R2 + R_OUT) / 2), rot=62)
+    L.put("Machine_Column", "Technical", polar(80, 36.0), rot=80 + 90)
+    L.put("Machine_Column", "Technical", polar(40, 31.5), rot=40 + 90)
 
 
 # grime decals and loose floor cables per section: (decals, cable runs)

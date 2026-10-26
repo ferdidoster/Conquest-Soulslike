@@ -19784,6 +19784,177 @@
       ]
     },
     {
+      "piece": "Lab_Table",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -21.1889,
+        0.0,
+        -27.1889
+      ],
+      "yaw": 45.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Lab_Table",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -21.8111,
+        0.0,
+        -27.8111
+      ],
+      "yaw": 225.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Table_Dining",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -6.965,
+        0.0,
+        -32.7679
+      ],
+      "yaw": 102.0,
+      "scale": [
+        0.7,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Chair",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -8.0476,
+        0.0,
+        -32.519
+      ],
+      "yaw": 282.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Chair",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -5.8748,
+        0.0,
+        -32.9809
+      ],
+      "yaw": 102.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Crate_Storage",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -3.0313,
+        0.0,
+        -28.8411
+      ],
+      "yaw": 76.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Barrel",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -2.393,
+        0.0,
+        -30.406
+      ],
+      "yaw": 74.5,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Crate_Stack",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -18.6977,
+        0.0,
+        -21.5092
+      ],
+      "yaw": 111.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Debris_Scrap",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -11.3886,
+        0.0,
+        -25.5793
+      ],
+      "yaw": 94.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
       "piece": "Shelf_Storage",
       "group": "Storage",
       "id": "",
@@ -20180,6 +20351,804 @@
       ],
       "sections": [
         "Storage"
+      ]
+    },
+    {
+      "piece": "Server_Rack",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        38.6039,
+        0.0,
+        23.3898
+      ],
+      "yaw": 58.789,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        34.1106,
+        0.0,
+        29.7887
+      ],
+      "yaw": 48.869,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Generator_Unit",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        31.1302,
+        0.0,
+        32.338
+      ],
+      "yaw": 43.91,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        25.3179,
+        0.0,
+        37.5488
+      ],
+      "yaw": 33.991,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        21.9769,
+        0.0,
+        39.597
+      ],
+      "yaw": 29.031,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Pipe_Wall_Run_4m",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        18.6344,
+        0.0,
+        41.7139
+      ],
+      "yaw": 24.071,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Server_Rack",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        14.7783,
+        0.0,
+        42.6491
+      ],
+      "yaw": 19.112,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Pipe_Wall_Run_4m",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        7.2985,
+        0.0,
+        45.1002
+      ],
+      "yaw": 9.192,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Pipe_Wall_Run_4m",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        9.0307,
+        0.0,
+        23.5082
+      ],
+      "yaw": 201.014,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Terminal_Wall",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        5.0023,
+        0.0,
+        24.6813
+      ],
+      "yaw": 191.457,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        0.8482,
+        0.0,
+        25.569
+      ],
+      "yaw": 181.9,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -32.2252,
+        0.0,
+        -31.8189
+      ],
+      "yaw": 225.363,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Locker_Single",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -29.4185,
+        0.0,
+        -34.5619
+      ],
+      "yaw": 220.404,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -26.2623,
+        0.0,
+        -36.8944
+      ],
+      "yaw": 215.444,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Vent_Wall",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -12.2905,
+        0.0,
+        -44.0027
+      ],
+      "yaw": 195.606,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -8.3664,
+        0.0,
+        -44.5074
+      ],
+      "yaw": 190.646,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Locker_Single",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -4.4971,
+        0.0,
+        -45.1636
+      ],
+      "yaw": 185.686,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -16.7137,
+        0.0,
+        -19.3886
+      ],
+      "yaw": 40.763,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Terminal_Wall",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -13.3798,
+        0.0,
+        -21.3525
+      ],
+      "yaw": 32.072,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -10.1586,
+        0.0,
+        -23.4961
+      ],
+      "yaw": 23.381,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -6.4917,
+        0.0,
+        -24.7613
+      ],
+      "yaw": 14.691,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Terminal_Wall",
+      "group": "Kitchen",
+      "id": "",
+      "position": [
+        -2.6339,
+        0.0,
+        -25.0601
+      ],
+      "yaw": 6.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Kitchen"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        3.3426,
+        0.0,
+        -45.1634
+      ],
+      "yaw": 175.767,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Crate_Stack",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        7.1787,
+        0.0,
+        -44.3598
+      ],
+      "yaw": 170.808,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        11.0724,
+        0.0,
+        -43.9125
+      ],
+      "yaw": 165.848,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Pipe_Wall_Run_4m",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        14.9583,
+        0.0,
+        -43.1688
+      ],
+      "yaw": 160.888,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        18.4713,
+        0.0,
+        -41.3487
+      ],
+      "yaw": 155.929,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Crate_Stack",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        21.807,
+        0.0,
+        -39.291
+      ],
+      "yaw": 150.969,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        25.3179,
+        0.0,
+        -37.5488
+      ],
+      "yaw": 146.009,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Pipe_Wall_Run_4m",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        28.7208,
+        0.0,
+        -35.5304
+      ],
+      "yaw": 141.05,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        31.4076,
+        0.0,
+        -32.6262
+      ],
+      "yaw": 136.09,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Crate_Stack",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        33.847,
+        0.0,
+        -29.5585
+      ],
+      "yaw": 131.131,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        36.5583,
+        0.0,
+        -26.7282
+      ],
+      "yaw": 126.171,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        38.7321,
+        0.0,
+        -23.4676
+      ],
+      "yaw": 121.211,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        1.2017,
+        0.0,
+        -25.5699
+      ],
+      "yaw": 357.309,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Crate_Stack",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        5.1205,
+        0.0,
+        -25.4379
+      ],
+      "yaw": 348.619,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Server_Rack",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        8.8368,
+        0.0,
+        -24.1843
+      ],
+      "yaw": 339.928,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Shelf_Storage",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        12.3173,
+        0.0,
+        -22.4399
+      ],
+      "yaw": 331.237,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Crate_Stack",
+      "group": "Storage",
+      "id": "",
+      "position": [
+        20.2051,
+        0.0,
+        -16.2862
+      ],
+      "yaw": 308.87,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Storage"
+      ]
+    },
+    {
+      "piece": "Crane_Gantry",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        16.6662,
+        0.0,
+        31.3446
+      ],
+      "yaw": 298.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Machine_Column",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        6.2513,
+        0.0,
+        35.4531
+      ],
+      "yaw": 190.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
+      ]
+    },
+    {
+      "piece": "Machine_Column",
+      "group": "Technical",
+      "id": "",
+      "position": [
+        24.1304,
+        0.0,
+        20.2478
+      ],
+      "yaw": 230.0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sections": [
+        "Technical"
       ]
     },
     {

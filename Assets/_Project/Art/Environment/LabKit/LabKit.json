@@ -2901,6 +2901,52 @@
       ]
     },
     {
+      "name": "Crane_Gantry",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Crane_Gantry.fbx",
+      "collider": "none",
+      "notes": "Overhead crane from the technical-room concept: a 19.6 m yellow girder along X at 4.3 m, end trucks with wall brackets, a trolley with a chain and hook. Span it from wall to wall.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": true,
+      "lights": [
+        {
+          "offset": [
+            0,
+            3.9,
+            0
+          ],
+          "color": "#FF8A3A",
+          "range": 9.0,
+          "intensity": 1.6,
+          "flicker": 0.06,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
       "name": "Machine_Column",
       "category": "Containment",
       "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Machine_Column.fbx",
