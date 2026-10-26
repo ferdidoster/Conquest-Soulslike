@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d4c0f8a81555f429a9b3e10eef8951, type: 3}
+  m_Name: HitFeedback
+  m_EditorClassIdentifier: Conquest.Feedback::Conquest.Feedback.HitFeedbackProfile
+  entries:
+  - result: 2
+    hitStop: 0.09
+    attackerHitStop: 1
+    shudder: 0.05
+    trauma: 0.32
+    kick: 0.14
+    zoomPunch: 0.015
+    slowMotionScale: 1
+    slowMotionDuration: 0
+    effect: {fileID: 0}
+    effectScale: 1
+    effectTowardAttacker: 0
+    bleed: 1
+    bloodAmount: 1
+    bloodPool: 0
+    flashColor: {r: 1, g: 1, b: 1, a: 1}
+    flashDuration: 0.08
+    sounds:
+    - {fileID: 8300000, guid: 3532e1e9abb9c3644ac665da49062b3c, type: 3}
+    - {fileID: 8300000, guid: 77c1d8a69834b6f4b96c0377492840c3, type: 3}
+    - {fileID: 8300000, guid: 29cc419066a8c564d84a1d24f126a245, type: 3}
+    volume: 0.9
+    pitch: {x: 0.92, y: 1.08}
+  - result: 6
+    hitStop: 0.16
+    attackerHitStop: 1
+    shudder: 0.07
+    trauma: 0.55
+    kick: 0.25
+    zoomPunch: 0.05
+    slowMotionScale: 0.25
+    slowMotionDuration: 0.55
+    effect: {fileID: 0}
+    effectScale: 1
+    effectTowardAttacker: 0
+    bleed: 1
+    bloodAmount: 1.8
+    bloodPool: 1
+    flashColor: {r: 1, g: 1, b: 1, a: 1}
+    flashDuration: 0.1
+    sounds:
+    - {fileID: 8300000, guid: 1f4f9c27a07e4b64499c297feb4601d7, type: 3}
+    volume: 1
+    pitch: {x: 0.9, y: 1}
+  - result: 3
+    hitStop: 0.07
+    attackerHitStop: 1.2
+    shudder: 0.025
+    trauma: 0.22
+    kick: 0.08
+    zoomPunch: 0
+    slowMotionScale: 1
+    slowMotionDuration: 0
+    effect: {fileID: 2701688225476942392, guid: 8258dcc9ba82e47419966e822b2e1c39, type: 3}
+    effectScale: 1
+    effectTowardAttacker: 1
+    bleed: 0
+    bloodAmount: 1
+    bloodPool: 0
+    flashColor: {r: 1, g: 1, b: 1, a: 1}
+    flashDuration: 0
+    sounds:
+    - {fileID: 8300000, guid: 981a972e9213ca545a8af84111c0c9af, type: 3}
+    - {fileID: 8300000, guid: e35fd593f3c31db479e8ed5e5513c7db, type: 3}
+    volume: 1
+    pitch: {x: 0.94, y: 1.06}
+  - result: 4
+    hitStop: 0.13
+    attackerHitStop: 1
+    shudder: 0.05
+    trauma: 0.5
+    kick: 0.2
+    zoomPunch: 0.04
+    slowMotionScale: 1
+    slowMotionDuration: 0
+    effect: {fileID: 2701688225476942392, guid: 8258dcc9ba82e47419966e822b2e1c39, type: 3}
+    effectScale: 1.6
+    effectTowardAttacker: 1
+    bleed: 0
+    bloodAmount: 1
+    bloodPool: 0
+    flashColor: {r: 1, g: 1, b: 1, a: 1}
+    flashDuration: 0.08
+    sounds:
+    - {fileID: 8300000, guid: d779aa4b7d421794b80b680323f23097, type: 3}
+    volume: 1
+    pitch: {x: 0.92, y: 1.08}
+  - result: 5
+    hitStop: 0.15
+    attackerHitStop: 1
+    shudder: 0
+    trauma: 0.4
+    kick: 0.1
+    zoomPunch: 0.06
+    slowMotionScale: 0.3
+    slowMotionDuration: 0.4
+    effect: {fileID: 2150081970439185216, guid: fb9539fc9ac1dfc499000fe04a7285fd, type: 3}
+    effectScale: 1
+    effectTowardAttacker: 1
+    bleed: 0
+    bloodAmount: 1
+    bloodPool: 0
+    flashColor: {r: 1, g: 1, b: 1, a: 1}
+    flashDuration: 0
+    sounds:
+    - {fileID: 8300000, guid: 216190eface041248953d4a72a5e91e1, type: 3}
+    volume: 0.9
+    pitch: {x: 0.97, y: 1.03}
+  defaultsVersion: 2

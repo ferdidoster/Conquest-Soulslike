@@ -1,0 +1,9 @@
+scene Sandbox, run 4.2 m/s, sprint 7.2 m/s
+settle: avg speed 0.00 m/s over 91 frames | first [0.00;False;0.00;100;LocomotionState] last [0.00;False;0.00;100;LocomotionState] (speed;sprintHeld;animSpeed;stamina;state) | peak 0.00 m above start | states LocomotionState
+run (W): avg speed 4.20 m/s over 138 frames | first [4.20;False;0.99;100;LocomotionState] last [4.20;False;1.00;100;LocomotionState] (speed;sprintHeld;animSpeed;stamina;state) | peak 0.08 m above start | states LocomotionState
+hold Space (W + Space): avg speed 7.20 m/s over 138 frames | first [7.20;True;1.47;94;LocomotionState] last [7.20;True;1.50;83;LocomotionState] (speed;sprintHeld;animSpeed;stamina;state) | peak 0.01 m above start | states LocomotionState
+release: avg speed 0.00 m/s over 192 frames | first [0.00;False;0.00;97;LocomotionState] last [0.00;False;0.00;100;LocomotionState] (speed;sprintHeld;animSpeed;stamina;state) | peak 0.00 m above start | states LocomotionState
+hold Shift (W + Shift): avg speed 7.20 m/s over 145 frames | first [7.20;True;1.49;89;LocomotionState] last [7.20;True;1.50;79;LocomotionState] (speed;sprintHeld;animSpeed;stamina;state) | peak 0.00 m above start | states LocomotionState
+stop: avg speed 0.00 m/s over 53 frames | first [0.00;False;0.29;79;LocomotionState] last [0.00;False;0.06;79;LocomotionState] (speed;sprintHeld;animSpeed;stamina;state) | peak 0.00 m above start | states LocomotionState
+jump (W + E): avg speed 4.13 m/s over 120 frames | first [2.66;False;0.03;69;LocomotionState] last [4.20;False;0.98;90;LocomotionState] (speed;sprintHeld;animSpeed;stamina;state) | peak 1.08 m above start | states JumpState > LocomotionState
+land: avg speed 0.00 m/s over 85 frames | first [0.00;False;0.07;100;LocomotionState] last [0.00;False;0.01;100;LocomotionState] (speed;sprintHeld;animSpeed;stamina;state) | peak 0.00 m above start | states LocomotionState

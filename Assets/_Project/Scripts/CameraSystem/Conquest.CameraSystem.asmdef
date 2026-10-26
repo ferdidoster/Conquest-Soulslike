@@ -1,0 +1,6 @@
+{
+    "name": "Conquest.CameraSystem",
+    "rootNamespace": "Conquest.CameraSystem",
+    "references": ["Conquest.Core", "Conquest.Targeting"],
+    "autoReferenced": true
+}

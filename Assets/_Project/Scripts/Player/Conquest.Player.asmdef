@@ -1,0 +1,11 @@
+{
+    "name": "Conquest.Player",
+    "rootNamespace": "Conquest.Player",
+    "references": [
+        "Conquest.Core",
+        "Conquest.Targeting",
+        "Conquest.CameraSystem",
+        "Unity.InputSystem"
+    ],
+    "autoReferenced": true
+}

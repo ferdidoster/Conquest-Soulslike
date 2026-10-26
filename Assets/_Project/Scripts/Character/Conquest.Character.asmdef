@@ -1,0 +1,14 @@
+{
+    "name": "Conquest.Character",
+    "rootNamespace": "Conquest.Character",
+    "references": [
+        "Conquest.Core",
+        "Conquest.Stats",
+        "Conquest.Movement",
+        "Conquest.Animation",
+        "Conquest.Targeting",
+        "Conquest.Combat",
+        "Conquest.Environment"
+    ],
+    "autoReferenced": true
+}

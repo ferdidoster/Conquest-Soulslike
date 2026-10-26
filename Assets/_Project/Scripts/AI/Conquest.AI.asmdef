@@ -1,0 +1,6 @@
+{
+    "name": "Conquest.AI",
+    "rootNamespace": "Conquest.AI",
+    "references": ["Conquest.Core", "Conquest.Targeting", "Conquest.Combat", "Conquest.Character", "Conquest.Environment"],
+    "autoReferenced": true
+}

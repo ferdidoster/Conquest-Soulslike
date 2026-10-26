@@ -1,0 +1,21 @@
+{
+    "name": "Conquest.Editor.Cinemachine",
+    "rootNamespace": "Conquest.EditorTools",
+    "references": [
+        "Conquest.Editor",
+        "Conquest.Targeting",
+        "Conquest.CameraSystem",
+        "Conquest.CameraSystem.Cinemachine",
+        "Unity.Cinemachine"
+    ],
+    "includePlatforms": ["Editor"],
+    "defineConstraints": ["CONQUEST_CINEMACHINE"],
+    "versionDefines": [
+        {
+            "name": "com.unity.cinemachine",
+            "expression": "3.0.0",
+            "define": "CONQUEST_CINEMACHINE"
+        }
+    ],
+    "autoReferenced": false
+}

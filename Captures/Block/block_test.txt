@@ -1,0 +1,9 @@
+0_idle: guarding False, state LocomotionState, stamina 100, shield hidden
+1_raised: guarding True, state LocomotionState, stamina 100, shield visible
+  hit with guard damage 15 (guarding True, state ReactionState): Blocked
+2_blocked_hit: guarding True, state ReactionState, stamina 85, shield visible
+  stamina drained to 12
+3_low_stamina: guarding True, state LocomotionState, stamina 12, shield visible
+  hit with guard damage 500 (guarding False, state ReactionState): GuardBroken
+4_guard_break: guarding False, state ReactionState, stamina 0, shield visible
+5_lowered: guarding False, state LocomotionState, stamina 37, shield hidden

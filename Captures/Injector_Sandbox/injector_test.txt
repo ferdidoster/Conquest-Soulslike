@@ -1,0 +1,23 @@
+scene Assets/_Project/Scenes/Sandbox.unity
+PASS a checkpoint at the spawn: Checkpoint (Spawn)
+PASS charges full at start: 4/4
+PASS HUD pips match: 4 lit of 4
+PASS R starts the heal: HealState > LocomotionState
+PASS committed: no movement while W is held: drift 0.000 m, max speed 0.00 m/s
+PASS committed: no turning: 0.0 deg
+PASS committed: attack click ignored during the heal: no swing
+PASS one charge used: 4 -> 3
+PASS healed 45% of max: 30 -> 75 (+45.0, expected +45.0)
+PASS HUD pips follow: 3 lit
+PASS cartridge shown and put away: drawn 1, stowed 1
+PASS gamepad West starts the heal: state HealState, charges 3 -> 2
+PASS hit before the slam interrupts and keeps the charge: healing True, then ReactionState, charges 2 -> 2, hp 90 -> 80
+PASS cartridge put away on the interruption: drawn 3, stowed 3
+PASS hit after the slam: charge spent, repair continues: charges 2 -> 1, repairing True, hp 78 -> 100
+PASS empty injector: no heal, just the click: state LocomotionState, empty clicks 1
+PASS HUD shows no charges: 0 lit
+PASS checkpoint refills charges and health: charges 4/4, hp 100/100
+PASS death then respawn at the checkpoint: dead True, alive again True, 0.00 m from the checkpoint
+PASS respawn refills charges and health: charges before death 3, after 4, hp 100
+PASS can heal again after respawning: HealState
+21 passed, 0 failed

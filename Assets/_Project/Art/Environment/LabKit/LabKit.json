@@ -1,0 +1,3233 @@
+{
+  "palette": [
+    {
+      "name": "Lab_Floor",
+      "color": "#484C52",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.32,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_FloorLight",
+      "color": "#53585F",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.28,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_FloorDark",
+      "color": "#22262C",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.2,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Grate",
+      "color": "#33373D",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.2,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Tile",
+      "color": "#8E969E",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.22,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Wall",
+      "color": "#4C535C",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.34,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_WallLight",
+      "color": "#646C76",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.3,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_WallDark",
+      "color": "#2A2F36",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.28,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Concrete",
+      "color": "#57595C",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.42,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Metal",
+      "color": "#6E767F",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.26,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_MetalDark",
+      "color": "#1F2328",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.2,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Steel",
+      "color": "#9AA2AA",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.18,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Plastic",
+      "color": "#17191D",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.08,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Rust",
+      "color": "#7A3E22",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.45,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Hazard",
+      "color": "#C08A2A",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.38,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Marking",
+      "color": "#B9BEC4",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.5,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Porcelain",
+      "color": "#C4CACF",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.14,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Fabric",
+      "color": "#6E2A26",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.14,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_FabricBlue",
+      "color": "#343E50",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.12,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Mattress",
+      "color": "#A49E92",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.18,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Wood",
+      "color": "#4E3A2C",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.28,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Void",
+      "color": "#08090C",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.0,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Glow",
+      "color": "#8FE6FF",
+      "emission": "#3AB4FF",
+      "emissionIntensity": 3.2,
+      "grit": 0.0,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#9E809E"
+    },
+    {
+      "name": "Lab_GlowSoft",
+      "color": "#2E6E9C",
+      "emission": "#1A6FC0",
+      "emissionIntensity": 1.1,
+      "grit": 0.0,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#9E809E"
+    },
+    {
+      "name": "Lab_Screen",
+      "color": "#3FA6D8",
+      "emission": "#2490D0",
+      "emissionIntensity": 1.4,
+      "grit": 0.0,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#9E809E"
+    },
+    {
+      "name": "Lab_LampCold",
+      "color": "#D6ECFF",
+      "emission": "#9CCFFF",
+      "emissionIntensity": 1.8,
+      "grit": 0.0,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#9E809E"
+    },
+    {
+      "name": "Lab_LampWarm",
+      "color": "#FFB070",
+      "emission": "#FF7020",
+      "emissionIntensity": 2.6,
+      "grit": 0.0,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#9E809E"
+    },
+    {
+      "name": "Lab_LightRed",
+      "color": "#FF4040",
+      "emission": "#FF1A10",
+      "emissionIntensity": 2.6,
+      "grit": 0.0,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#9E809E"
+    },
+    {
+      "name": "Lab_LightGreen",
+      "color": "#60FFB0",
+      "emission": "#20E080",
+      "emissionIntensity": 2.0,
+      "grit": 0.0,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#9E809E"
+    },
+    {
+      "name": "Lab_Grime",
+      "color": "#3E4248",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.5,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_GrimeDark",
+      "color": "#32363C",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.45,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Puddle",
+      "color": "#2A323C",
+      "emission": "#0A1420",
+      "emissionIntensity": 0.4,
+      "grit": 0.05,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#9E809E"
+    },
+    {
+      "name": "Lab_TankGlass",
+      "color": "#21506F",
+      "emission": "#11528C",
+      "emissionIntensity": 0.85,
+      "grit": 0.0,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#9E809E"
+    },
+    {
+      "name": "Lab_Cardboard",
+      "color": "#6A5741",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.3,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#52607A"
+    },
+    {
+      "name": "Lab_Specimen",
+      "color": "#162E3E",
+      "emission": "#0C2A40",
+      "emissionIntensity": 0.7,
+      "grit": 0.0,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#9E809E"
+    }
+  ],
+  "pieces": [
+    {
+      "name": "Crate_Storage",
+      "category": "Storage",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Crate_Storage.fbx",
+      "collider": "box",
+      "notes": "Steel supply crate with ribs, latches and a label.",
+      "boxCenter": [
+        0,
+        0.4,
+        0
+      ],
+      "boxSize": [
+        1.2,
+        0.8,
+        0.9
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Crate_Large",
+      "category": "Storage",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Crate_Large.fbx",
+      "collider": "box",
+      "notes": "Large cargo container with hazard band and corner guards.",
+      "boxCenter": [
+        0,
+        0.7,
+        0
+      ],
+      "boxSize": [
+        2.0,
+        1.4,
+        1.4
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Crate_Stack",
+      "category": "Storage",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Crate_Stack.fbx",
+      "collider": "box",
+      "notes": "Two crates and a small case stacked together.",
+      "boxCenter": [
+        0,
+        0.8,
+        0
+      ],
+      "boxSize": [
+        2.4,
+        1.6,
+        1.4
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Barrel",
+      "category": "Storage",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Barrel.fbx",
+      "collider": "box",
+      "notes": "Chemical drum with rings and a warning band.",
+      "boxCenter": [
+        0,
+        0.5,
+        0
+      ],
+      "boxSize": [
+        0.7,
+        1.0,
+        0.7
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Shelf_Storage",
+      "category": "Storage",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Shelf_Storage.fbx",
+      "collider": "box",
+      "notes": "3 m industrial shelving with boxes and canisters (back against a wall).",
+      "boxCenter": [
+        0,
+        1.2,
+        0
+      ],
+      "boxSize": [
+        3.0,
+        2.4,
+        0.7
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Locker_Single",
+      "category": "Storage",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Locker_Single.fbx",
+      "collider": "box",
+      "notes": "Single 2 m steel locker with vents and a handle.",
+      "boxCenter": [
+        0,
+        1.0,
+        0
+      ],
+      "boxSize": [
+        0.6,
+        2.0,
+        0.55
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Locker_Row",
+      "category": "Storage",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Locker_Row.fbx",
+      "collider": "box",
+      "notes": "Three lockers side by side, 1.8 m wide.",
+      "boxCenter": [
+        0,
+        1.0,
+        0
+      ],
+      "boxSize": [
+        1.85,
+        2.0,
+        0.55
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Bed_Bunk",
+      "category": "Furniture",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Bed_Bunk.fbx",
+      "collider": "box",
+      "notes": "Steel bunk bed with two mattresses, pillows, blankets and a ladder.",
+      "boxCenter": [
+        0,
+        0.95,
+        0
+      ],
+      "boxSize": [
+        2.1,
+        1.9,
+        1.0
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Bed_Medical",
+      "category": "Furniture",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Bed_Medical.fbx",
+      "collider": "box",
+      "notes": "Medical / examination bed with straps and a monitor arm.",
+      "boxCenter": [
+        0,
+        0.5,
+        0
+      ],
+      "boxSize": [
+        2.1,
+        1.0,
+        0.9
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Table_Dining",
+      "category": "Furniture",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Table_Dining.fbx",
+      "collider": "box",
+      "notes": "3 m mess table with a steel frame.",
+      "boxCenter": [
+        0,
+        0.4,
+        0
+      ],
+      "boxSize": [
+        3.0,
+        0.8,
+        1.2
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Chair",
+      "category": "Furniture",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Chair.fbx",
+      "collider": "box",
+      "notes": "Simple steel chair, seat facing -Z (Unity).",
+      "boxCenter": [
+        0,
+        0.45,
+        0
+      ],
+      "boxSize": [
+        0.5,
+        0.9,
+        0.5
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Sofa",
+      "category": "Furniture",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Sofa.fbx",
+      "collider": "box",
+      "notes": "Worn red three-seat sofa (from the kitchen / living concept).",
+      "boxCenter": [
+        0,
+        0.45,
+        0
+      ],
+      "boxSize": [
+        2.2,
+        0.9,
+        0.95
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Kitchen_Counter",
+      "category": "Furniture",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Kitchen_Counter.fbx",
+      "collider": "box",
+      "notes": "3 m kitchen run: cabinets, a sink, a stove, wall cupboards (back against a wall).",
+      "boxCenter": [
+        0,
+        1.0,
+        0
+      ],
+      "boxSize": [
+        3.0,
+        2.0,
+        0.7
+      ],
+      "fade": true,
+      "lights": [
+        {
+          "offset": [
+            0.2,
+            1.6,
+            -0.6
+          ],
+          "color": "#FFB070",
+          "range": 4.0,
+          "intensity": 1.4,
+          "flicker": 0.08,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Fridge",
+      "category": "Furniture",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Fridge.fbx",
+      "collider": "box",
+      "notes": "Tall steel fridge with two doors.",
+      "boxCenter": [
+        0,
+        1.0,
+        0
+      ],
+      "boxSize": [
+        0.8,
+        2.0,
+        0.75
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Shower_Stall",
+      "category": "Furniture",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Shower_Stall.fbx",
+      "collider": "mesh",
+      "notes": "1.4 m tiled shower cubicle with partitions, shower head and drain (open side faces -Z in Unity).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Sink_Row",
+      "category": "Furniture",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Sink_Row.fbx",
+      "collider": "box",
+      "notes": "Three wash basins on a counter with a long mirror (back against a wall).",
+      "boxCenter": [
+        0,
+        0.5,
+        0
+      ],
+      "boxSize": [
+        2.6,
+        1.0,
+        0.6
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Toilet_Stall",
+      "category": "Furniture",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Toilet_Stall.fbx",
+      "collider": "mesh",
+      "notes": "Toilet cubicle with partitions and a half-open door (open side faces -Z in Unity).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Lab_Table",
+      "category": "Furniture",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Lab_Table.fbx",
+      "collider": "box",
+      "notes": "Lab bench with drawers, sample jars, a microscope and a tablet.",
+      "boxCenter": [
+        0,
+        0.5,
+        0
+      ],
+      "boxSize": [
+        2.0,
+        1.0,
+        0.9
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Workbench",
+      "category": "Furniture",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Workbench.fbx",
+      "collider": "box",
+      "notes": "Heavy workbench with a vice, tools, a pegboard and a work lamp (back against a wall).",
+      "boxCenter": [
+        0,
+        0.5,
+        0
+      ],
+      "boxSize": [
+        2.4,
+        1.0,
+        0.9
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Med_Cabinet",
+      "category": "Furniture",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Med_Cabinet.fbx",
+      "collider": "box",
+      "notes": "Tall glass-front cabinet with glowing sample vials (back against a wall).",
+      "boxCenter": [
+        0,
+        1.0,
+        0
+      ],
+      "boxSize": [
+        1.2,
+        2.0,
+        0.5
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Floor_Tile_4m",
+      "category": "Floors",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Floor_Tile_4m.fbx",
+      "collider": "box",
+      "notes": "4 x 4 m steel deck plate, top at 0. Tile it on a 4 m grid.",
+      "boxCenter": [
+        0,
+        -0.1,
+        0
+      ],
+      "boxSize": [
+        4,
+        0.2,
+        4
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Floor_Tile_Clean_4m",
+      "category": "Floors",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Floor_Tile_Clean_4m.fbx",
+      "collider": "box",
+      "notes": "4 x 4 m lighter lab floor with a centre seam, for the living quarters.",
+      "boxCenter": [
+        0,
+        -0.1,
+        0
+      ],
+      "boxSize": [
+        4,
+        0.2,
+        4
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Floor_Grate_4m",
+      "category": "Floors",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Floor_Grate_4m.fbx",
+      "collider": "box",
+      "notes": "4 x 4 m grating over a dark service pit, for corridors.",
+      "boxCenter": [
+        0,
+        -0.1,
+        0
+      ],
+      "boxSize": [
+        4,
+        0.2,
+        4
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Floor_Tile_Bath_4m",
+      "category": "Floors",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Floor_Tile_Bath_4m.fbx",
+      "collider": "box",
+      "notes": "4 x 4 m small white tiles for bathrooms and the medical bay.",
+      "boxCenter": [
+        0,
+        -0.1,
+        0
+      ],
+      "boxSize": [
+        4,
+        0.2,
+        4
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Floor_Hazard_Strip_4m",
+      "category": "Floors",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Floor_Hazard_Strip_4m.fbx",
+      "collider": "none",
+      "notes": "Painted hazard stripes, 4 x 0.6 m. Lies on top of any floor tile.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Floor_Void_Slab",
+      "category": "Floors",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Floor_Void_Slab.fbx",
+      "collider": "box",
+      "notes": "Huge dark base slab under a level, so gaps between floor pieces never show light.",
+      "boxCenter": [
+        0,
+        -0.45,
+        0
+      ],
+      "boxSize": [
+        260,
+        0.3,
+        260
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Floor_Hub_Disc",
+      "category": "Floors",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Floor_Hub_Disc.fbx",
+      "collider": "mesh",
+      "notes": "Round floor for a 9 m hub with ring inlays and a glowing service ring. Pivot at the centre.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Floor_Arena_Disc",
+      "category": "Floors",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Floor_Arena_Disc.fbx",
+      "collider": "mesh",
+      "notes": "Round floor for the 25 m laboratory / boss arena: rings, radial seams and a glowing summoning circle in the middle. Pivot at the centre.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Wall_Panel_4m",
+      "category": "Walls",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Wall_Panel_4m.fbx",
+      "collider": "mesh",
+      "notes": "4 m long, 5 m tall, 0.5 m thick wall panel, detailed on both faces. Centred on the wall line.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Wall_Panel_2m",
+      "category": "Walls",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Wall_Panel_2m.fbx",
+      "collider": "mesh",
+      "notes": "2 m version of Wall_Panel_4m for closing gaps.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Wall_Panel_4m_Vent",
+      "category": "Walls",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Wall_Panel_4m_Vent.fbx",
+      "collider": "mesh",
+      "notes": "Wall panel with a ventilation grille.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Wall_Panel_4m_Pipes",
+      "category": "Walls",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Wall_Panel_4m_Pipes.fbx",
+      "collider": "mesh",
+      "notes": "Wall panel with a pipe run on its front face.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Wall_Panel_4m_B3",
+      "category": "Walls",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Wall_Panel_4m_B3.fbx",
+      "collider": "mesh",
+      "notes": "Wall panel with the painted 'B-3' sector marking.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Wall_Pillar",
+      "category": "Walls",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Wall_Pillar.fbx",
+      "collider": "box",
+      "notes": "Structural steel pillar, 1 m square and 5.4 m tall: riveted flanges, collars and a small amber service light near the foot. Put one on every wall joint.",
+      "boxCenter": [
+        0,
+        2.7,
+        0
+      ],
+      "boxSize": [
+        1.0,
+        5.4,
+        1.0
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Wall_Pillar_Large",
+      "category": "Walls",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Wall_Pillar_Large.fbx",
+      "collider": "box",
+      "notes": "2 m heavy support column, 8 m tall, for big halls and the arena rim.",
+      "boxCenter": [
+        0,
+        4.0,
+        0
+      ],
+      "boxSize": [
+        1.8,
+        8.0,
+        1.8
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Wall_Cap_End",
+      "category": "Walls",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Wall_Cap_End.fbx",
+      "collider": "box",
+      "notes": "Slim end post that finishes a wall run at an opening.",
+      "boxCenter": [
+        0,
+        2.6,
+        0
+      ],
+      "boxSize": [
+        0.8,
+        5.2,
+        0.8
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Rock_Mass_4m",
+      "category": "Walls",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Rock_Mass_4m.fbx",
+      "collider": "box",
+      "notes": "Raw rock and concrete backfill, 4 m long and 6 m deep, that sits behind an outer wall (front at the wall's back face, mass toward +Z in Unity). Hides floor edges and frames the level.",
+      "boxCenter": [
+        0,
+        2.8,
+        3.0
+      ],
+      "boxSize": [
+        4.1,
+        5.6,
+        6.0
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Door_Sliding",
+      "category": "Doors",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Door_Sliding.fbx",
+      "collider": "mesh",
+      "notes": "6 m wall section with a 3 x 3.4 m sliding double door. Opens on its own when a character comes near (Gate with Auto Open). Fits a 6 m gap in a wall run.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [
+        {
+          "offset": [
+            0,
+            3.75,
+            -0.55
+          ],
+          "color": "#9ED8FF",
+          "range": 5.0,
+          "intensity": 1.6,
+          "flicker": 0.0,
+          "spot": 0.0
+        }
+      ],
+      "isGate": true,
+      "gateTravel": 1.45,
+      "gateAuto": true,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        1.5,
+        0
+      ],
+      "sensorSize": [
+        3.4,
+        3.0,
+        6.0
+      ]
+    },
+    {
+      "name": "Gate_Blast",
+      "category": "Gates",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Gate_Blast.fbx",
+      "collider": "mesh",
+      "notes": "Event gate: 8 m heavy wall section with a 4 x 4.2 m split blast door and a red status bar that turns green when open. Closed until a script calls Gate.Open() (or Gate.Open(\"id\")).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [
+        {
+          "offset": [
+            0,
+            4.75,
+            -0.75
+          ],
+          "color": "#FF3A30",
+          "range": 7.0,
+          "intensity": 3.0,
+          "flicker": 0.0,
+          "spot": 0.0
+        },
+        {
+          "offset": [
+            0,
+            4.75,
+            0.75
+          ],
+          "color": "#FF3A30",
+          "range": 7.0,
+          "intensity": 3.0,
+          "flicker": 0.0,
+          "spot": 0.0
+        }
+      ],
+      "isGate": true,
+      "gateTravel": 2.05,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Gate_Shutter",
+      "category": "Gates",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Gate_Shutter.fbx",
+      "collider": "mesh",
+      "notes": "Event gate: 6 m wall section with a 4 x 4 m shutter that sinks into the floor when opened.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [
+        {
+          "offset": [
+            0,
+            4.3,
+            -0.6
+          ],
+          "color": "#FF3A30",
+          "range": 5.5,
+          "intensity": 2.2,
+          "flicker": 0.0,
+          "spot": 0.0
+        }
+      ],
+      "isGate": true,
+      "gateTravel": 4.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Door_Airlock_Locked",
+      "category": "Doors",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Door_Airlock_Locked.fbx",
+      "collider": "mesh",
+      "notes": "Decoration: a sealed round vault door set into a 4 m wall panel (never opens).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Stairs_Wide",
+      "category": "Stairs",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Stairs_Wide.fbx",
+      "collider": "mesh",
+      "notes": "4 m wide stairs climbing 3 m over 5.4 m toward +Z (Unity), with railings. Meets Catwalk_4m. An invisible ramp gives smooth walking.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Stairs_Short",
+      "category": "Stairs",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Stairs_Short.fbx",
+      "collider": "mesh",
+      "notes": "4 m wide, three steps up 0.6 m toward +Z (Unity). For daises and raised rooms.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Railing_4m",
+      "category": "Railings",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Railing_4m.fbx",
+      "collider": "box",
+      "notes": "4 m safety railing along X, 1.1 m tall.",
+      "boxCenter": [
+        0,
+        0.55,
+        0
+      ],
+      "boxSize": [
+        4.0,
+        1.1,
+        0.15
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Railing_2m",
+      "category": "Railings",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Railing_2m.fbx",
+      "collider": "box",
+      "notes": "2 m safety railing along X.",
+      "boxCenter": [
+        0,
+        0.55,
+        0
+      ],
+      "boxSize": [
+        2.0,
+        1.1,
+        0.15
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Catwalk_4m",
+      "category": "Catwalks",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Catwalk_4m.fbx",
+      "collider": "mesh",
+      "notes": "4 m long, 2.4 m wide grated walkway 3 m up on legs, railings both sides.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Catwalk_4m_Wall",
+      "category": "Catwalks",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Catwalk_4m_Wall.fbx",
+      "collider": "mesh",
+      "notes": "4 m catwalk with a railing on the front (-Z in Unity) only, to run along a wall.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Catwalk_Landing",
+      "category": "Catwalks",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Catwalk_Landing.fbx",
+      "collider": "mesh",
+      "notes": "2.4 x 2.4 m catwalk landing without railings, where stairs meet a walkway.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Platform_Dais_6m",
+      "category": "Catwalks",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Platform_Dais_6m.fbx",
+      "collider": "mesh",
+      "notes": "Round two-tier dais, 6 m radius and 0.5 m tall, with a glowing edge. Pivot at the centre.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Ceiling_Panel_4m",
+      "category": "Ceilings",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Ceiling_Panel_4m.fbx",
+      "collider": "box",
+      "notes": "4 x 4 m ceiling panel with a recessed light; its pivot is the underside. Put it at wall height for third-person interiors (the isometric demo leaves ceilings off so the camera can see in).",
+      "boxCenter": [
+        0,
+        0.15,
+        0
+      ],
+      "boxSize": [
+        4,
+        0.3,
+        4
+      ],
+      "fade": false,
+      "lights": [
+        {
+          "offset": [
+            0,
+            -0.4,
+            0
+          ],
+          "color": "#BFE6FF",
+          "range": 8.0,
+          "intensity": 2.0,
+          "flicker": 0.0,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Pipe_Large_4m",
+      "category": "Pipes",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Pipe_Large_4m.fbx",
+      "collider": "box",
+      "notes": "4 m heavy pipe (0.45 m) along X on two floor saddles. Chain them end to end.",
+      "boxCenter": [
+        0,
+        0.55,
+        0
+      ],
+      "boxSize": [
+        4.0,
+        1.1,
+        1.0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Pipe_Wall_Run_4m",
+      "category": "Pipes",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Pipe_Wall_Run_4m.fbx",
+      "collider": "none",
+      "notes": "Three pipes and a cable tray along X, mounted on a wall face (back at 0, sticks out to -Z in Unity).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Pipe_Vertical_5m",
+      "category": "Pipes",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Pipe_Vertical_5m.fbx",
+      "collider": "box",
+      "notes": "Vertical 5 m pipe with brackets, for wall corners and machine rooms.",
+      "boxCenter": [
+        0,
+        2.5,
+        -0.3
+      ],
+      "boxSize": [
+        0.6,
+        5.0,
+        0.6
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Pipe_Elbow",
+      "category": "Pipes",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Pipe_Elbow.fbx",
+      "collider": "box",
+      "notes": "Large pipe rising out of the floor and bending 90 degrees toward -Z (Unity).",
+      "boxCenter": [
+        0,
+        1.0,
+        0
+      ],
+      "boxSize": [
+        1.4,
+        2.0,
+        1.4
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Pipe_U_Bend",
+      "category": "Pipes",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Pipe_U_Bend.fbx",
+      "collider": "box",
+      "notes": "Two upright pipes joined by a U-bend at the floor, with a cable wrapped around (concept 'Pipe & Cable').",
+      "boxCenter": [
+        0,
+        1.4,
+        0
+      ],
+      "boxSize": [
+        1.8,
+        2.8,
+        0.7
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Cable_Hanging_4m",
+      "category": "Pipes",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Cable_Hanging_4m.fbx",
+      "collider": "none",
+      "notes": "Bundle of sagging cables spanning 4 m along X at 4.5 m height (between pillars or across a corridor).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Lamp_Wall_Cold",
+      "category": "Lights",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Lamp_Wall_Cold.fbx",
+      "collider": "none",
+      "notes": "Wall-mounted caged lamp with a cold blue light; back on the wall face.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [
+        {
+          "offset": [
+            0,
+            3.3,
+            -0.6
+          ],
+          "color": "#9CC8F0",
+          "range": 10.0,
+          "intensity": 3.0,
+          "flicker": 0.0,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Lamp_Emergency",
+      "category": "Lights",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Lamp_Emergency.fbx",
+      "collider": "none",
+      "notes": "Wall-mounted orange emergency lamp that flickers; back on the wall face.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [
+        {
+          "offset": [
+            0,
+            3.6,
+            -0.6
+          ],
+          "color": "#FF8A3A",
+          "range": 10.0,
+          "intensity": 4.5,
+          "flicker": 0.12,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Lamp_Alarm_Red",
+      "category": "Lights",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Lamp_Alarm_Red.fbx",
+      "collider": "none",
+      "notes": "Red rotating-style alarm beacon for wall faces near gates.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [
+        {
+          "offset": [
+            0,
+            4.2,
+            -0.5
+          ],
+          "color": "#FF3030",
+          "range": 6.0,
+          "intensity": 2.5,
+          "flicker": 0.6,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Light_Floor_Strip_2m",
+      "category": "Lights",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Light_Floor_Strip_2m.fbx",
+      "collider": "none",
+      "notes": "2 m glowing guide strip on the floor along X (no light source, just glow).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Light_Post",
+      "category": "Lights",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Light_Post.fbx",
+      "collider": "box",
+      "notes": "Free-standing work light on a weighted base.",
+      "boxCenter": [
+        0,
+        1.4,
+        0
+      ],
+      "boxSize": [
+        0.5,
+        2.8,
+        0.5
+      ],
+      "fade": true,
+      "lights": [
+        {
+          "offset": [
+            0,
+            2.6,
+            0
+          ],
+          "color": "#BFE6FF",
+          "range": 9.0,
+          "intensity": 2.6,
+          "flicker": 0.0,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Console_Control",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Console_Control.fbx",
+      "collider": "box",
+      "notes": "Control desk with three monitors and button panels (front faces -Z in Unity).",
+      "boxCenter": [
+        0,
+        0.6,
+        0
+      ],
+      "boxSize": [
+        2.4,
+        1.2,
+        1.1
+      ],
+      "fade": false,
+      "lights": [
+        {
+          "offset": [
+            0,
+            1.4,
+            -1.0
+          ],
+          "color": "#3FC8FF",
+          "range": 4.5,
+          "intensity": 1.6,
+          "flicker": 0.0,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Terminal_Wall",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Terminal_Wall.fbx",
+      "collider": "none",
+      "notes": "Wall terminal with a glowing screen and keypad; back on the wall face.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Terminal_Offline",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Terminal_Offline.fbx",
+      "collider": "box",
+      "notes": "Dead monitor and keyboard on a small desk, a few lines still glowing.",
+      "boxCenter": [
+        0,
+        0.6,
+        0
+      ],
+      "boxSize": [
+        0.9,
+        1.2,
+        0.7
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Server_Rack",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Server_Rack.fbx",
+      "collider": "box",
+      "notes": "2.2 m server cabinet with rows of status lights.",
+      "boxCenter": [
+        0,
+        1.1,
+        0
+      ],
+      "boxSize": [
+        0.8,
+        2.2,
+        1.0
+      ],
+      "fade": true,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Generator_Unit",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Generator_Unit.fbx",
+      "collider": "box",
+      "notes": "Boxy power unit with fan housings, gauges and warm status lamps.",
+      "boxCenter": [
+        0,
+        0.8,
+        0
+      ],
+      "boxSize": [
+        2.6,
+        1.6,
+        1.6
+      ],
+      "fade": false,
+      "lights": [
+        {
+          "offset": [
+            0,
+            1.0,
+            -1.1
+          ],
+          "color": "#FF8A3A",
+          "range": 4.5,
+          "intensity": 1.6,
+          "flicker": 0.15,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Machine_Pump",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Machine_Pump.fbx",
+      "collider": "box",
+      "notes": "Big boiler / pump tank with gauges, pipes into the floor and orange work lights (technical room centrepiece).",
+      "boxCenter": [
+        0,
+        2.0,
+        0
+      ],
+      "boxSize": [
+        3.0,
+        4.0,
+        3.0
+      ],
+      "fade": true,
+      "lights": [
+        {
+          "offset": [
+            0,
+            1.6,
+            -1.8
+          ],
+          "color": "#FF8A3A",
+          "range": 7.0,
+          "intensity": 2.4,
+          "flicker": 0.2,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Containment_Tube",
+      "category": "Containment",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Containment_Tube.fbx",
+      "collider": "box",
+      "notes": "3 m specimen tube: steel base and cap, glowing liquid with a dark figure inside.",
+      "boxCenter": [
+        0,
+        1.5,
+        0
+      ],
+      "boxSize": [
+        1.6,
+        3.0,
+        1.6
+      ],
+      "fade": true,
+      "lights": [
+        {
+          "offset": [
+            0,
+            1.5,
+            -0.9
+          ],
+          "color": "#3FC8FF",
+          "range": 5.5,
+          "intensity": 1.8,
+          "flicker": 0.0,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Containment_Tube_Broken",
+      "category": "Containment",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Containment_Tube_Broken.fbx",
+      "collider": "box",
+      "notes": "Smashed specimen tube: empty, glass gone, a few bent bars and a drained base.",
+      "boxCenter": [
+        0,
+        1.0,
+        0
+      ],
+      "boxSize": [
+        1.6,
+        2.0,
+        1.6
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Containment_Tube_Large",
+      "category": "Containment",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Containment_Tube_Large.fbx",
+      "collider": "box",
+      "notes": "The laboratory's centrepiece: a 9 m containment cylinder with a huge dark specimen, cage bars, machinery crown and cables.",
+      "boxCenter": [
+        0,
+        3.5,
+        0
+      ],
+      "boxSize": [
+        5.0,
+        7.0,
+        5.0
+      ],
+      "fade": true,
+      "lights": [
+        {
+          "offset": [
+            0,
+            2.0,
+            0
+          ],
+          "color": "#3FC8FF",
+          "range": 16.0,
+          "intensity": 3.2,
+          "flicker": 0.0,
+          "spot": 0.0
+        },
+        {
+          "offset": [
+            0,
+            5.5,
+            -3.0
+          ],
+          "color": "#3FC8FF",
+          "range": 12.0,
+          "intensity": 2.0,
+          "flicker": 0.0,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Reactor_Column",
+      "category": "Containment",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Reactor_Column.fbx",
+      "collider": "box",
+      "notes": "The hub's 15 m energy column from the concept: a machinery drum, a bright core in a caged lower chamber, a ribbed dark housing with glowing slots, a narrow upper core between girders, crown and feeder pipes. Stands on Platform_Dais_6m.",
+      "boxCenter": [
+        0,
+        4.0,
+        0
+      ],
+      "boxSize": [
+        5.4,
+        8.0,
+        5.4
+      ],
+      "fade": true,
+      "lights": [
+        {
+          "offset": [
+            0,
+            2.6,
+            0
+          ],
+          "color": "#3FC8FF",
+          "range": 20.0,
+          "intensity": 7.0,
+          "flicker": 0.0,
+          "spot": 0.0
+        },
+        {
+          "offset": [
+            0,
+            10.5,
+            0
+          ],
+          "color": "#3FC8FF",
+          "range": 14.0,
+          "intensity": 3.0,
+          "flicker": 0.0,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Elevator_Platform",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Elevator_Platform.fbx",
+      "collider": "mesh",
+      "notes": "6 x 6 m freight elevator: raised platform, corner guide rails up into the dark, call console. Its trigger and lift motion are left for your own script.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [
+        {
+          "offset": [
+            0,
+            4.5,
+            0
+          ],
+          "color": "#BFE6FF",
+          "range": 9.0,
+          "intensity": 2.6,
+          "flicker": 0.0,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Vent_Wall",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Vent_Wall.fbx",
+      "collider": "none",
+      "notes": "Ventilation unit with louvres for wall faces (concept 'Ventilation').",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Broken_Robot",
+      "category": "Props",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Broken_Robot.fbx",
+      "collider": "box",
+      "notes": "Wrecked droid: cracked skull-like head, torso plates and a torn arm with cables.",
+      "boxCenter": [
+        0,
+        0.4,
+        0
+      ],
+      "boxSize": [
+        1.6,
+        0.8,
+        1.4
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Debris_Scrap",
+      "category": "Props",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Debris_Scrap.fbx",
+      "collider": "none",
+      "notes": "Scattered panels, bolts and a bent pipe for the floor.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Floor_Grime",
+      "category": "Props",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Floor_Grime.fbx",
+      "collider": "none",
+      "notes": "Flat dirt: oil stains, a dark water puddle and a few scattered papers, about 3 m across. Scatter over any floor to break up the tiling (the concept's floors are never clean).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Cable_Floor_Run",
+      "category": "Pipes",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Cable_Floor_Run.fbx",
+      "collider": "none",
+      "notes": "Bundle of three loose cables snaking 4 m along X across the floor, for clutter between machines.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Light_Fill_Cold",
+      "category": "Lights",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Light_Fill_Cold.fbx",
+      "collider": "none",
+      "notes": "Invisible cold ceiling light that lifts a room's mid-tones (the concept's overhead panels).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [
+        {
+          "offset": [
+            0,
+            4.2,
+            0
+          ],
+          "color": "#A9C8EE",
+          "range": 13.0,
+          "intensity": 1.6,
+          "flicker": 0.0,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Light_Fill_Warm",
+      "category": "Lights",
+      "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Light_Fill_Warm.fbx",
+      "collider": "none",
+      "notes": "Invisible warm ceiling light for workshops and living areas.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "fade": false,
+      "lights": [
+        {
+          "offset": [
+            0,
+            4.2,
+            0
+          ],
+          "color": "#FF9A50",
+          "range": 13.0,
+          "intensity": 1.8,
+          "flicker": 0.0,
+          "spot": 0.0
+        }
+      ],
+      "isGate": false,
+      "gateTravel": 0.0,
+      "gateAuto": false,
+      "gateStartsOpen": false,
+      "sensorCenter": [
+        0,
+        0,
+        0
+      ],
+      "sensorSize": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

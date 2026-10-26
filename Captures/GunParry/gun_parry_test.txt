@@ -1,0 +1,8 @@
+enemy 3.2 m ahead; shot fires 0.167 s after the press
+early shot: enemy idle in LocomotionState, health 100
+  shot: Damaged (target Enemy_Knight, 2.2 m), enemy state LocomotionState, health 96
+  0.4 s later: enemy LocomotionState, health 96
+  enemy parryable after 0.069 s; pressing Ctrl
+  shot: Parried (target Enemy_Knight, 2.2 m), enemy state ReactionState, health 96
+  0.6 s after the press: enemy ReactionState, player ShootState
+  health bar: active True, canvas True WorldSpace, alpha 1.00 (frame 652, time 4.99, unscaled 164.61, dt 0.005, unscaled dt 0.005), scale 0.0133, at (-11.55, 2.38, -11.55), camera Main Camera ortho False fov 40 size 6.5 dist 28.3 mask -1

@@ -1,0 +1,6 @@
+{
+    "name": "Conquest.Animation",
+    "rootNamespace": "Conquest.Animation",
+    "references": ["Conquest.Core"],
+    "autoReferenced": true
+}

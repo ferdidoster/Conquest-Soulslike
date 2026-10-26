@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UpperBody
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000u
+  m_Elements:
+  - m_Path: 
+    m_Weight: 0
+  - m_Path: Gun_Hand
+    m_Weight: 0
+  - m_Path: Gun_Holster
+    m_Weight: 0
+  - m_Path: Knight
+    m_Weight: 0
+  - m_Path: Knight/Root
+    m_Weight: 0
+  - m_Path: Knight/Root/Hips
+    m_Weight: 0
+  - m_Path: Knight/Root/Hips/Spine
+    m_Weight: 0
+  - m_Path: Knight/Root/Hips/Spine/Chest
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/LockPoint
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/Neck
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/Neck/Head
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/Pole.L
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/Pole.R
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.L
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.L/LowerArm.L
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.L/LowerArm.L/Hand.L
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.L/LowerArm.L/Hand.L/Gun_Muzzle
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.L/LowerArm.L/Shield.L
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Hand.R
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Hand.R/Weapon.R
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Hand.R/Weapon.R/Blade_Base
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Hand.R/Weapon.R/Blade_Mid
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Hand.R/Weapon.R/Blade_Tip
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Hand.R/Weapon.R/Greatsword_0
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Hand.R/Weapon.R/Greatsword_1
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Hand.R/Weapon.R/Greatsword_2
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Hand.R/Weapon.R/Greatsword_3
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Hand.R/Weapon.R/Longsword_0
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Hand.R/Weapon.R/Longsword_1
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Hand.R/Weapon.R/Longsword_2
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/UpperLeg.L
+    m_Weight: 0
+  - m_Path: Knight/Root/Hips/UpperLeg.L/LowerLeg.L
+    m_Weight: 0
+  - m_Path: Knight/Root/Hips/UpperLeg.L/LowerLeg.L/Foot.L
+    m_Weight: 0
+  - m_Path: Knight/Root/Hips/UpperLeg.R
+    m_Weight: 0
+  - m_Path: Knight/Root/Hips/UpperLeg.R/LowerLeg.R
+    m_Weight: 0
+  - m_Path: Knight/Root/Hips/UpperLeg.R/LowerLeg.R/Foot.R
+    m_Weight: 0
+  - m_Path: Knight/Root/SwordCtrl
+    m_Weight: 0
+  - m_Path: Knight/Root/SwordCtrl/Grip.L
+    m_Weight: 0
+  - m_Path: TechKnight_Mesh
+    m_Weight: 0
+  - m_Path: Weapon_Longsword
+    m_Weight: 0
+  - m_Path: Weapon_UltraGreatsword
+    m_Weight: 0

@@ -1,0 +1,1392 @@
+{
+  "palette": [
+    {
+      "name": "Kit_Sand",
+      "color": "#ECC3A4",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.18,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_SandDark",
+      "color": "#D9A68A",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.22,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_SandDeep",
+      "color": "#A87A78",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.25,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_Crack",
+      "color": "#A5705F",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.0,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_Inlay",
+      "color": "#C98A80",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.12,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_Rock",
+      "color": "#C2675C",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.28,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_RockLight",
+      "color": "#DB9275",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.26,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_RockDark",
+      "color": "#8F5560",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.28,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_Stone",
+      "color": "#A0908F",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.26,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_StoneLight",
+      "color": "#BFAAA0",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.24,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_StoneDark",
+      "color": "#6F6168",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.28,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_StoneTemple",
+      "color": "#958589",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.3,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_Metal",
+      "color": "#999BA4",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.18,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_MetalDark",
+      "color": "#4A4C58",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.18,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_Rust",
+      "color": "#9B5B3F",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.32,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_Cloth",
+      "color": "#A8323C",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.06,
+      "sway": 0.18,
+      "doubleSided": true
+    },
+    {
+      "name": "Kit_ClothDark",
+      "color": "#72232F",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.06,
+      "sway": 0.18,
+      "doubleSided": true
+    },
+    {
+      "name": "Kit_Bone",
+      "color": "#EEDFC8",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.03,
+      "sway": 0.18,
+      "doubleSided": true
+    },
+    {
+      "name": "Kit_Bronze",
+      "color": "#8C6A3C",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.22,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_Void",
+      "color": "#2A2330",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.0,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_Flame",
+      "color": "#FF8A2E",
+      "emission": "#FF5A14",
+      "emissionIntensity": 0.7,
+      "grit": 0.0,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_FloorDisc",
+      "color": "#DDA08F",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.14,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_Sandstone",
+      "color": "#D98F6E",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.26,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_SandstoneDark",
+      "color": "#B56C5C",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.28,
+      "sway": 0.0,
+      "doubleSided": false
+    },
+    {
+      "name": "Kit_TechLight",
+      "color": "#FF7A45",
+      "emission": "#FF4A1A",
+      "emissionIntensity": 1.4,
+      "grit": 0.0,
+      "sway": 0.0,
+      "doubleSided": false
+    }
+  ],
+  "pieces": [
+    {
+      "name": "Floor_Arena_Center",
+      "category": "Floor",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Floor_Arena_Center.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Centre disc of the arena floor with the emblem inlay (r = 5 m).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Floor_Arena_Segment",
+      "category": "Floor",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Floor_Arena_Segment.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "45 degree wedge of the arena floor from r = 5 to 13 m with the inlay ring. Pivot = arena centre.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Floor_Walkway_Segment",
+      "category": "Floor",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Floor_Walkway_Segment.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "45 degree wedge of paving blocks from r = 13 to 17 m around the arena floor.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Wall_Arena_Segment",
+      "category": "Walls",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Wall_Arena_Segment.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "15 degree segment of the low ring wall at r = 17 m. Leave segments out for openings.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Stands_Segment",
+      "category": "Walls",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Stands_Segment.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "15 degree segment of tiered stone seating behind the ring wall (r = 17.8 to 24 m).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Pillar_Banner",
+      "category": "Architecture",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Pillar_Banner.fbx",
+      "collider": "box",
+      "hover": false,
+      "notes": "7 m stone pillar with a red banner on its front (-Y / Unity +Z) and a fire bowl on top.",
+      "boxCenter": [
+        0,
+        3.6,
+        0
+      ],
+      "boxSize": [
+        1.6,
+        7.2,
+        1.6
+      ],
+      "hasLight": true,
+      "lightOffset": [
+        0,
+        7.8,
+        0
+      ],
+      "lightColor": "#FFA34A",
+      "lightRange": 7.0,
+      "lightIntensity": 2.5
+    },
+    {
+      "name": "Pillar_Short",
+      "category": "Architecture",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Pillar_Short.fbx",
+      "collider": "box",
+      "hover": false,
+      "notes": "Waist-high stone post; use it to cap wall openings.",
+      "boxCenter": [
+        0,
+        0.8,
+        0
+      ],
+      "boxSize": [
+        1.1,
+        1.6,
+        1.1
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Pillar_Broken",
+      "category": "Architecture",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Pillar_Broken.fbx",
+      "collider": "box",
+      "hover": false,
+      "notes": "Broken pillar stump with a fallen chunk.",
+      "boxCenter": [
+        0,
+        1.2,
+        0
+      ],
+      "boxSize": [
+        1.2,
+        2.4,
+        1.2
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Stairs_Wide",
+      "category": "Architecture",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Stairs_Wide.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "6 m wide stairs, 6 steps rising 1.5 m toward +Y (Unity -Z from the front). Pivot = bottom front.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Path_Segment",
+      "category": "Floor",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Path_Segment.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "4 x 4 m paved path with curbs; tile it along Y.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Bridge_Arch_Segment",
+      "category": "Architecture",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Bridge_Arch_Segment.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "8 m bridge span on arches over the canyon, deck top at 0. Chain along Y; piers reach 20 m down.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Temple_Gate",
+      "category": "Architecture",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Temple_Gate.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "The boss temple: stepped tower, dark gate, giant banner and front stairs. Pivot = foot of the stairs, front faces -Y (Unity +Z). About 17 x 12 m footprint, 41 m tall.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Plateau_Large",
+      "category": "Nature",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Plateau_Large.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Rock plateau the arena stands on: r = 28 m with a bulge to the north for the temple, top at 0, cliffs 20 m down.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Plateau_Small",
+      "category": "Nature",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Plateau_Small.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Small rock landing (r = 7 m) for bridge ends. Top at 0, 20 m tall.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Rock_Boulder_S",
+      "category": "Nature",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Rock_Boulder_S.fbx",
+      "collider": "none",
+      "hover": false,
+      "notes": "Knee-high boulder (r = 0.6 m).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Rock_Boulder_M",
+      "category": "Nature",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Rock_Boulder_M.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Large boulder (r = 1.5 m).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Rock_Cluster",
+      "category": "Nature",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Rock_Cluster.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Group of three boulders with a flat slab, about 4 m across.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Rock_Mesa_A",
+      "category": "Nature",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Rock_Mesa_A.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Layered mesa (r = 9 m, 26 m tall). Stand it on the canyon floor.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Rock_Mesa_B",
+      "category": "Nature",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Rock_Mesa_B.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Wide flat-topped mesa (r = 14 m, 18 m tall).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Rock_Spire_A",
+      "category": "Nature",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Rock_Spire_A.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Tall needle spire (r = 4 m, 36 m tall).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Rock_Spire_B",
+      "category": "Nature",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Rock_Spire_B.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Twin-stepped spire (r = 3.5 m, 24 m tall).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Rock_Arch",
+      "category": "Nature",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Rock_Arch.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Natural stone arch, 22 m wide and 20 m tall.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Ground_Canyon",
+      "category": "Nature",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Ground_Canyon.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "320 x 320 m canyon floor with low dunes. Place it 20 m below the plateau top.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Rock_Cliff_Wall",
+      "category": "Nature",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Rock_Cliff_Wall.fbx",
+      "collider": "none",
+      "hover": false,
+      "notes": "48 m stretch of canyon wall, 14 m deep and 24 to 38 m tall: vertical rock columns split by dark clefts, with jutting strata ledges. Front faces -Y (Unity +Z). Ring them around a level to close off the horizon.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Brazier_Standing",
+      "category": "Props",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Brazier_Standing.fbx",
+      "collider": "box",
+      "hover": false,
+      "notes": "Stone pedestal with a bronze fire bowl (1.3 m).",
+      "boxCenter": [
+        0,
+        0.6,
+        0
+      ],
+      "boxSize": [
+        0.8,
+        1.2,
+        0.8
+      ],
+      "hasLight": true,
+      "lightOffset": [
+        0,
+        1.8,
+        0
+      ],
+      "lightColor": "#FFA34A",
+      "lightRange": 6.5,
+      "lightIntensity": 3.0
+    },
+    {
+      "name": "Brazier_Bowl",
+      "category": "Props",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Brazier_Bowl.fbx",
+      "collider": "box",
+      "hover": false,
+      "notes": "Wide bronze bowl on a low iron stand.",
+      "boxCenter": [
+        0,
+        0.5,
+        0
+      ],
+      "boxSize": [
+        1.4,
+        1.0,
+        1.4
+      ],
+      "hasLight": true,
+      "lightOffset": [
+        0,
+        1.5,
+        0
+      ],
+      "lightColor": "#FFA34A",
+      "lightRange": 6.5,
+      "lightIntensity": 3.0
+    },
+    {
+      "name": "Banner_Hanging",
+      "category": "Cloth",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Banner_Hanging.fbx",
+      "collider": "none",
+      "hover": false,
+      "notes": "1.2 x 4.5 m banner on a rod. Pivot = rod centre, hangs down; front faces -Y (Unity +Z).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Banner_Small",
+      "category": "Cloth",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Banner_Small.fbx",
+      "collider": "none",
+      "hover": false,
+      "notes": "0.5 x 1 m pennant for wall faces. Pivot = rod centre.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Awning_Span_12m",
+      "category": "Cloth",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Awning_Span_12m.fbx",
+      "collider": "none",
+      "hover": false,
+      "notes": "Sagging red cloth roped between two points 12 m apart along X. Pivot = midpoint of the ropes; put it at the height of the pillar tops.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Block_Ruin_A",
+      "category": "Props",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Block_Ruin_A.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Toppled stack of big masonry blocks (about 3 x 2 x 2 m).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Block_Ruin_B",
+      "category": "Props",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Block_Ruin_B.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Broken 3.5 m wall fragment with a crumbled end.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Rubble_Pile",
+      "category": "Props",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Rubble_Pile.fbx",
+      "collider": "none",
+      "hover": false,
+      "notes": "Scatter of small stone chunks (about 2 m across).",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Tech_Vaporator",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Tech_Vaporator.fbx",
+      "collider": "box",
+      "hover": false,
+      "notes": "Moisture-farm tower (3.6 m): ringed column, fins and a status light.",
+      "boxCenter": [
+        0,
+        1.7,
+        0
+      ],
+      "boxSize": [
+        1.0,
+        3.4,
+        1.0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Tech_Antenna",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Tech_Antenna.fbx",
+      "collider": "box",
+      "hover": false,
+      "notes": "9 m lattice mast with a dish and a warning light.",
+      "boxCenter": [
+        0,
+        1.5,
+        0
+      ],
+      "boxSize": [
+        1.6,
+        3.0,
+        1.6
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Tech_Generator",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Tech_Generator.fbx",
+      "collider": "box",
+      "hover": false,
+      "notes": "Boxy power unit with a fuel tank, vents, hoses into the ground and a status panel.",
+      "boxCenter": [
+        0,
+        0.75,
+        0
+      ],
+      "boxSize": [
+        2.6,
+        1.5,
+        1.6
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Tech_PipeRun",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Tech_PipeRun.fbx",
+      "collider": "box",
+      "hover": false,
+      "notes": "6 m of twin pipes on stands along Y; chain them end to end.",
+      "boxCenter": [
+        0,
+        0.6,
+        0
+      ],
+      "boxSize": [
+        1.0,
+        1.2,
+        6.0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Tech_Crate_Stack",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Tech_Crate_Stack.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Three salvage crates with banding.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Tech_Console",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Tech_Console.fbx",
+      "collider": "box",
+      "hover": false,
+      "notes": "Waist-high control post with a slanted, lit panel.",
+      "boxCenter": [
+        0,
+        0.55,
+        0
+      ],
+      "boxSize": [
+        0.9,
+        1.1,
+        0.7
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Tech_Pole",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Tech_Pole.fbx",
+      "collider": "box",
+      "hover": false,
+      "notes": "3.4 m cable pole; string Tech_Cable_Span between two of them (8 m apart).",
+      "boxCenter": [
+        0,
+        1.7,
+        0
+      ],
+      "boxSize": [
+        0.4,
+        3.4,
+        0.4
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Tech_Cable_Span",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Tech_Cable_Span.fbx",
+      "collider": "none",
+      "hover": false,
+      "notes": "Two sagging cables 8 m long along X; pivot = midpoint at the attachment height.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Tech_Wreck_Hull",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Tech_Wreck_Hull.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Half-buried hull section of a crashed ship (10 m long) with exposed ribs.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Tech_Wreck_Engine",
+      "category": "Tech",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Tech_Wreck_Engine.fbx",
+      "collider": "mesh",
+      "hover": false,
+      "notes": "Crashed engine pod (7 m) nose-down in the sand.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    },
+    {
+      "name": "Ship_SkyBarge",
+      "category": "Backdrop",
+      "model": "Assets/_Project/Art/Environment/DesertKit/Meshes/Ship_SkyBarge.fbx",
+      "collider": "none",
+      "hover": true,
+      "notes": "Floating barge for the sky (about 30 m long). Bobs gently in Unity.",
+      "boxCenter": [
+        0,
+        0,
+        0
+      ],
+      "boxSize": [
+        0,
+        0,
+        0
+      ],
+      "hasLight": false,
+      "lightOffset": [
+        0,
+        0,
+        0
+      ],
+      "lightColor": "#FFFFFF",
+      "lightRange": 0.0,
+      "lightIntensity": 0.0
+    }
+  ]
+}

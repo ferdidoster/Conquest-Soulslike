@@ -1,0 +1,6 @@
+{
+    "name": "Conquest.Core",
+    "rootNamespace": "Conquest.Core",
+    "references": [],
+    "autoReferenced": true
+}

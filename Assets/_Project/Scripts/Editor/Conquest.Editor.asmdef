@@ -1,0 +1,25 @@
+{
+    "name": "Conquest.Editor",
+    "rootNamespace": "Conquest.EditorTools",
+    "references": [
+        "Conquest.Core",
+        "Conquest.Stats",
+        "Conquest.Movement",
+        "Conquest.Animation",
+        "Conquest.Targeting",
+        "Conquest.CameraSystem",
+        "Conquest.Combat",
+        "Conquest.Character",
+        "Conquest.Player",
+        "Conquest.AI",
+        "Conquest.UI",
+        "Conquest.Environment",
+        "Conquest.Feedback",
+        "UnityEngine.UI",
+        "Unity.RenderPipelines.Core.Runtime",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": ["Editor"],
+    "autoReferenced": false
+}

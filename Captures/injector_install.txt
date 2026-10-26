@@ -1,0 +1,6 @@
+Conquest: nano-injector installed.
+- Knight.controller already has Heal
+- refreshed Knight_TwoHanded.overrideController (Heal_2H)
+- Player_Knight: NanoInjector, NanoInjectorFeedback, PlayerRespawn
+- Sandbox: charge pips and spawn checkpoint
+- Lab_Demo: charge pips and spawn checkpoint

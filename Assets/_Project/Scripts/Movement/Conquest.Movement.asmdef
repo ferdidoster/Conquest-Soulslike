@@ -1,0 +1,6 @@
+{
+    "name": "Conquest.Movement",
+    "rootNamespace": "Conquest.Movement",
+    "references": ["Conquest.Core"],
+    "autoReferenced": true
+}

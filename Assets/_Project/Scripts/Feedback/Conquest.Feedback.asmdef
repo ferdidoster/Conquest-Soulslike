@@ -1,0 +1,6 @@
+{
+    "name": "Conquest.Feedback",
+    "rootNamespace": "Conquest.Feedback",
+    "references": ["Conquest.Core", "Conquest.Stats", "Conquest.Combat", "Conquest.CameraSystem"],
+    "autoReferenced": true
+}

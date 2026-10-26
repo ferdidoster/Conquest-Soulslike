@@ -1,0 +1,6 @@
+{
+    "name": "Conquest.UI",
+    "rootNamespace": "Conquest.UI",
+    "references": ["Conquest.Core", "Conquest.Targeting", "UnityEngine.UI"],
+    "autoReferenced": true
+}

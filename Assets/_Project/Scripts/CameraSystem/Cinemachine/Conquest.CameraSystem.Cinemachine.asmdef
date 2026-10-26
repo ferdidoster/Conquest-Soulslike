@@ -1,0 +1,20 @@
+{
+    "name": "Conquest.CameraSystem.Cinemachine",
+    "rootNamespace": "Conquest.CameraSystem.Cinemachine",
+    "references": [
+        "Conquest.Core",
+        "Conquest.Targeting",
+        "Conquest.CameraSystem",
+        "Unity.Cinemachine",
+        "Unity.InputSystem"
+    ],
+    "defineConstraints": ["CONQUEST_CINEMACHINE"],
+    "versionDefines": [
+        {
+            "name": "com.unity.cinemachine",
+            "expression": "3.0.0",
+            "define": "CONQUEST_CINEMACHINE"
+        }
+    ],
+    "autoReferenced": true
+}

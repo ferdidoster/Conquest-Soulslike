@@ -1,0 +1,6 @@
+{
+    "name": "Conquest.Combat",
+    "rootNamespace": "Conquest.Combat",
+    "references": ["Conquest.Core", "Conquest.Stats"],
+    "autoReferenced": true
+}
