@@ -13,8 +13,7 @@ namespace Conquest.CameraSystem.Cinemachine
 
     /// <summary>
     /// Switches between the Cinemachine isometric rig and the orbiting third-person camera.
-    /// Lock-on picks targets relative to the camera in third person and relative to the
-    /// character's facing in isometric (the view direction is fixed there).
+    /// Lock-on always picks targets by what the camera shows, in both modes.
     /// </summary>
     public sealed class CameraModeSwitcher : MonoBehaviour
     {
@@ -68,7 +67,7 @@ namespace Conquest.CameraSystem.Cinemachine
             if (thirdPerson != null) thirdPerson.enabled = !iso;
             if (brain != null) brain.enabled = iso;
             if (isometric != null) isometric.gameObject.SetActive(iso);
-            if (lockOn != null) lockOn.SetView(iso ? player : transform);
+            if (lockOn != null) lockOn.SetView(transform);
         }
 
         private void OnToggle(InputAction.CallbackContext _) =>

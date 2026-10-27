@@ -17,7 +17,12 @@ namespace Conquest.Targeting
             public float MaxViewAngle;
             public LayerMask OcclusionMask;
             public GameObject Ignore;
+            /// <summary>When set, targets are picked by how close they sit to the centre of this camera's screen.</summary>
+            public Camera ViewCamera;
         }
+
+        // Rough degrees per unit of viewport offset, so screen scoring weighs like the angle scoring.
+        private const float ScreenOffsetWeight = 90f;
 
         /// <summary>Best target in front of the view, preferring the one closest to the screen centre.</summary>
         public static ITargetable FindBest<T>(IReadOnlyList<T> candidates, in Query query) where T : ITargetable
@@ -30,9 +35,20 @@ namespace Conquest.Targeting
                 T candidate = candidates[i];
                 if (!IsValid(candidate, query, out Vector3 toTarget, out float distance)) continue;
 
-                // Measured on the ground plane so steep (e.g. isometric) views still find targets.
-                float angle = Vector3.Angle(Flat(query.ViewForward), Flat(toTarget));
-                if (angle > query.MaxViewAngle) continue;
+                float angle;
+                if (query.ViewCamera != null)
+                {
+                    // Whatever the character faces, the camera decides: only on-screen targets count,
+                    // and the one nearest the screen centre wins.
+                    if (!TryScreenOffset(query.ViewCamera, candidate.LockPoint.position, out float offset)) continue;
+                    angle = offset * ScreenOffsetWeight;
+                }
+                else
+                {
+                    // Measured on the ground plane so steep (e.g. isometric) views still find targets.
+                    angle = Vector3.Angle(Flat(query.ViewForward), Flat(toTarget));
+                    if (angle > query.MaxViewAngle) continue;
+                }
 
                 // Angle matters most; distance breaks ties.
                 float score = angle + distance / query.MaxDistance * 20f;
@@ -87,6 +103,21 @@ namespace Conquest.Targeting
             Vector3 end = target.LockPoint.position;
             return !Physics.Linecast(origin, end, out RaycastHit hit, occlusionMask, QueryTriggerInteraction.Ignore)
                    || hit.transform.IsChildOf(target.Owner.transform);
+        }
+
+        /// <summary>
+        /// Distance of a world point from the screen centre in viewport units (aspect-corrected).
+        /// False when the point is behind the camera or off screen.
+        /// </summary>
+        private static bool TryScreenOffset(Camera cam, Vector3 worldPoint, out float offset)
+        {
+            Vector3 vp = cam.WorldToViewportPoint(worldPoint);
+            offset = 0f;
+            if (vp.z <= 0f || vp.x < 0f || vp.x > 1f || vp.y < 0f || vp.y > 1f) return false;
+
+            Vector2 fromCentre = new Vector2((vp.x - 0.5f) * cam.aspect, vp.y - 0.5f);
+            offset = fromCentre.magnitude;
+            return true;
         }
 
         private static Vector3 Flat(Vector3 v) => new Vector3(v.x, 0f, v.z);
