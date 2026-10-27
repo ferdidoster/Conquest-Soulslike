@@ -37,34 +37,41 @@ def floor_hazard(b, x0, x1, y0, y1, stripe=0.36):
               rot_z=0.0)
 
 
+def flush_plates(b, quads, seam=0.05, seam_mat=P.FLOOR_DARK, depth=0.2):
+    """A 4 x 4 m floor tile of four 2 m plates (sx, sy, material) and seam strips, all with their
+    top at 0 and abutting, so no side faces ever show."""
+    half = 2.0 - seam / 2
+    for sx, sy, mat in quads:
+        b.box((half - seam / 2, half - seam / 2, depth), (sx * (seam / 2 + (half - seam / 2) / 2),
+                                                          sy * (seam / 2 + (half - seam / 2) / 2), -depth), mat)
+    # cross seams through the centre and half seams on the tile border (the neighbour adds the other half)
+    b.box((4.0, seam, depth), (0, 0, -depth), seam_mat)
+    b.box((seam, 4.0, depth), (0, 0, -depth), seam_mat)
+    for s in (-1, 1):
+        b.box((4.0, seam / 2, depth), (0, s * (2.0 - seam / 4), -depth), seam_mat)
+        b.box((seam / 2, 4.0, depth), (s * (2.0 - seam / 4), 0, -depth), seam_mat)
+
+
 def bolts(b, x, y, z0, z1, step=0.42, size=0.07, mat=P.METAL):
-    """A column of bolt heads on a face at x, between z0 and z1."""
-    n = max(1, int((z1 - z0) / step))
-    for k in range(n + 1):
-        b.box((size, 0.04, size), (x, y, z0 + (z1 - z0) * k / n - size / 2), mat)
+    """A column of bolt heads on a face at x, between z0 and z1. Off in the game's chunky look:
+    kept as a hook so the pieces that called it still build."""
+    return
 
 
 def wall_face(b, width, side, height=WALL_H, vent=False, pipes=False, marking=None):
-    """The concept's wall section, one face of a wall running along X (side=-1 front (-Y), +1 back):
-    a dark kick plinth, tall gunmetal plates in bolted frames with seams, heavy ribs between them,
-    a top band, small orange status lights and a conduit."""
+    """One face of a wall running along X (side=-1 front (-Y), +1 back), in the arena's chunky
+    block language: a kick plinth, tall plain plates in a frame, heavy ribs between them and a
+    top band. Rivets, seams and small lights are left off so the faces stay flat."""
     y = side * (WALL_T / 2)
     b.box((width, 0.16, 0.45), (0, y + side * 0.06, 0), P.METAL_DARK, bevel=0.02)
-    b.box((width, 0.04, 0.04), (0, y + side * 0.15, 0.42), P.RUST)
     cols = max(1, int(round(width / 2)))
     pw = width / cols
     for i in range(cols):
         cx = -width / 2 + (i + 0.5) * pw
         D.framed_plate(b, pw - 0.24, 3.75, cx, y, 0.5, depth=0.07, frame=0.1, mat=P.WALL,
-                       frame_mat=P.GUNMETAL, seams=1 if marking is None else 0, bolts=True, face=side)
-        # horizontal plate joint with a rivet row
-        if marking is None:
-            b.box((pw - 0.44, 0.09, 0.04), (cx, y + side * 0.06, 1.55), P.WALL_DARK)
-            D.bolts_row(b, cx - pw * 0.36, cx + pw * 0.36, y + side * 0.11, 1.62, 6, size=0.045, mat=P.METAL)
-        # top band of small plates
+                       frame_mat=P.GUNMETAL, face=side)
+        # top band
         b.box((pw - 0.24, 0.1, 0.5), (cx, y + side * 0.05, 4.3), P.WALL_DARK, bevel=0.01)
-        for k in (-1, 1):
-            b.box((pw * 0.38, 0.03, 0.34), (cx + k * pw * 0.21, y + side * 0.1, 4.38), P.WALL)
         if vent and i == 0:
             b.box((pw * 0.62, 0.14, 0.95), (cx, y + side * 0.08, 2.3), P.METAL_DARK, bevel=0.02)
             b.box((pw * 0.54, 0.04, 0.8), (cx, y + side * 0.15, 2.38), P.VOID)
@@ -76,14 +83,9 @@ def wall_face(b, width, side, height=WALL_H, vent=False, pipes=False, marking=No
             b.box((0.62, 0.05, 0.8), (cx + 0.2, y + side * 0.1, 2.2), P.WALL, bevel=0.01)
             b.box((0.5, 0.03, 0.04), (cx + 0.2, y + side * 0.13, 2.85), P.METAL_DARK)
             b.box((0.16, 0.03, 0.1), (cx - 0.45, y + side * 0.12, 3.6), P.SCREEN)
-        b.box((0.11, 0.05, 0.09), (cx + pw * 0.32, y + side * 0.15, 0.58), P.METAL_DARK)
-        b.box((0.07, 0.05, 0.05), (cx + pw * 0.32, y + side * 0.17, 0.6), P.LAMP_WARM)
     for i in range(cols + 1):
         x = -width / 2 + i * pw
         b.box((0.24, 0.2, height - 0.45), (x, y + side * 0.08, 0.45), P.METAL_DARK, bevel=0.02)
-        b.box((0.1, 0.06, height - 0.9), (x, y + side * 0.19, 0.65), P.WALL_DARK)
-        bolts(b, x, y + side * 0.22, 0.75, height - 0.7, step=0.55, size=0.05, mat=P.METAL)
-    b.cylinder(0.06, width, (0, y + side * 0.2, 4.85), P.METAL_DARK, segments=6, rot_y=90, base=False)
     if pipes:
         for z, r, mat in ((3.05, 0.16, P.GUNMETAL), (3.42, 0.1, P.RUST), (2.8, 0.07, P.METAL_DARK)):
             b.cylinder(r, width, (0, y + side * (0.3 + r), z), mat, segments=10, rot_y=90, base=False)
@@ -166,37 +168,17 @@ def wall(b, width, vent=False, pipes=False, marking=None):
 @piece("Floor_Tile_4m", "Floors", collider="box", box=((0, 0, -0.1), (4, 4, 0.2)),
        notes="4 x 4 m steel deck plate, top at 0. Tile it on a 4 m grid.")
 def floor_tile(b):
-    # the concept's floor tile: a raised bolted border, four plates with a cross seam and small
-    # orange corner markers. Walking surface at 0.
-    b.box((4, 4, 0.2), (0, 0, -0.24), P.FLOOR_DARK)
-    for s in (-1, 1):
-        b.box((4.0, 0.1, 0.06), (0, s * 1.95, -0.04), P.GRIME_DARK, bevel=0.01)
-        b.box((0.1, 3.8, 0.06), (s * 1.95, 0, -0.04), P.GRIME_DARK, bevel=0.01)
-    shades = (P.FLOOR, P.FLOOR_LIGHT, P.FLOOR_LIGHT, P.FLOOR)
-    for i, (sx, sy) in enumerate(((-1, -1), (1, -1), (-1, 1), (1, 1))):
-        b.box((1.84, 1.84, 0.04), (sx * 0.95, sy * 0.95, -0.04), shades[i], bevel=0.012)
-        b.box((1.2, 0.03, 0.01), (sx * 0.95, sy * 0.95, 0.0), P.FLOOR_DARK)
-        for bx, by in ((-0.78, -0.78), (0.78, -0.78), (-0.78, 0.78), (0.78, 0.78)):
-            b.box((0.06, 0.06, 0.015), (sx * 0.95 + bx, sy * 0.95 + by, 0.0), P.METAL)
-    b.box((3.8, 0.06, 0.05), (0, 0, -0.04), P.GRIME_DARK)
-    b.box((0.06, 3.8, 0.05), (0, 0, -0.04), P.GRIME_DARK)
-    for sx in (-1, 1):
-        for sy in (-1, 1):
-            b.box((0.14, 0.14, 0.02), (sx * 1.95, sy * 1.95, 0.02), P.METAL)
-            b.box((0.2, 0.05, 0.015), (sx * 1.76, sy * 1.95, 0.02), P.HAZARD)
-    for x in (-1.4, -0.5, 0.5, 1.4):
-        for s in (-1, 1):
-            b.box((0.05, 0.05, 0.015), (x, s * 1.95, 0.02), P.METAL)
-            b.box((0.05, 0.05, 0.015), (s * 1.95, x, 0.02), P.METAL)
+    # big flat slabs like the arena floor: four plates in two shades with thin dark seams, all
+    # flush at 0 so the seams are painted lines (a stepped seam is sub-pixel at game distance and
+    # breaks the ink lines into dashes).
+    flush_plates(b, ((-1, -1, P.FLOOR), (1, -1, P.FLOOR_LIGHT), (-1, 1, P.FLOOR_LIGHT), (1, 1, P.FLOOR)))
 
 
 @piece("Floor_Tile_Clean_4m", "Floors", collider="box", box=((0, 0, -0.1), (4, 4, 0.2)),
        notes="4 x 4 m lighter lab floor with a centre seam, for the living quarters.")
 def floor_tile_clean(b):
-    b.box((4, 4, 0.18), (0, 0, -0.2), P.FLOOR_DARK)
-    for sx in (-1, 1):
-        b.box((1.96, 3.96, 0.04), (sx * 1.0, 0, -0.04), P.FLOOR_LIGHT)
-    b.box((0.1, 3.9, 0.02), (0, 0, 0.0), P.METAL_DARK)
+    flush_plates(b, ((-1, -1, P.FLOOR_LIGHT), (1, -1, P.FLOOR_LIGHT), (-1, 1, P.FLOOR_LIGHT), (1, 1, P.FLOOR_LIGHT)),
+                 seam_mat=P.FLOOR)
 
 
 @piece("Floor_Grate_4m", "Floors", collider="box", box=((0, 0, -0.1), (4, 4, 0.2)),
@@ -318,11 +300,11 @@ def wall_b3(b):
 
 
 @piece("Wall_Pillar", "Walls", collider="box", box=((0, 0, 2.7), (1.0, 1.0, 5.4)), fade=True,
-       notes="Structural steel pillar, 1 m square and 5.4 m tall: riveted flanges, collars and a small "
+       notes="Structural steel pillar, 1 m square and 5.4 m tall: chamfered column, collars and a small "
              "amber service light near the foot. Put one on every wall joint.")
 def wall_pillar(b):
-    # the concept's pillar: a chamfered dark column on a heavy base block, panel lines, collars,
-    # a cap, a small tag and an orange light at the foot
+    # a chamfered dark column on a heavy base block, collars, a cap, a small tag and an orange
+    # light at the foot (no thin panel lines: they draw as dashed ink at game distance)
     def octagon(r, c):
         return [(r, -r + c), (r, r - c), (r - c, r), (-r + c, r), (-r, r - c), (-r, -r + c), (-r + c, -r),
                 (r - c, -r)]
@@ -332,13 +314,6 @@ def wall_pillar(b):
     for z in (1.7, 3.4):
         b.prism(octagon(0.5, 0.15), z, z + 0.14, P.METAL_DARK)
     for side in (-1, 1):
-        for axis in ("x", "y"):
-            if axis == "y":
-                b.box((0.05, 0.04, 4.0), (0, side * 0.465, 0.75), P.WALL_DARK)
-                b.box((0.03, 0.035, 4.0), (-0.16, side * 0.465, 0.75), P.WALL_DARK)
-            else:
-                b.box((0.04, 0.05, 4.0), (side * 0.465, 0, 0.75), P.WALL_DARK)
-        bolts(b, 0.18, side * 0.48, 0.8, 4.7, step=0.55, size=0.045, mat=P.METAL)
         b.box((0.14, 0.04, 0.07), (0, side * 0.61, 0.3), P.LAMP_WARM)
     b.box((0.16, 0.02, 0.1), (0.0, -0.47, 3.85), P.MARKING)
     b.box((0.05, 0.02, 0.05), (0.0, -0.48, 3.7), P.LAMP_WARM)

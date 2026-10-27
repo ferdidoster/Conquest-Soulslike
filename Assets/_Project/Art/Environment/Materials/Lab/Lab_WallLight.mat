@@ -31,15 +31,15 @@ Material:
     m_Floats:
     - _Cull: 2
     - _GritScale: 1.2
-    - _GritStrength: 0.3
+    - _GritStrength: 0.2
     - _ShadowSoftness: 0.03
     - _ShadowThreshold: 0.05
     - _SwaySpeed: 1.6
     - _SwayStrength: 0
     - _VertexColorStrength: 1
     m_Colors:
-    - _BaseColor: {r: 0.39215687, g: 0.42352942, b: 0.4627451, a: 1}
+    - _BaseColor: {r: 0.6627451, g: 0.6862745, b: 0.75686276, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShadowColor: {r: 0.32156864, g: 0.3764706, b: 0.47843137, a: 1}
+    - _ShadowColor: {r: 0.5019608, g: 0.53333336, b: 0.6666667, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

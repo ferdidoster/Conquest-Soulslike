@@ -640,9 +640,10 @@ def fill_room_floors(L):
 
 
 # grime decals and loose floor cables per section: (decals, cable runs)
-GRIME = {"Hub": (5, 2), "Corridor": (3, 2), "InnerRing": (10, 4), "OuterRing": (14, 5), "Technical": (9, 6),
-         "Sleeping": (7, 1), "Bathroom": (5, 0), "Kitchen": (7, 1), "Storage": (8, 3), "Lab": (10, 6),
-         "Elevator": (2, 1)}
+# (no grime decals: the arena's floors are clean, and raised decals draw dashed ink edges)
+GRIME = {"Hub": (0, 1), "Corridor": (0, 0), "InnerRing": (0, 1), "OuterRing": (0, 2), "Technical": (0, 3),
+         "Sleeping": (0, 0), "Bathroom": (0, 0), "Kitchen": (0, 0), "Storage": (0, 1), "Lab": (0, 2),
+         "Elevator": (0, 0)}
 
 
 def scatter_grime(L):

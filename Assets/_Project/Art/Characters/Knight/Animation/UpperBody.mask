@@ -15,6 +15,10 @@ AvatarMask:
     m_Weight: 0
   - m_Path: Gun_Holster
     m_Weight: 0
+  - m_Path: Injector_Gauntlet
+    m_Weight: 0
+  - m_Path: Injector_Hand
+    m_Weight: 0
   - m_Path: Knight
     m_Weight: 0
   - m_Path: Knight/Root
@@ -42,6 +46,8 @@ AvatarMask:
   - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.L/LowerArm.L/Hand.L
     m_Weight: 1
   - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.L/LowerArm.L/Hand.L/Gun_Muzzle
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.L/LowerArm.L/Hand.L/Injector_Tip
     m_Weight: 1
   - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.L/LowerArm.L/Shield.L
     m_Weight: 1
@@ -72,6 +78,8 @@ AvatarMask:
   - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Hand.R/Weapon.R/Longsword_1
     m_Weight: 1
   - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Hand.R/Weapon.R/Longsword_2
+    m_Weight: 1
+  - m_Path: Knight/Root/Hips/Spine/Chest/UpperArm.R/LowerArm.R/Injector_Port
     m_Weight: 1
   - m_Path: Knight/Root/Hips/UpperLeg.L
     m_Weight: 0

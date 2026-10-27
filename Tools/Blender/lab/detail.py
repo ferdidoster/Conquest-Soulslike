@@ -1,6 +1,6 @@
 """
 Shared detailing for the lab kit, after the concept sheet's asset callouts: heavy chamfered steel,
-framed plates with recessed panel lines, bolt rows, corner guards and small orange status lights.
+framed plates with recessed panel lines, corner guards and small orange status lights.
 All helpers work in a piece's local space (X along the front, -Y toward the viewer, Z up).
 """
 
@@ -8,28 +8,28 @@ from . import palette as P
 
 
 def bolts_row(b, x0, x1, y, z, n, size=0.05, mat=P.METAL):
-    """n bolt heads on a front face (facing -Y at depth y) from x0 to x1 at height z."""
-    for i in range(n):
-        x = x0 + (x1 - x0) * (i / (n - 1) if n > 1 else 0.5)
-        b.box((size, 0.03, size), (x, y - 0.015, z - size / 2), mat)
+    """n bolt heads on a front face (facing -Y at depth y) from x0 to x1 at height z. Off in the
+    game's chunky look (no rivets), kept so callers still build."""
+    return
 
 
 def framed_plate(b, w, h, cx, y, z0, depth=0.06, frame=0.07, mat=P.WALL, frame_mat=P.METAL_DARK,
                  seams=0, bolts=0, face=-1):
-    """A plate of w x h on a face at depth y (face=-1 looks toward -Y): raised frame, recessed
-    centre, optional vertical seams and corner bolts."""
+    """A plate of w x h on a face at depth y (face=-1 looks toward -Y): a flush frame border
+    around the centre, optional vertical seams. `bolts` is ignored:
+    rivets are off in the game's chunky look."""
+    # frame strips and centre plate abut on one flush front, so the frame is a painted border
+    # rather than a 3 cm lip (which would draw as dashed ink at game distance)
     out = face
-    b.box((w, depth, h), (cx, y + out * depth / 2, z0), frame_mat, bevel=0.012)
-    b.box((w - 2 * frame, depth * 0.5, h - 2 * frame), (cx, y + out * depth * 0.95, z0 + frame), mat,
-          bevel=0.008)
+    yc = y + out * depth / 2
+    b.box((w, depth, frame), (cx, yc, z0), frame_mat)
+    b.box((w, depth, frame), (cx, yc, z0 + h - frame), frame_mat)
+    for s in (-1, 1):
+        b.box((frame, depth, h - 2 * frame), (cx + s * (w - frame) / 2, yc, z0 + frame), frame_mat)
+    b.box((w - 2 * frame, depth, h - 2 * frame), (cx, yc, z0 + frame), mat)
     for i in range(seams):
         x = cx - w / 2 + w * (i + 1) / (seams + 1)
         b.box((0.025, depth * 0.3, h - 2 * frame), (x, y + out * depth * 1.25, z0 + frame), frame_mat)
-    if bolts:
-        for sx in (-1, 1):
-            for z in (z0 + frame * 0.5, z0 + h - frame * 0.5):
-                b.box((0.04, 0.02, 0.04), (cx + sx * (w / 2 - frame * 0.5), y + out * (depth + 0.01), z - 0.02),
-                      P.METAL)
 
 
 def chamfer_frame(b, w, h, t, d, cx, cy, z0, chamfer, mat=P.METAL_DARK):

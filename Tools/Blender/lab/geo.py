@@ -26,6 +26,8 @@ def _xf(loc=(0, 0, 0), rot_z=0.0, rot_x=0.0, rot_y=0.0):
             @ Matrix.Rotation(math.radians(rot_x), 4, "X"))
 
 
+MIN_BEVEL = 0.03
+
 class MeshBuilder:
     def __init__(self, name, seed=None):
         self.name = name
@@ -54,7 +56,9 @@ class MeshBuilder:
         idx = self._mat(mat)
         for f in faces:
             f.material_index = idx
-        if bevel > 0:
+        # bevels under MIN_BEVEL are dropped: at game distance they are sub-pixel, and a corner the
+        # ink pass sees only some of the time draws as a dashed line instead of a crisp edge
+        if bevel >= MIN_BEVEL:
             edges = {e for f in faces for e in f.edges}
             result = bmesh.ops.bevel(self.bm, geom=list(edges), offset=bevel, segments=1,
                                      affect="EDGES", clamp_overlap=True)
