@@ -23,8 +23,9 @@ namespace Conquest.Animation
         private float minCrossFade;
         [SerializeField, Tooltip("Eases the guard layer in and out instead of blending it linearly.")]
         private bool easeGuardBlend;
-        [SerializeField, Tooltip("Returning to locomotion starts the blend tree from standing, instead of from " +
-                                 "whatever speed it had before the action (which makes the legs run on the spot).")]
+        [SerializeField, Tooltip("Returning to locomotion starts the blend tree at the speed the character is " +
+                                 "moving, instead of whatever speed it had before the action (which makes the " +
+                                 "legs run on the spot).")]
         private bool resetLocomotionOnReturn;
 
         private int _guardLayer = -1;
@@ -70,12 +71,14 @@ namespace Conquest.Animation
         /// <summary>Shows the guard pose on the upper body while the legs keep walking.</summary>
         public void SetGuarding(bool guarding) => _guardTarget = guarding ? 1f : 0f;
 
-        /// <summary>Cross-fades the base layer into a named action state.</summary>
-        public void Play(string stateName, float crossFade = -1f)
+        /// <summary>
+        /// Cross-fades the base layer into a named action state, <paramref name="startSeconds"/> into its clip.
+        /// </summary>
+        public void Play(string stateName, float crossFade = -1f, float startSeconds = 0f)
         {
             float fade = crossFade < 0f ? defaultCrossFade : crossFade;
             fade = Mathf.Max(minCrossFade, fade * crossFadeScale);
-            animator.CrossFadeInFixedTime(stateName, fade, 0, 0f);
+            animator.CrossFadeInFixedTime(stateName, fade, 0, startSeconds);
         }
 
         /// <summary>Freezes the pose in place (hit-stop) or lets it play on.</summary>
@@ -110,14 +113,17 @@ namespace Conquest.Animation
             _guardLayer = animator.GetLayerIndex(AnimatorStates.GuardLayer);
         }
 
-        /// <summary>Returns to the locomotion blend tree.</summary>
-        public void PlayLocomotion(float crossFade = 0.2f)
+        /// <summary>
+        /// Returns to the locomotion blend tree. <paramref name="startMove"/> is the movement it starts from
+        /// (see <see cref="SetLocomotion"/>), used with resetLocomotionOnReturn.
+        /// </summary>
+        public void PlayLocomotion(Vector2 startMove, float crossFade = 0.2f)
         {
             if (resetLocomotionOnReturn)
             {
-                animator.SetFloat(AnimatorParameters.MoveX, 0f);
-                animator.SetFloat(AnimatorParameters.MoveY, 0f);
-                animator.SetFloat(AnimatorParameters.Speed, 0f);
+                animator.SetFloat(AnimatorParameters.MoveX, startMove.x);
+                animator.SetFloat(AnimatorParameters.MoveY, startMove.y);
+                animator.SetFloat(AnimatorParameters.Speed, startMove.magnitude);
             }
             Play(AnimatorStates.Locomotion, crossFade);
         }

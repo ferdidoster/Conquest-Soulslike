@@ -44,6 +44,9 @@ namespace Conquest.Character
         [SerializeField] private ReactionSettings reactions = new ReactionSettings();
         [SerializeField, Tooltip("Seconds an early button press is remembered.")]
         private float inputBufferTime = 0.35f;
+        [SerializeField, Tooltip("Moving the stick (or raising the guard) breaks out of the end of an attack or " +
+                                 "roll, from its moveCancelFrom point. Off for AI, which always holds a direction.")]
+        private bool moveCancelsRecovery;
 
         private readonly StateMachine _stateMachine = new StateMachine();
         private InputBuffer<CharacterAction> _buffer;
@@ -66,6 +69,8 @@ namespace Conquest.Character
         private ReactionState _reactionState;
         private DeadState _deadState;
         private float _hitStopRemaining;
+        // Time the input buffer runs on: it stands still during hit-stop, so a press made on impact survives the freeze.
+        private float _inputClock;
 
         public ICharacterInput Input => _input;
         public CharacterMotor Motor { get; private set; }
@@ -89,6 +94,10 @@ namespace Conquest.Character
         public bool IsDead => _stateMachine.IsIn(_deadState);
         public bool IsInHitStop => _hitStopRemaining > 0f;
         public bool IsParryableNow => !IsDead && _stateMachine.IsIn(_attackState) && _attackState.IsParryable;
+
+        /// <summary>True when the player asks to move or guard, which may cut an action's recovery short.</summary>
+        public bool WantsToBreakRecovery =>
+            moveCancelsRecovery && _input != null && (_input.MoveDirection.sqrMagnitude > 0.04f || _input.IsBlockHeld);
 
         public event Action<IState> StateChanged;
 
@@ -157,6 +166,7 @@ namespace Conquest.Character
         private void Update()
         {
             if (TickHitStop(Time.deltaTime)) return;
+            _inputClock += Time.deltaTime;
             Animator.SetGrounded(Motor.IsGrounded);
             _stateMachine.Tick(Time.deltaTime);
         }
@@ -210,7 +220,10 @@ namespace Conquest.Character
                 weapon.heavyAttack != null ? weapon.heavyAttack : _defaultHeavy);
         }
 
-        private void OnActionRequested(CharacterAction action) => _buffer.Push(action, Time.time);
+        private void OnActionRequested(CharacterAction action) => _buffer.Push(action, _inputClock);
+
+        /// <summary>Keeps a pending press from expiring, e.g. one made mid-swing that waits for the combo window.</summary>
+        public void HoldBufferedAction() => _buffer.Refresh(_inputClock);
 
         // ---------- Helpers used by states ----------
 
@@ -252,11 +265,11 @@ namespace Conquest.Character
         /// </summary>
         public bool TryStartBufferedAction(Predicate<CharacterAction> filter = null, AttackData currentAttack = null)
         {
-            if (!_buffer.TryPeek(Time.time, out CharacterAction action)) return false;
+            if (!_buffer.TryPeek(_inputClock, out CharacterAction action)) return false;
             if (filter != null && !filter(action)) return false;
             if (currentAttack == null && IsAttackLocked(action))
             {
-                _buffer.Clear(); // a press during the cooldown is spent, not saved for later
+                HoldBufferedAction(); // a press during the cooldown swings as soon as it ends
                 return false;
             }
             if (action == CharacterAction.Heal && (_injector == null || !_injector.HasCharge))
@@ -280,6 +293,10 @@ namespace Conquest.Character
             switch (action)
             {
                 case CharacterAction.LightAttack:
+                    // Out of a roll or backstep, the light attack becomes the moveset's roll attack.
+                    if (currentAttack == null && _stateMachine.IsIn(_dodgeState) && lightAttack != null &&
+                        lightAttack.rollAttack != null)
+                        return Attack(lightAttack.rollAttack, action);
                     return Attack(NextInCombo(currentAttack, lightAttack), action);
                 case CharacterAction.HeavyAttack:
                     return Attack(NextInCombo(currentAttack, heavyAttack), action);

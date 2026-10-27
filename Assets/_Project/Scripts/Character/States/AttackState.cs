@@ -52,7 +52,9 @@ namespace Conquest.Character.States
             _chargeTime = 0f;
             Character.Stamina.Spend(_attack.staminaCost);
             Character.FaceIntendedDirection();
-            Character.Animator.Play(_attack.animationState, _attack.crossFade);
+            float offset = _attack.startAt * _attack.duration;
+            Skip(offset);
+            Character.Animator.Play(_attack.animationState, _attack.crossFade, offset);
         }
 
         protected override void OnTick(float dt)
@@ -70,9 +72,16 @@ namespace Conquest.Character.States
             // forwardSpeed is in clip time, so scale it with the tempo to keep each step's distance.
             Character.Motor.SetPlanarVelocityImmediate(Character.transform.forward * (_attack.forwardSpeed.Evaluate(t) * tempo));
             UpdateHitWindow(t);
+            // From the strike on, a press waits for its window instead of expiring before it opens.
+            if (t >= _attack.activeWindow.start) Character.HoldBufferedAction();
 
             if (_attack.comboWindow.Contains(t) && TryChain()) return;
             if (t >= _attack.dodgeCancelFrom && Character.TryStartBufferedAction(a => a == CharacterAction.Dodge)) return;
+            if (t >= _attack.moveCancelFrom && Character.WantsToBreakRecovery)
+            {
+                Character.EnterLocomotion();
+                return;
+            }
             // With a cooldown, a press left in the buffer can't start a fresh swing straight away.
             if (IsFinished && !Character.TryStartBufferedAction(a => _attack.cooldown <= 0f || !IsAttack(a)))
                 Character.EnterLocomotion();

@@ -90,7 +90,8 @@ rebuild the scene). The `Kit_*` materials are re-synced from `palette.py` on eve
 
 Hits are meant to land hard. All of it is data, so you can tune it while playing:
 
-- **Hit-stop:** both fighters freeze for a few frames when a blow connects. The defender's model shudders along the blow. Heavier blows freeze longer.
+- **Hit-stop:** both fighters freeze for a few frames when a blow connects. The defender's model shudders along the blow. Heavier blows freeze longer. The attacker's freeze is capped (`maxAttackerHitStop` on the profile) so landing a hit never stalls your next input.
+- **Flow:** a press made during a swing waits for the combo window instead of expiring, and the buffer stands still during hit-stop. A press during a weapon's cooldown swings as soon as it ends. Moving the stick or raising the guard breaks out of the end of an attack (`moveCancelFrom`) or a roll. Pressing light attack out of a roll or backstep does the moveset's roll attack (`rollAttack` on the first attack of the chain).
 - **Camera:** shake, a jolt along the blow and a small zoom punch. The orbit camera and the isometric Cinemachine cameras read the same shared signal (`CameraShake`, plus `CinemachineShakeExtension` on each Cinemachine camera).
 - **Weight:** each `AttackData` has a `weight` (1 = light, 2 = heavy). Weight scales knockback, hit-stop, shake and blood. Blows at or above `heavyHitWeight` stagger instead of flinch. The attacks hold a wind-up, strike over three frames, overshoot, and then have a long recovery. The body shifts back during the wind-up and lunges into the strike.
 - **Blood:** in a flat Sable style. Hits spray droplets along the blow and the swing, splats land where the droplets fall, and a pool spreads under the dead (`BloodSpray`, `SplatDecals`, shader `Conquest/Flat Splat`).

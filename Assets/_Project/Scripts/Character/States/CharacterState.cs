@@ -34,6 +34,9 @@ namespace Conquest.Character.States
 
         public void Exit() => OnExit();
 
+        /// <summary>Moves the state's clock ahead, e.g. to start an attack part way into its clip.</summary>
+        protected void Skip(float seconds) => Elapsed += seconds;
+
         protected virtual void OnEnter() { }
         protected virtual void OnTick(float deltaTime) { }
         protected virtual void OnExit() { }

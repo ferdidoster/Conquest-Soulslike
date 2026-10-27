@@ -44,6 +44,12 @@ namespace Conquest.Core.Utilities
             return true;
         }
 
+        /// <summary>Restarts the lifetime of the buffered value, so a press can wait for its window.</summary>
+        public void Refresh(float now)
+        {
+            if (HasValue(now)) _timestamp = now;
+        }
+
         public void Clear() => _value = null;
     }
 }

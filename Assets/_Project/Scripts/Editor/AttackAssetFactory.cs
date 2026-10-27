@@ -18,8 +18,10 @@ namespace Conquest.EditorTools
         /// 6: heavier greatsword: a slow wind-up that hangs before the strike, a fast strike, a dragging
         ///    recovery (<see cref="AttackData.tempo"/>), heavier blows and earlier commitment to the aim.
         /// 7: greatsword cooldown: a short pause after a swing before a new one can start, and a later combo window.
+        /// 8: fluid recovery: moving cancels the end of a swing (<see cref="AttackData.moveCancelFrom"/>), the
+        ///    greatsword recovery no longer drags after the strike, and each moveset has a roll attack.
         /// </summary>
-        private const int DefaultsVersion = 7;
+        private const int DefaultsVersion = 8;
 
         /// <summary>Forward travel between two clip frames (30 fps), e.g. a step synced to the animation's feet.</summary>
         private readonly struct Step
@@ -51,6 +53,7 @@ namespace Conquest.EditorTools
 
             Link(a1, a2);
             Link(a2, a3);
+            SetRollAttack(a1, CreateRollAttack(folder, a1, startAt: 0.2f));
             AssetDatabase.SaveAssets();
             return (a1, heavy);
         }
@@ -78,6 +81,7 @@ namespace Conquest.EditorTools
 
             Link(a1, a2);
             Link(a2, a3);
+            SetRollAttack(a1, CreateRollAttack(folder, a1, startAt: 0.22f));
             AssetDatabase.SaveAssets();
             return (a1, heavy);
         }
@@ -105,6 +109,7 @@ namespace Conquest.EditorTools
             // A heavy weapon has to settle before the next swing of the combo can follow.
             data.comboWindow = new TimeWindow(active.end + (heavy ? 0.15f : -0.05f), 0.95f);
             data.dodgeCancelFrom = active.end + 0.1f;
+            data.moveCancelFrom = Mathf.Max(0.7f, data.comboWindow.start + 0.1f);
             data.trackingUntil = Mathf.Max(0.1f, active.start - (heavy ? 0.16f : 0.08f));
             data.tempo = heavy ? HeavyTempo(active) : new AnimationCurve();
             data.cooldown = heavy ? 0.35f : 0f;
@@ -139,8 +144,9 @@ namespace Conquest.EditorTools
         }
 
         /// <summary>
-        /// Playback speed of a heavy weapon: the wind-up drags and hangs for a beat at the top, the strike
-        /// snaps through faster than the clip, then the recovery drags as the blade's weight is reined in.
+        /// Playback speed of a heavy weapon: the wind-up drags and hangs for a beat at the top and the strike
+        /// snaps through faster than the clip. The blade is reined in with a short check after the strike, then
+        /// the recovery plays at the clip's speed so the next action isn't kept waiting.
         /// </summary>
         private static AnimationCurve HeavyTempo(TimeWindow active)
         {
@@ -148,8 +154,45 @@ namespace Conquest.EditorTools
             return new AnimationCurve(
                 new Keyframe(0f, 0.85f, 0f, 0f), new Keyframe(s - 0.14f, 0.7f, 0f, 0f),
                 new Keyframe(s - 0.05f, 0.5f, 0f, 0f), new Keyframe(s, 1.35f, 0f, 0f),
-                new Keyframe(e, 1.2f, 0f, 0f), new Keyframe(e + 0.05f, 0.55f, 0f, 0f),
-                new Keyframe(e + 0.2f, 0.8f, 0f, 0f), new Keyframe(1f, 0.95f, 0f, 0f));
+                new Keyframe(e, 1.2f, 0f, 0f), new Keyframe(e + 0.05f, 0.8f, 0f, 0f),
+                new Keyframe(e + 0.15f, 1f, 0f, 0f), new Keyframe(1f, 1f, 0f, 0f));
+        }
+
+        /// <summary>
+        /// The attack out of a roll: the chain's first swing started past most of its wind-up
+        /// (<paramref name="startAt"/>), at the clip's own speed and without a charge.
+        /// </summary>
+        private static AttackData CreateRollAttack(string folder, AttackData source, float startAt)
+        {
+            string path = $"{folder}/Attack_Roll.asset";
+            var data = AssetDatabase.LoadAssetAtPath<AttackData>(path);
+            if (data != null && data.defaultsVersion >= DefaultsVersion) return data;
+            if (data == null)
+            {
+                data = ScriptableObject.CreateInstance<AttackData>();
+                AssetDatabase.CreateAsset(data, path);
+            }
+
+            EditorUtility.CopySerialized(source, data);
+            data.name = "Attack_Roll"; // CopySerialized copies the source's name too
+            data.startAt = startAt;
+            data.tempo = new AnimationCurve();
+            data.chargeable = false;
+            data.cooldown = 0f;
+            data.trackingUntil = Mathf.Max(data.trackingUntil, startAt + 0.08f);
+            data.damage = data.guardDamage = source.damage * 0.85f;
+            data.next = null;
+            data.rollAttack = null;
+            data.defaultsVersion = DefaultsVersion;
+            EditorUtility.SetDirty(data);
+            return data;
+        }
+
+        private static void SetRollAttack(AttackData chainStart, AttackData rollAttack)
+        {
+            if (chainStart.rollAttack == rollAttack) return;
+            chainStart.rollAttack = rollAttack;
+            EditorUtility.SetDirty(chainStart);
         }
 
         /// <summary>

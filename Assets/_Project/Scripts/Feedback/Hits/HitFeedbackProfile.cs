@@ -13,6 +13,9 @@ namespace Conquest.Feedback
     {
         [Tooltip("Values marked 'scaled' grow with the blow's weight: 0.5 + 0.5 * weight.")]
         public HitFeedbackEntry[] entries = Array.Empty<HitFeedbackEntry>();
+        [Tooltip("The attacker never freezes longer than this (seconds), however heavy the blow, so landing " +
+                 "a hit doesn't stall the next input. The defender still gets the full hit-stop.")]
+        [Min(0f)] public float maxAttackerHitStop = 0.07f;
 
         /// <summary>Version of the generated defaults; lets the setup tool refresh untouched profiles.</summary>
         [HideInInspector] public int defaultsVersion;
