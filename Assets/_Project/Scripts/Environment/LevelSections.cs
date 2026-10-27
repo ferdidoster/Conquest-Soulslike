@@ -32,7 +32,7 @@ namespace Conquest.Environment
 
         [Header("Other sections")]
         [Tooltip("Colour multiplier for everything outside the current section.")]
-        [SerializeField] private Color dimTint = new Color(0.5f, 0.53f, 0.66f, 1f);
+        [SerializeField] private Color dimTint = new Color(0.36f, 0.34f, 0.42f, 1f);
         [Tooltip("How much of their glow lamps and screens keep outside the current section.")]
         [SerializeField, Range(0f, 1f)] private float glowKept = 0.75f;
         [Tooltip("Seconds the light takes to come up in a section the player enters (and to dim in the one left). 0 = at once.")]

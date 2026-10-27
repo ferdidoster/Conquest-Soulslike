@@ -685,14 +685,14 @@ def _fill_marker(b):
 
 
 @piece("Light_Fill_Cold", "Lights", collider="none",
-       lights=[{"offset": (0, 0, 4.2), "color": "#A9C8EE", "range": 13.0, "intensity": 0.7}],
+       lights=[{"offset": (0, 0, 4.2), "color": "#A9C8EE", "range": 13.0, "intensity": 0.9}],
        notes="Invisible cold ceiling light that lifts a room's mid-tones (the concept's overhead panels).")
 def light_fill_cold(b):
     _fill_marker(b)
 
 
 @piece("Light_Fill_Warm", "Lights", collider="none",
-       lights=[{"offset": (0, 0, 4.2), "color": "#FF9A50", "range": 13.0, "intensity": 0.6}],
+       lights=[{"offset": (0, 0, 4.2), "color": "#FF9A50", "range": 13.0, "intensity": 0.9}],
        notes="Invisible warm ceiling light for workshops and living areas.")
 def light_fill_warm(b):
     _fill_marker(b)

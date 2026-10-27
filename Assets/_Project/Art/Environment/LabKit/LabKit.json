@@ -2,223 +2,223 @@
   "palette": [
     {
       "name": "Lab_Floor",
-      "color": "#8E93A3",
+      "color": "#6E646B",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.2,
+      "grit": 0.34,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_FloorLight",
-      "color": "#989DAD",
+      "color": "#7C7279",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.18,
+      "grit": 0.32,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_FloorDark",
-      "color": "#6B7082",
+      "color": "#4A3F46",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.16,
+      "grit": 0.28,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_Grate",
-      "color": "#737889",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.14,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#8088AA"
-    },
-    {
-      "name": "Lab_Tile",
-      "color": "#B8BCC7",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.14,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#8088AA"
-    },
-    {
-      "name": "Lab_Wall",
-      "color": "#8B91A5",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.22,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#8088AA"
-    },
-    {
-      "name": "Lab_WallLight",
-      "color": "#A9AFC1",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.2,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#8088AA"
-    },
-    {
-      "name": "Lab_WallDark",
-      "color": "#61677B",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.2,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#8088AA"
-    },
-    {
-      "name": "Lab_Concrete",
-      "color": "#9C9BA7",
+      "color": "#554B52",
       "emission": "#000000",
       "emissionIntensity": 0.0,
       "grit": 0.26,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
+    },
+    {
+      "name": "Lab_Tile",
+      "color": "#9A9098",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.26,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#5A5670"
+    },
+    {
+      "name": "Lab_Wall",
+      "color": "#6A6070",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.36,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#5A5670"
+    },
+    {
+      "name": "Lab_WallLight",
+      "color": "#807484",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.34,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#5A5670"
+    },
+    {
+      "name": "Lab_WallDark",
+      "color": "#463A44",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.32,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#5A5670"
+    },
+    {
+      "name": "Lab_Concrete",
+      "color": "#7A6E72",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.4,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_Metal",
-      "color": "#9DA2B2",
+      "color": "#8D8F97",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.16,
+      "grit": 0.28,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_MetalDark",
-      "color": "#4C4E60",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.14,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#8088AA"
-    },
-    {
-      "name": "Lab_Steel",
-      "color": "#C2C6D0",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.12,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#8088AA"
-    },
-    {
-      "name": "Lab_Plastic",
-      "color": "#3C3E4C",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.06,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#8088AA"
-    },
-    {
-      "name": "Lab_Rust",
-      "color": "#B8654A",
+      "color": "#3A2C30",
       "emission": "#000000",
       "emissionIntensity": 0.0,
       "grit": 0.24,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
+    },
+    {
+      "name": "Lab_Steel",
+      "color": "#ADA9AE",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.22,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#5A5670"
+    },
+    {
+      "name": "Lab_Plastic",
+      "color": "#2E2629",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.12,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#5A5670"
+    },
+    {
+      "name": "Lab_Rust",
+      "color": "#9E5A48",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.4,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_Hazard",
-      "color": "#E9B23C",
+      "color": "#C99A4A",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.2,
+      "grit": 0.34,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_Marking",
-      "color": "#EEEFF3",
+      "color": "#D8D3CA",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.2,
+      "grit": 0.36,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_Porcelain",
-      "color": "#E7E9EE",
+      "color": "#CECAC3",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.08,
+      "grit": 0.16,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_Fabric",
-      "color": "#A8323C",
+      "color": "#8E2E32",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.06,
+      "grit": 0.16,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_FabricBlue",
-      "color": "#4E6A9C",
+      "color": "#5A6A86",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.06,
+      "grit": 0.16,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_Mattress",
-      "color": "#DCD5C6",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.08,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#8088AA"
-    },
-    {
-      "name": "Lab_Wood",
-      "color": "#8C6548",
+      "color": "#B7B0A6",
       "emission": "#000000",
       "emissionIntensity": 0.0,
       "grit": 0.2,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
+    },
+    {
+      "name": "Lab_Wood",
+      "color": "#6E5042",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.3,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_Void",
-      "color": "#2A2A3A",
+      "color": "#1E171A",
       "emission": "#000000",
       "emissionIntensity": 0.0,
       "grit": 0.0,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_Glow",
@@ -292,27 +292,27 @@
     },
     {
       "name": "Lab_Grime",
-      "color": "#7D8292",
+      "color": "#5E5458",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.24,
+      "grit": 0.36,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_GrimeDark",
-      "color": "#717586",
+      "color": "#52484C",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.22,
+      "grit": 0.34,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_Puddle",
-      "color": "#6E7C94",
+      "color": "#5A5E6A",
       "emission": "#000000",
       "emissionIntensity": 0.0,
       "grit": 0.04,
@@ -332,33 +332,33 @@
     },
     {
       "name": "Lab_Cardboard",
-      "color": "#B88F62",
+      "color": "#9A7A5A",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.18,
+      "grit": 0.3,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_Gunmetal",
-      "color": "#686D7E",
+      "color": "#5A5058",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.18,
+      "grit": 0.3,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_WoodGrey",
-      "color": "#8E887E",
+      "color": "#6E665E",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.22,
+      "grit": 0.32,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#8088AA"
+      "shadow": "#5A5670"
     },
     {
       "name": "Lab_Specimen",
@@ -3287,7 +3287,7 @@
           ],
           "color": "#A9C8EE",
           "range": 13.0,
-          "intensity": 0.7,
+          "intensity": 0.9,
           "flicker": 0.0,
           "spot": 0.0
         }
@@ -3333,7 +3333,7 @@
           ],
           "color": "#FF9A50",
           "range": 13.0,
-          "intensity": 0.6,
+          "intensity": 0.9,
           "flicker": 0.0,
           "spot": 0.0
         }

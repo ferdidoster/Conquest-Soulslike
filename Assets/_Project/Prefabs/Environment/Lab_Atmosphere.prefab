@@ -48,13 +48,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Conquest.Environment::Conquest.Environment.AtmosphereSettings
   skybox: {fileID: 2100000, guid: 987f881d7e6aa6549b9357c1b607bc36, type: 2}
   sun: {fileID: 549966736103470395}
-  skyColor: {r: 0.6, g: 0.63, b: 0.74, a: 1}
-  equatorColor: {r: 0.54, g: 0.54, b: 0.6, a: 1}
-  groundColor: {r: 0.44, g: 0.4, b: 0.42, a: 1}
+  skyColor: {r: 0.44, g: 0.45, b: 0.54, a: 1}
+  equatorColor: {r: 0.4, g: 0.37, b: 0.4, a: 1}
+  groundColor: {r: 0.26, g: 0.23, b: 0.25, a: 1}
   fog: 1
-  fogColor: {r: 0.32, g: 0.34, b: 0.46, a: 1}
-  fogStart: 35
-  fogEnd: 120
+  fogColor: {r: 0.3, g: 0.27, b: 0.33, a: 1}
+  fogStart: 18
+  fogEnd: 95
 --- !u!114 &4175486297661686063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,8 +114,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 13
   m_Type: 1
-  m_Color: {r: 1, g: 0.97, b: 0.93, a: 1}
-  m_Intensity: 1.05
+  m_Color: {r: 1, g: 0.92, b: 0.84, a: 1}
+  m_Intensity: 0.9
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
