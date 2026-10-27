@@ -2,223 +2,223 @@
   "palette": [
     {
       "name": "Lab_Floor",
-      "color": "#484C52",
+      "color": "#8E93A3",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.32,
+      "grit": 0.2,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_FloorLight",
-      "color": "#53585F",
+      "color": "#989DAD",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.28,
+      "grit": 0.18,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_FloorDark",
-      "color": "#22262C",
+      "color": "#6B7082",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.2,
+      "grit": 0.16,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_Grate",
-      "color": "#33373D",
+      "color": "#737889",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.2,
+      "grit": 0.14,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_Tile",
-      "color": "#8E969E",
+      "color": "#B8BCC7",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.14,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#8088AA"
+    },
+    {
+      "name": "Lab_Wall",
+      "color": "#8B91A5",
       "emission": "#000000",
       "emissionIntensity": 0.0,
       "grit": 0.22,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
-    },
-    {
-      "name": "Lab_Wall",
-      "color": "#4C535C",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.34,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_WallLight",
-      "color": "#646C76",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.3,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#52607A"
-    },
-    {
-      "name": "Lab_WallDark",
-      "color": "#2A2F36",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.28,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#52607A"
-    },
-    {
-      "name": "Lab_Concrete",
-      "color": "#57595C",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.42,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#52607A"
-    },
-    {
-      "name": "Lab_Metal",
-      "color": "#6E767F",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.26,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#52607A"
-    },
-    {
-      "name": "Lab_MetalDark",
-      "color": "#1F2328",
+      "color": "#A9AFC1",
       "emission": "#000000",
       "emissionIntensity": 0.0,
       "grit": 0.2,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
+    },
+    {
+      "name": "Lab_WallDark",
+      "color": "#61677B",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.2,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#8088AA"
+    },
+    {
+      "name": "Lab_Concrete",
+      "color": "#9C9BA7",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.26,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#8088AA"
+    },
+    {
+      "name": "Lab_Metal",
+      "color": "#9DA2B2",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.16,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#8088AA"
+    },
+    {
+      "name": "Lab_MetalDark",
+      "color": "#4C4E60",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.14,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_Steel",
-      "color": "#9AA2AA",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.18,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#52607A"
-    },
-    {
-      "name": "Lab_Plastic",
-      "color": "#17191D",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.08,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#52607A"
-    },
-    {
-      "name": "Lab_Rust",
-      "color": "#7A3E22",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.45,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#52607A"
-    },
-    {
-      "name": "Lab_Hazard",
-      "color": "#C08A2A",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.38,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#52607A"
-    },
-    {
-      "name": "Lab_Marking",
-      "color": "#B9BEC4",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.5,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#52607A"
-    },
-    {
-      "name": "Lab_Porcelain",
-      "color": "#C4CACF",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.14,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#52607A"
-    },
-    {
-      "name": "Lab_Fabric",
-      "color": "#6E2A26",
-      "emission": "#000000",
-      "emissionIntensity": 0.0,
-      "grit": 0.14,
-      "sway": 0.0,
-      "doubleSided": false,
-      "shadow": "#52607A"
-    },
-    {
-      "name": "Lab_FabricBlue",
-      "color": "#343E50",
+      "color": "#C2C6D0",
       "emission": "#000000",
       "emissionIntensity": 0.0,
       "grit": 0.12,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
+    },
+    {
+      "name": "Lab_Plastic",
+      "color": "#3C3E4C",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.06,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#8088AA"
+    },
+    {
+      "name": "Lab_Rust",
+      "color": "#B8654A",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.24,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#8088AA"
+    },
+    {
+      "name": "Lab_Hazard",
+      "color": "#E9B23C",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.2,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#8088AA"
+    },
+    {
+      "name": "Lab_Marking",
+      "color": "#EEEFF3",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.2,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#8088AA"
+    },
+    {
+      "name": "Lab_Porcelain",
+      "color": "#E7E9EE",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.08,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#8088AA"
+    },
+    {
+      "name": "Lab_Fabric",
+      "color": "#A8323C",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.06,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#8088AA"
+    },
+    {
+      "name": "Lab_FabricBlue",
+      "color": "#4E6A9C",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.06,
+      "sway": 0.0,
+      "doubleSided": false,
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_Mattress",
-      "color": "#A49E92",
+      "color": "#DCD5C6",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.18,
+      "grit": 0.08,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_Wood",
-      "color": "#4E3A2C",
+      "color": "#8C6548",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.28,
+      "grit": 0.2,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_Void",
-      "color": "#08090C",
+      "color": "#2A2A3A",
       "emission": "#000000",
       "emissionIntensity": 0.0,
       "grit": 0.0,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_Glow",
@@ -292,37 +292,37 @@
     },
     {
       "name": "Lab_Grime",
-      "color": "#3E4248",
+      "color": "#7D8292",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.5,
+      "grit": 0.24,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_GrimeDark",
-      "color": "#32363C",
+      "color": "#717586",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.45,
+      "grit": 0.22,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_Puddle",
-      "color": "#2A323C",
-      "emission": "#0A1420",
-      "emissionIntensity": 0.4,
-      "grit": 0.05,
+      "color": "#6E7C94",
+      "emission": "#000000",
+      "emissionIntensity": 0.0,
+      "grit": 0.04,
       "sway": 0.0,
       "doubleSided": false,
       "shadow": "#9E809E"
     },
     {
       "name": "Lab_TankGlass",
-      "color": "#21506F",
+      "color": "#4A8CB4",
       "emission": "#11528C",
       "emissionIntensity": 0.85,
       "grit": 0.0,
@@ -332,37 +332,37 @@
     },
     {
       "name": "Lab_Cardboard",
-      "color": "#6A5741",
+      "color": "#B88F62",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.3,
+      "grit": 0.18,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_Gunmetal",
-      "color": "#3A4048",
+      "color": "#686D7E",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.26,
+      "grit": 0.18,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_WoodGrey",
-      "color": "#4A4640",
+      "color": "#8E887E",
       "emission": "#000000",
       "emissionIntensity": 0.0,
-      "grit": 0.34,
+      "grit": 0.22,
       "sway": 0.0,
       "doubleSided": false,
-      "shadow": "#52607A"
+      "shadow": "#8088AA"
     },
     {
       "name": "Lab_Specimen",
-      "color": "#162E3E",
+      "color": "#3A6A86",
       "emission": "#0C2A40",
       "emissionIntensity": 0.7,
       "grit": 0.0,
@@ -1479,7 +1479,7 @@
       "category": "Walls",
       "model": "Assets/_Project/Art/Environment/LabKit/Meshes/Wall_Pillar.fbx",
       "collider": "box",
-      "notes": "Structural steel pillar, 1 m square and 5.4 m tall: riveted flanges, collars and a small amber service light near the foot. Put one on every wall joint.",
+      "notes": "Structural steel pillar, 1 m square and 5.4 m tall: chamfered column, collars and a small amber service light near the foot. Put one on every wall joint.",
       "boxCenter": [
         0,
         2.7,
@@ -3287,7 +3287,7 @@
           ],
           "color": "#A9C8EE",
           "range": 13.0,
-          "intensity": 1.6,
+          "intensity": 0.7,
           "flicker": 0.0,
           "spot": 0.0
         }
@@ -3333,7 +3333,7 @@
           ],
           "color": "#FF9A50",
           "range": 13.0,
-          "intensity": 1.8,
+          "intensity": 0.6,
           "flicker": 0.0,
           "spot": 0.0
         }

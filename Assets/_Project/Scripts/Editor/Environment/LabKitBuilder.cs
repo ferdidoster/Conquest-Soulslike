@@ -17,7 +17,7 @@ namespace Conquest.EditorTools
     ///   * one prefab per kit piece with colliders, lights, gates and camera fading
     ///     (Prefabs/Environment/LabKit/&lt;Category&gt;)
     ///   * the demo level as a prefab of nested kit prefabs and spawn points (Prefabs/Environment/Levels)
-    ///   * Lab_Atmosphere (cold fill light, dark haze, bloom) and the Lab_Demo scene.
+    ///   * Lab_Atmosphere (white key light, bright cool ambient, light haze, bloom) and the Lab_Demo scene.
     /// Build your own levels by dragging the kit prefabs into a scene; Level_LabDemo is just one
     /// arrangement of them.
     /// </summary>
@@ -105,7 +105,7 @@ namespace Conquest.EditorTools
             if (camera != null)
             {
                 camera.GetUniversalAdditionalCameraData().renderPostProcessing = true;
-                camera.backgroundColor = new Color(0.01f, 0.015f, 0.025f);
+                camera.backgroundColor = new Color(0.16f, 0.17f, 0.25f);
             }
 
             var sections = Object.FindFirstObjectByType<LevelSections>();
@@ -426,37 +426,39 @@ namespace Conquest.EditorTools
 
             if (sky != null)
             {
-                // underground: no sky, just a deep blue-black void
-                sky.SetColor("_ZenithColor", new Color(0.012f, 0.018f, 0.03f));
-                sky.SetColor("_HorizonColor", new Color(0.03f, 0.045f, 0.07f));
-                sky.SetColor("_GroundColor", new Color(0.01f, 0.012f, 0.02f));
+                // underground: no sky, a slate-blue void in the desert kit's Void value range
+                sky.SetColor("_ZenithColor", new Color(0.12f, 0.13f, 0.2f));
+                sky.SetColor("_HorizonColor", new Color(0.2f, 0.21f, 0.3f));
+                sky.SetColor("_GroundColor", new Color(0.1f, 0.1f, 0.16f));
                 sky.SetFloat("_SunSize", 0f);
                 sky.SetFloat("_CloudCover", 1f); // 1 = no clouds
                 EditorUtility.SetDirty(sky);
             }
 
             var root = new GameObject("Lab_Atmosphere");
-            var fillGo = new GameObject("Cold Fill Light");
+            var fillGo = new GameObject("Key Light");
             fillGo.transform.SetParent(root.transform, false);
             fillGo.transform.rotation = Quaternion.Euler(62f, -30f, 0f);
             var fill = fillGo.AddComponent<Light>();
             fill.type = LightType.Directional;
-            fill.color = new Color(0.46f, 0.56f, 0.74f);
-            fill.intensity = 0.5f;
+            // the arena's bright, near-white key light: strong enough for crisp cel shadows
+            fill.color = new Color(1f, 0.97f, 0.93f);
+            fill.intensity = 1.05f;
             fill.shadows = LightShadows.Soft;
-            fill.shadowStrength = 0.9f;
+            fill.shadowStrength = 0.85f;
 
             var atmosphere = root.AddComponent<AtmosphereSettings>();
             var so = new SerializedObject(atmosphere);
             so.FindProperty("skybox").objectReferenceValue = sky;
             so.FindProperty("sun").objectReferenceValue = fill;
-            so.FindProperty("skyColor").colorValue = new Color(0.24f, 0.29f, 0.39f);
-            so.FindProperty("equatorColor").colorValue = new Color(0.13f, 0.16f, 0.22f);
-            so.FindProperty("groundColor").colorValue = new Color(0.07f, 0.075f, 0.09f);
+            // high ambient fill like the desert's, in cool lavender instead of warm sand
+            so.FindProperty("skyColor").colorValue = new Color(0.6f, 0.63f, 0.74f);
+            so.FindProperty("equatorColor").colorValue = new Color(0.54f, 0.54f, 0.6f);
+            so.FindProperty("groundColor").colorValue = new Color(0.44f, 0.4f, 0.42f);
             so.FindProperty("fog").boolValue = true;
-            so.FindProperty("fogColor").colorValue = new Color(0.035f, 0.05f, 0.08f);
-            so.FindProperty("fogStart").floatValue = 20f;
-            so.FindProperty("fogEnd").floatValue = 75f;
+            so.FindProperty("fogColor").colorValue = new Color(0.32f, 0.34f, 0.46f);
+            so.FindProperty("fogStart").floatValue = 35f;
+            so.FindProperty("fogEnd").floatValue = 120f;
             so.ApplyModifiedPropertiesWithoutUndo();
 
             var volume = root.AddComponent<Volume>();
@@ -482,23 +484,23 @@ namespace Conquest.EditorTools
 
             Bloom bloom = GetOrAdd<Bloom>(profile);
             bloom.active = true;
-            bloom.threshold.Override(0.9f);
-            bloom.intensity.Override(1.4f);
+            bloom.threshold.Override(1.1f);
+            bloom.intensity.Override(0.7f);
             bloom.scatter.Override(0.6f);
             bloom.tint.Override(new Color(0.75f, 0.9f, 1f));
 
             Vignette vignette = GetOrAdd<Vignette>(profile);
             vignette.active = true;
-            vignette.intensity.Override(0.38f);
+            vignette.intensity.Override(0.18f);
             vignette.smoothness.Override(0.45f);
             vignette.color.Override(new Color(0.0f, 0.01f, 0.03f));
 
-            // concept mood: high contrast, deep shadows, muted paint
+            // the game's flat, clean paint: no extra contrast or desaturation
             ColorAdjustments grade = GetOrAdd<ColorAdjustments>(profile);
             grade.active = true;
-            grade.contrast.Override(12f);
-            grade.saturation.Override(-12f);
-            grade.postExposure.Override(0.35f);
+            grade.contrast.Override(0f);
+            grade.saturation.Override(4f);
+            grade.postExposure.Override(0f);
 
             EditorUtility.SetDirty(profile);
             return profile;

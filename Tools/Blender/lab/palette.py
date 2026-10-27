@@ -1,13 +1,14 @@
 """
-The underground laboratory palette, taken from the lab concept sheets: cold blue-grey steel and
-concrete, deep navy shadows, cyan glow from the containment tech, and warm orange and red
-accents from emergency lights. Every lab kit piece uses these materials by name; Unity builds
-one shared toon material per entry (see LabKit.json), so recolouring the whole kit is a matter
-of editing a material in Unity or a value here.
+The underground laboratory palette, in the game's own look rather than the dark concept sheets:
+the desert arena's light, flat stone values turned cold (lavender-blue stone and steel instead of
+sand and mauve), cyan glow from the containment tech, and one saturated accent per room (hazard
+yellow, cloth red, terracotta rust) the way the arena uses its red banners. Every lab kit piece
+uses these materials by name; Unity builds one shared toon material per entry (see LabKit.json),
+so recolouring the whole kit is a matter of editing a material in Unity or a value here.
 
 Colours are sRGB hex. `grit` is the strength of the procedural wear noise in the toon shader,
 `emission` an HDR colour with `emission_intensity` for glowing parts. `shadow` is the toon
-shadow tint (the desert kit keeps the shader's warm default; the lab goes cold).
+shadow tint (the desert kit keeps the shader's warm mauve default; the lab uses its cold twin).
 """
 
 import bpy
@@ -59,34 +60,33 @@ CRACK = WALL_DARK
 BONE = MARKING
 FLAME = LAMP_WARM
 
-COLD = "#52607A"
+COLD = "#8088AA"  # lavender-blue, the cold twin of the desert's mauve shadow
 
-# Swatches from the concept sheets: near-black blue (#1E242C), gunmetal (#3E454E), slate (#5A6672),
-# steel blue-grey (#7A8794), off-white (#D8DCE0), emergency orange (#E07A2A), alarm red (#D03A3A).
-# The steel stays mostly neutral; the blue comes from the light, not from the paint.
+# Values sit in the same light band as the desert kit's stone (#A0908F, #BFAAA0) so the ink
+# lines and cel shadows read; the dark tones are kept for trims and voids only.
 ENTRIES = {
-    FLOOR:       dict(color="#484C52", grit=0.32, shadow=COLD),
-    FLOOR_LIGHT: dict(color="#53585F", grit=0.28, shadow=COLD),
-    FLOOR_DARK:  dict(color="#22262C", grit=0.2, shadow=COLD),
-    GRATE:       dict(color="#33373D", grit=0.2, shadow=COLD),
-    TILE:        dict(color="#8E969E", grit=0.22, shadow=COLD),
-    WALL:        dict(color="#4C535C", grit=0.34, shadow=COLD),
-    WALL_LIGHT:  dict(color="#646C76", grit=0.3, shadow=COLD),
-    WALL_DARK:   dict(color="#2A2F36", grit=0.28, shadow=COLD),
-    CONCRETE:    dict(color="#57595C", grit=0.42, shadow=COLD),
-    METAL:       dict(color="#6E767F", grit=0.26, shadow=COLD),
-    METAL_DARK:  dict(color="#1F2328", grit=0.2, shadow=COLD),
-    STEEL:       dict(color="#9AA2AA", grit=0.18, shadow=COLD),
-    PLASTIC:     dict(color="#17191D", grit=0.08, shadow=COLD),
-    RUST:        dict(color="#7A3E22", grit=0.45, shadow=COLD),
-    HAZARD:      dict(color="#C08A2A", grit=0.38, shadow=COLD),
-    MARKING:     dict(color="#B9BEC4", grit=0.5, shadow=COLD),
-    PORCELAIN:   dict(color="#C4CACF", grit=0.14, shadow=COLD),
-    FABRIC:      dict(color="#6E2A26", grit=0.14, shadow=COLD),
-    FABRIC_BLUE: dict(color="#343E50", grit=0.12, shadow=COLD),
-    MATTRESS:    dict(color="#A49E92", grit=0.18, shadow=COLD),
-    WOOD:        dict(color="#4E3A2C", grit=0.28, shadow=COLD),
-    VOID:        dict(color="#08090C", grit=0.0, shadow=COLD),
+    FLOOR:       dict(color="#8E93A3", grit=0.2, shadow=COLD),
+    FLOOR_LIGHT: dict(color="#989DAD", grit=0.18, shadow=COLD),
+    FLOOR_DARK:  dict(color="#6B7082", grit=0.16, shadow=COLD),
+    GRATE:       dict(color="#737889", grit=0.14, shadow=COLD),
+    TILE:        dict(color="#B8BCC7", grit=0.14, shadow=COLD),
+    WALL:        dict(color="#8B91A5", grit=0.22, shadow=COLD),
+    WALL_LIGHT:  dict(color="#A9AFC1", grit=0.2, shadow=COLD),
+    WALL_DARK:   dict(color="#61677B", grit=0.2, shadow=COLD),
+    CONCRETE:    dict(color="#9C9BA7", grit=0.26, shadow=COLD),
+    METAL:       dict(color="#9DA2B2", grit=0.16, shadow=COLD),
+    METAL_DARK:  dict(color="#4C4E60", grit=0.14, shadow=COLD),
+    STEEL:       dict(color="#C2C6D0", grit=0.12, shadow=COLD),
+    PLASTIC:     dict(color="#3C3E4C", grit=0.06, shadow=COLD),
+    RUST:        dict(color="#B8654A", grit=0.24, shadow=COLD),
+    HAZARD:      dict(color="#E9B23C", grit=0.2, shadow=COLD),
+    MARKING:     dict(color="#EEEFF3", grit=0.2, shadow=COLD),
+    PORCELAIN:   dict(color="#E7E9EE", grit=0.08, shadow=COLD),
+    FABRIC:      dict(color="#A8323C", grit=0.06, shadow=COLD),
+    FABRIC_BLUE: dict(color="#4E6A9C", grit=0.06, shadow=COLD),
+    MATTRESS:    dict(color="#DCD5C6", grit=0.08, shadow=COLD),
+    WOOD:        dict(color="#8C6548", grit=0.2, shadow=COLD),
+    VOID:        dict(color="#2A2A3A", grit=0.0, shadow=COLD),
     GLOW:        dict(color="#8FE6FF", emission="#3AB4FF", emission_intensity=3.2, grit=0.0),
     GLOW_SOFT:   dict(color="#2E6E9C", emission="#1A6FC0", emission_intensity=1.1, grit=0.0),
     SCREEN:      dict(color="#3FA6D8", emission="#2490D0", emission_intensity=1.4, grit=0.0),
@@ -94,14 +94,14 @@ ENTRIES = {
     LAMP_WARM:   dict(color="#FFB070", emission="#FF7020", emission_intensity=2.6, grit=0.0),
     LIGHT_RED:   dict(color="#FF4040", emission="#FF1A10", emission_intensity=2.6, grit=0.0),
     LIGHT_GREEN: dict(color="#60FFB0", emission="#20E080", emission_intensity=2.0, grit=0.0),
-    GRIME:       dict(color="#3E4248", grit=0.5, shadow=COLD),
-    GRIME_DARK:  dict(color="#32363C", grit=0.45, shadow=COLD),
-    PUDDLE:      dict(color="#2A323C", emission="#0A1420", emission_intensity=0.4, grit=0.05),
-    TANK:        dict(color="#21506F", emission="#11528C", emission_intensity=0.85, grit=0.0),
-    CARDBOARD:   dict(color="#6A5741", grit=0.3, shadow=COLD),
-    GUNMETAL:    dict(color="#3A4048", grit=0.26, shadow=COLD),
-    WOOD_GREY:   dict(color="#4A4640", grit=0.34, shadow=COLD),
-    SPECIMEN:    dict(color="#162E3E", emission="#0C2A40", emission_intensity=0.7, grit=0.0),
+    GRIME:       dict(color="#7D8292", grit=0.24, shadow=COLD),
+    GRIME_DARK:  dict(color="#717586", grit=0.22, shadow=COLD),
+    PUDDLE:      dict(color="#6E7C94", emission="#000000", emission_intensity=0.0, grit=0.04),
+    TANK:        dict(color="#4A8CB4", emission="#11528C", emission_intensity=0.85, grit=0.0),
+    CARDBOARD:   dict(color="#B88F62", grit=0.18, shadow=COLD),
+    GUNMETAL:    dict(color="#686D7E", grit=0.18, shadow=COLD),
+    WOOD_GREY:   dict(color="#8E887E", grit=0.22, shadow=COLD),
+    SPECIMEN:    dict(color="#3A6A86", emission="#0C2A40", emission_intensity=0.7, grit=0.0),
 }
 
 

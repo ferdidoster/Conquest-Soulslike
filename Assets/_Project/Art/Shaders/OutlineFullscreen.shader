@@ -73,8 +73,11 @@ Shader "Conquest/Outline Fullscreen"
                     float d = EyeDepth(uv + offsets[i]);
                     // relative depth jump, only counted on the far side so lines stay one pixel wide
                     depthEdge = max(depthEdge, (d - depth) / max(depth, 0.001));
-                    float3 n = SampleSceneNormals(uv + offsets[i]);
-                    normalEdge = max(normalEdge, 1.0 - dot(normal, n));
+                    // a crease only counts when the other surface spans two pixels: a sub-pixel
+                    // strip or lip is hit by one tap here and there and would draw as dashes
+                    float3 n1 = SampleSceneNormals(uv + offsets[i]);
+                    float3 n2 = SampleSceneNormals(uv + offsets[i] * 2.0);
+                    normalEdge = max(normalEdge, min(1.0 - dot(normal, n1), 1.0 - dot(normal, n2)));
                 }
 
                 float edge = max(step(_DepthThreshold, depthEdge), step(_NormalThreshold, normalEdge));

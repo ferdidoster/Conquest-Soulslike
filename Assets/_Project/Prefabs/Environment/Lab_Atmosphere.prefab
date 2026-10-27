@@ -31,7 +31,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2520824700058653308}
+  - {fileID: 5324943770985668420}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5887529961924176616
@@ -47,14 +47,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Conquest.Environment::Conquest.Environment.AtmosphereSettings
   skybox: {fileID: 2100000, guid: 987f881d7e6aa6549b9357c1b607bc36, type: 2}
-  sun: {fileID: 13251171114983924}
-  skyColor: {r: 0.24, g: 0.29, b: 0.39, a: 1}
-  equatorColor: {r: 0.13, g: 0.16, b: 0.22, a: 1}
-  groundColor: {r: 0.07, g: 0.075, b: 0.09, a: 1}
+  sun: {fileID: 549966736103470395}
+  skyColor: {r: 0.6, g: 0.63, b: 0.74, a: 1}
+  equatorColor: {r: 0.54, g: 0.54, b: 0.6, a: 1}
+  groundColor: {r: 0.44, g: 0.4, b: 0.42, a: 1}
   fog: 1
-  fogColor: {r: 0.035, g: 0.05, b: 0.08, a: 1}
-  fogStart: 20
-  fogEnd: 75
+  fogColor: {r: 0.32, g: 0.34, b: 0.46, a: 1}
+  fogStart: 35
+  fogEnd: 120
 --- !u!114 &4175486297661686063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 1306986facb2c7d47a1dc4c0a55d8737, type: 2}
---- !u!1 &3803310432594648107
+--- !u!1 &7574496215651571995
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,22 +80,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2520824700058653308}
-  - component: {fileID: 13251171114983924}
+  - component: {fileID: 5324943770985668420}
+  - component: {fileID: 549966736103470395}
   m_Layer: 0
-  m_Name: Cold Fill Light
+  m_Name: Key Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2520824700058653308
+--- !u!4 &5324943770985668420
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3803310432594648107}
+  m_GameObject: {fileID: 7574496215651571995}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4974886, y: -0.22185123, z: 0.13330168, w: 0.8279601}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -104,18 +104,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9145395242682638730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &13251171114983924
+--- !u!108 &549966736103470395
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3803310432594648107}
+  m_GameObject: {fileID: 7574496215651571995}
   m_Enabled: 1
   serializedVersion: 13
   m_Type: 1
-  m_Color: {r: 0.46, g: 0.56, b: 0.74, a: 1}
-  m_Intensity: 0.5
+  m_Color: {r: 1, g: 0.97, b: 0.93, a: 1}
+  m_Intensity: 1.05
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -124,7 +124,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.9
+    m_Strength: 0.85
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2

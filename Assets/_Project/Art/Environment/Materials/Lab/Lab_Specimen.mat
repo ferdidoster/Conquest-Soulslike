@@ -38,7 +38,7 @@ Material:
     - _SwayStrength: 0
     - _VertexColorStrength: 1
     m_Colors:
-    - _BaseColor: {r: 0.08627451, g: 0.18039216, b: 0.24313726, a: 1}
+    - _BaseColor: {r: 0.22745098, g: 0.41568628, b: 0.5254902, a: 1}
     - _EmissionColor: {r: 0.032941177, g: 0.11529412, b: 0.17568628, a: 0.7}
     - _ShadowColor: {r: 0.61960787, g: 0.5019608, b: 0.61960787, a: 1}
   m_BuildTextureStacks: []

@@ -246,11 +246,11 @@ PrefabInstance:
     - target: {fileID: -7286054035231753482, guid: 27ef07e945d4a8b44ac30e454ea6a5e7, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 2100000, guid: 41f7ae36f1892f344bec1fb01b62d9a0, type: 2}
+      objectReference: {fileID: 2100000, guid: c10aa26aace5d524cb1da3cd57b862fe, type: 2}
     - target: {fileID: -7286054035231753482, guid: 27ef07e945d4a8b44ac30e454ea6a5e7, type: 3}
       propertyPath: 'm_Materials.Array.data[2]'
       value: 
-      objectReference: {fileID: 2100000, guid: c10aa26aace5d524cb1da3cd57b862fe, type: 2}
+      objectReference: {fileID: 2100000, guid: 41f7ae36f1892f344bec1fb01b62d9a0, type: 2}
     - target: {fileID: -7286054035231753482, guid: 27ef07e945d4a8b44ac30e454ea6a5e7, type: 3}
       propertyPath: 'm_Materials.Array.data[3]'
       value: 
@@ -278,15 +278,15 @@ PrefabInstance:
     - target: {fileID: -74000205415904078, guid: 27ef07e945d4a8b44ac30e454ea6a5e7, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2ec1de53947bcbd4b884a1f9b76fd0ec, type: 2}
+      objectReference: {fileID: 2100000, guid: c10aa26aace5d524cb1da3cd57b862fe, type: 2}
     - target: {fileID: -74000205415904078, guid: 27ef07e945d4a8b44ac30e454ea6a5e7, type: 3}
       propertyPath: 'm_Materials.Array.data[2]'
       value: 
-      objectReference: {fileID: 2100000, guid: c10aa26aace5d524cb1da3cd57b862fe, type: 2}
+      objectReference: {fileID: 2100000, guid: e1dcbcd08ef990c44b11aa03ea599a50, type: 2}
     - target: {fileID: -74000205415904078, guid: 27ef07e945d4a8b44ac30e454ea6a5e7, type: 3}
       propertyPath: 'm_Materials.Array.data[3]'
       value: 
-      objectReference: {fileID: 2100000, guid: e1dcbcd08ef990c44b11aa03ea599a50, type: 2}
+      objectReference: {fileID: 2100000, guid: 2ec1de53947bcbd4b884a1f9b76fd0ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 27ef07e945d4a8b44ac30e454ea6a5e7, type: 3}
       propertyPath: m_Name
       value: Model
