@@ -1,4 +1,4 @@
-[hub_spawn] section Hub, player (-7.20, 0.05, 0.00), camera yaw 45
+[hub_spawn] section Hub (light 1.00), player (-7.20, 0.05, 0.00), camera yaw 45
     view forward used (0.00, 0.00, 1.00), camera (0.00, 0.00, 1.00), level yaw 45
     UP   wall Wall_Panel_4m_Vent at (3.74, 0.00, 7.94) fwd (0.43, 0.00, 0.90) front InnerRing back Hub facing False drawnCut 0/1
     UP   wall Wall_Panel_4m at (-0.06, 0.00, 8.78) fwd (-0.01, 0.00, 1.00) front InnerRing back Hub facing False drawnCut 0/1
@@ -6,13 +6,13 @@
     UP   wall Wall_Panel_4m_B3 at (-6.88, 0.00, 5.45) fwd (-0.78, 0.00, 0.62) front InnerRing back Hub facing False drawnCut 0/1
     cut  wall Door_Airlock_Locked at (-8.56, 0.00, 1.94) fwd (-0.98, 0.00, 0.22) front InnerRing back Hub facing True drawnCut 1/1
     cut  wall Door_Airlock_Locked at (-8.56, 0.00, -1.94) fwd (-0.98, 0.00, -0.22) front InnerRing back Hub facing True drawnCut 1/1
-        with Lamp_Wall_Cold at (-6.70, 0.00, -5.31)
+        with Cable_Floor_Run at (-6.97, 0.02, -1.58)
     cut  wall Wall_Panel_4m_B3 at (-6.88, 0.00, -5.45) fwd (-0.78, 0.00, -0.62) front InnerRing back Hub facing True drawnCut 1/1
+        with Lamp_Wall_Cold at (-6.70, 0.00, -5.31)
     cut  wall Wall_Panel_4m at (-3.85, 0.00, -7.89) fwd (-0.44, 0.00, -0.90) front InnerRing back Hub facing True drawnCut 1/1
-        with Lamp_Emergency at (-0.06, 0.00, -8.55)
     cut  wall Wall_Panel_4m_Vent at (-0.06, 0.00, -8.78) fwd (-0.01, 0.00, -1.00) front InnerRing back Hub facing True drawnCut 1/1
+        with Lamp_Emergency at (-0.06, 0.00, -8.55)
     cut  wall Wall_Panel_4m at (3.74, 0.00, -7.94) fwd (0.43, 0.00, -0.90) front InnerRing back Hub facing True drawnCut 1/1
-        with Lamp_Wall_Cold at (6.62, 0.00, -5.40)
     UP   wall Wall_Pillar at (1.93, 0.00, 8.79) fwd (0.21, 0.00, 0.98) front InnerRing back Hub facing False drawnCut 0/1
     UP   wall Wall_Pillar at (-2.05, 0.00, 8.76) fwd (-0.23, 0.00, 0.97) front InnerRing back Hub facing False drawnCut 0/1
     UP   wall Wall_Pillar at (-5.64, 0.00, 7.01) fwd (-0.63, 0.00, 0.78) front InnerRing back Hub facing False drawnCut 0/1
@@ -28,10 +28,10 @@
     UP   wall Wall_Panel_4m at (-17.49, 0.00, 3.72) fwd (-0.98, 0.00, 0.21) front OuterRing back InnerRing facing False drawnCut 0/1
     UP   wall Wall_Panel_4m_Pipes at (-17.88, 0.00, -0.30) fwd (-1.00, 0.00, -0.02) front OuterRing back InnerRing facing False drawnCut 0/1
     cut  wall Wall_Panel_4m at (-17.36, 0.00, -4.30) fwd (-0.97, 0.00, -0.24) front OuterRing back InnerRing facing True drawnCut 1/1
+        with Lamp_Emergency at (-17.43, 0.00, -3.07)
     cut  wall Wall_Panel_4m_Vent at (-15.95, 0.00, -8.09) fwd (-0.89, 0.00, -0.45) front OuterRing back InnerRing facing True drawnCut 1/1
         with Lamp_Wall_Cold at (-15.33, 0.00, -8.85)
     cut  wall Wall_Panel_4m at (-13.73, 0.00, -11.46) fwd (-0.77, 0.00, -0.64) front OuterRing back InnerRing facing True drawnCut 1/1
-        with Lamp_Wall_Cold at (-11.27, 0.00, -14.42)
     UP   wall Wall_Pillar at (-12.86, 0.00, 12.59) fwd (-0.71, 0.00, 0.70) front OuterRing back InnerRing facing False drawnCut 0/1
     UP   wall Wall_Pillar at (-15.36, 0.00, 9.39) fwd (-0.85, 0.00, 0.52) front OuterRing back InnerRing facing False drawnCut 0/1
     UP   wall Wall_Pillar at (-17.07, 0.00, 5.71) fwd (-0.95, 0.00, 0.32) front OuterRing back InnerRing facing False drawnCut 0/1
@@ -40,57 +40,59 @@
     cut  wall Wall_Pillar at (-16.87, 0.00, -6.27) fwd (-0.94, 0.00, -0.35) front OuterRing back InnerRing facing True drawnCut 1/1
     cut  wall Wall_Pillar at (-15.03, 0.00, -9.90) fwd (-0.84, 0.00, -0.55) front OuterRing back InnerRing facing True drawnCut 1/1
     UP   prop Light_Post at (-14.38, 0.00, 8.30) fwd (-0.50, 0.00, -0.87) front InnerRing back InnerRing facing False drawnCut 0/1
-        hangs on Wall_Panel_4m_Vent at (-16.21, 0.00, 7.55) bounds (-4.00, 0.00, -0.50) (2.13, 5.08, 0.50) cut False
-[tech] section Technical, player (21.00, 0.05, 21.00), camera yaw 45
+        hangs on Wall_Panel_4m_Vent at (-16.21, 0.00, 7.55) bounds (-2.12, 0.00, -0.50) (2.12, 5.08, 0.50) cut False
+[tech] section Technical (light 1.00), player (21.00, 0.05, 21.00), camera yaw 45
     view forward used (0.00, 0.00, 1.00), camera (0.00, 0.00, 1.00), level yaw 45
     cut  wall Wall_Panel_4m at (15.93, 0.00, 8.23) fwd (0.89, 0.00, 0.46) front OuterRing back InnerRing facing True drawnCut 1/1
     cut  wall Wall_Pillar at (15.24, 0.00, 9.58) fwd (0.85, 0.00, 0.53) front OuterRing back InnerRing facing True drawnCut 1/1
     cut  wall Wall_Pillar at (9.58, 0.00, 15.24) fwd (0.53, 0.00, 0.85) front OuterRing back InnerRing facing True drawnCut 1/1
     cut  wall Wall_Panel_4m at (22.95, 0.00, 9.71) fwd (0.92, 0.00, 0.39) front Technical back OuterRing facing True drawnCut 1/1
-        with Light_Fill_Warm at (22.25, 0.00, 13.75)
     cut  wall Wall_Panel_4m at (21.12, 0.00, 13.23) fwd (0.85, 0.00, 0.53) front Technical back OuterRing facing True drawnCut 1/1
-        with Lamp_Emergency at (19.38, 0.00, 16.26)
+        with Light_Fill_Warm at (22.25, 0.00, 13.75)
     cut  wall Wall_Panel_4m at (18.74, 0.00, 16.42) fwd (0.75, 0.00, 0.66) front Technical back OuterRing facing True drawnCut 1/1
+        with Lamp_Emergency at (19.38, 0.00, 16.26)
     cut  wall Wall_Pillar at (23.73, 0.00, 7.87) fwd (0.95, 0.00, 0.31) front Technical back OuterRing facing True drawnCut 1/1
     cut  wall Wall_Pillar at (22.18, 0.00, 11.54) fwd (0.89, 0.00, 0.46) front Technical back OuterRing facing True drawnCut 1/1
     cut  wall Wall_Pillar at (20.06, 0.00, 14.92) fwd (0.80, 0.00, 0.60) front Technical back OuterRing facing True drawnCut 1/1
     cut  wall Wall_Pillar at (17.43, 0.00, 17.92) fwd (0.70, 0.00, 0.72) front Technical back OuterRing facing True drawnCut 1/1
     cut  wall Wall_Panel_4m at (8.93, 0.00, 23.26) fwd (0.36, 0.00, 0.93) front Technical back OuterRing facing True drawnCut 1/1
-        with Lamp_Emergency at (10.29, 0.00, 23.11)
+        with Lamp_Emergency at (10.29, 0.00, 23.11), Model at (9.03, 0.00, 23.51)
     cut  wall Wall_Pillar at (10.88, 0.00, 22.51) fwd (0.44, 0.00, 0.90) front Technical back OuterRing facing True drawnCut 1/1
     UP   prop Machine_Pump at (26.05, 0.00, 26.98) fwd (0.00, 0.00, 1.00) front Technical back Technical facing False drawnCut 0/1
     UP   prop Pipe_U_Bend at (32.63, 0.00, 27.38) fwd (0.77, 0.00, 0.64) front Technical back Technical facing False drawnCut 0/1
+    UP   prop Crane_Gantry at (16.67, 0.00, 31.34) fwd (-0.88, 0.00, 0.47) front Technical back Technical facing False drawnCut 0/1
+    UP   prop Machine_Column at (24.13, 0.00, 20.25) fwd (-0.77, 0.00, -0.64) front Technical back Technical facing False drawnCut 0/1
+    UP   prop Server_Rack at (19.61, 0.00, 31.38) fwd (0.53, 0.00, 0.85) front Technical back Technical facing False drawnCut 0/1
+    UP   prop Server_Rack at (18.72, 0.00, 31.91) fwd (0.51, 0.00, 0.86) front Technical back Technical facing False drawnCut 0/1
     cut  wall Wall_Panel_4m at (32.94, 0.00, 16.06) fwd (-0.76, 0.00, 0.64) front Technical back Lab facing True drawnCut 1/1
-        with Light_Fill_Warm at (30.75, 0.00, 13.75)
     cut  wall Wall_Panel_4m_Vent at (30.70, 0.00, 12.94) fwd (-0.85, 0.00, 0.52) front Technical back Lab facing True drawnCut 1/1
-        with Med_Cabinet at (30.87, 0.03, 12.20)
+        with Med_Cabinet at (30.87, 0.03, 12.20), Light_Fill_Warm at (30.75, 0.00, 13.75)
     cut  wall Wall_Panel_4m at (28.96, 0.00, 9.52) fwd (-0.92, 0.00, 0.38) front Technical back Lab facing True drawnCut 1/1
-        with Lamp_Wall_Cold at (28.19, 0.00, 6.38), Lamp_Alarm_Red at (28.08, 0.00, 5.96)
     cut  wall Wall_Pillar at (34.18, 0.00, 17.53) fwd (-0.71, 0.00, 0.70) front Technical back Lab facing True drawnCut 1/1
     cut  wall Wall_Pillar at (31.70, 0.00, 14.59) fwd (-0.81, 0.00, 0.58) front Technical back Lab facing True drawnCut 1/1
     cut  wall Wall_Pillar at (29.70, 0.00, 11.30) fwd (-0.89, 0.00, 0.45) front Technical back Lab facing True drawnCut 1/1
     UP   prop Med_Cabinet at (30.87, 0.03, 12.20) fwd (-0.87, 0.00, 0.50) front Technical back Lab facing False drawnCut 1/1
-        hangs on Wall_Panel_4m_Vent at (30.70, 0.00, 12.94) bounds (-4.00, 0.00, -0.50) (2.13, 5.08, 0.50) cut True
-[sleep] section Sleeping, player (-21.00, 0.05, 21.00), camera yaw 315
+        hangs on Wall_Panel_4m_Vent at (30.70, 0.00, 12.94) bounds (-2.12, 0.00, -0.50) (2.12, 5.08, 0.50) cut True
+[sleep] section Sleeping (light 1.00), player (-21.00, 0.05, 21.00), camera yaw 315
     view forward used (-1.00, 0.00, 0.00), camera (-1.00, 0.00, 0.00), level yaw 45
     cut  wall Wall_Panel_4m_Pipes at (-11.28, 0.00, 13.88) fwd (-0.63, 0.00, 0.78) front OuterRing back InnerRing facing True drawnCut 1/1
-        with Lamp_Wall_Cold at (-14.42, 0.00, 11.27)
+        with Cable_Floor_Run at (-10.75, 0.02, 12.23)
     cut  wall Wall_Panel_4m at (-14.11, 0.00, 10.99) fwd (-0.79, 0.00, 0.61) front OuterRing back InnerRing facing True drawnCut 1/1
+        with Lamp_Wall_Cold at (-14.42, 0.00, 11.27)
     cut  wall Wall_Pillar at (-9.71, 0.00, 15.16) fwd (-0.54, 0.00, 0.84) front OuterRing back InnerRing facing True drawnCut 1/1
     cut  wall Wall_Pillar at (-12.86, 0.00, 12.59) fwd (-0.71, 0.00, 0.70) front OuterRing back InnerRing facing True drawnCut 1/1
     cut  wall Wall_Pillar at (-15.36, 0.00, 9.39) fwd (-0.85, 0.00, 0.52) front OuterRing back InnerRing facing True drawnCut 1/1
     cut  wall Wall_Panel_4m at (-7.37, 0.00, 23.80) fwd (-0.30, 0.00, 0.96) front Sleeping back OuterRing facing True drawnCut 1/1
         with Model at (-8.76, 0.00, 24.06)
     cut  wall Wall_Panel_4m_Vent at (-11.22, 0.00, 22.24) fwd (-0.45, 0.00, 0.89) front Sleeping back OuterRing facing True drawnCut 1/1
-        with Model at (-14.32, 0.00, 21.22), Lamp_Emergency at (-14.17, 0.00, 20.23)
     cut  wall Wall_Panel_4m_Pipes at (-14.76, 0.00, 20.07) fwd (-0.59, 0.00, 0.81) front Sleeping back OuterRing facing True drawnCut 1/1
+        with Model at (-14.32, 0.00, 21.22), Lamp_Emergency at (-14.17, 0.00, 20.23)
     cut  wall Wall_Pillar at (-9.36, 0.00, 23.18) fwd (-0.37, 0.00, 0.93) front Sleeping back OuterRing facing True drawnCut 1/1
     cut  wall Wall_Pillar at (-13.08, 0.00, 21.30) fwd (-0.52, 0.00, 0.85) front Sleeping back OuterRing facing True drawnCut 1/1
     cut  wall Wall_Pillar at (-16.44, 0.00, 18.84) fwd (-0.66, 0.00, 0.75) front Sleeping back OuterRing facing True drawnCut 1/1
     cut  wall Wall_Panel_4m at (-21.49, 0.00, 12.60) fwd (-0.86, 0.00, 0.51) front Sleeping back OuterRing facing True drawnCut 1/1
         with Model at (-22.60, 0.00, 12.02)
     cut  wall Wall_Panel_4m_Vent at (-23.27, 0.00, 8.90) fwd (-0.93, 0.00, 0.36) front Sleeping back OuterRing facing True drawnCut 1/1
-        with Model at (-24.84, 0.00, 6.19)
     cut  wall Wall_Pillar at (-20.45, 0.00, 14.38) fwd (-0.82, 0.00, 0.58) front Sleeping back OuterRing facing True drawnCut 1/1
     cut  wall Wall_Pillar at (-22.54, 0.00, 10.82) fwd (-0.90, 0.00, 0.43) front Sleeping back OuterRing facing True drawnCut 1/1
     UP   prop Bed_Bunk at (-10.81, 0.00, 29.69) fwd (-0.34, 0.00, 0.94) front Sleeping back Sleeping facing False drawnCut 0/1
@@ -106,54 +108,23 @@
     UP   prop Bed_Bunk at (-28.40, 0.00, 13.85) fwd (-0.90, 0.00, 0.44) front Sleeping back Sleeping facing False drawnCut 0/1
     UP   prop Bed_Bunk at (-27.41, 0.00, 13.37) fwd (0.90, 0.00, -0.44) front Sleeping back Sleeping facing False drawnCut 0/1
     UP   prop Locker_Row at (-8.76, 0.00, 24.06) fwd (0.34, 0.00, -0.94) front OuterRing back Sleeping facing False drawnCut 1/1
-        hangs on Wall_Panel_4m at (-7.37, 0.00, 23.80) bounds (-4.00, 0.00, -0.50) (2.13, 5.08, 0.50) cut True
+        hangs on Wall_Panel_4m at (-7.37, 0.00, 23.80) bounds (-2.12, 0.00, -0.43) (2.12, 5.08, 0.43) cut True
     UP   prop Locker_Row at (-14.32, 0.00, 21.22) fwd (0.56, 0.00, -0.83) front OuterRing back Sleeping facing False drawnCut 1/1
-        hangs on Wall_Panel_4m_Vent at (-11.22, 0.00, 22.24) bounds (-4.00, 0.00, -0.50) (2.13, 5.08, 0.50) cut True
+        hangs on Wall_Panel_4m_Pipes at (-14.76, 0.00, 20.07) bounds (-2.12, 0.00, -0.87) (2.12, 5.08, 0.43) cut True
     UP   prop Locker_Row at (-22.60, 0.00, 12.02) fwd (0.88, 0.00, -0.47) front OuterRing back Sleeping facing False drawnCut 1/1
-        hangs on Wall_Panel_4m at (-21.49, 0.00, 12.60) bounds (-4.00, 0.00, -0.50) (2.13, 5.08, 0.50) cut True
+        hangs on Wall_Panel_4m at (-21.49, 0.00, 12.60) bounds (-2.12, 0.00, -0.43) (2.12, 5.08, 0.43) cut True
     UP   prop Light_Post at (-17.50, 0.00, 30.31) fwd (0.00, 0.00, 1.00) front Sleeping back Sleeping facing False drawnCut 0/1
     UP   prop Light_Post at (-31.97, 0.00, 14.24) fwd (0.00, 0.00, 1.00) front Sleeping back Sleeping facing False drawnCut 0/1
-[kitchen] section Kitchen, player (-12.00, 0.05, -30.00), camera yaw 45
-    view forward used (0.00, 0.00, 1.00), camera (0.00, 0.00, 1.00), level yaw 45
-    UP   wall Wall_Panel_4m at (-16.28, 0.00, -18.88) fwd (-0.65, 0.00, -0.76) front Kitchen back OuterRing facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m_Vent at (-13.24, 0.00, -21.12) fwd (-0.53, 0.00, -0.85) front Kitchen back OuterRing facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m_Pipes at (-9.89, 0.00, -22.88) fwd (-0.40, 0.00, -0.92) front Kitchen back OuterRing facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m at (-6.32, 0.00, -24.11) fwd (-0.25, 0.00, -0.97) front Kitchen back OuterRing facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m at (-2.61, 0.00, -24.79) fwd (-0.10, 0.00, -0.99) front Kitchen back OuterRing facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (-17.71, 0.00, -17.64) fwd (-0.71, 0.00, -0.71) front Kitchen back OuterRing facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (-14.84, 0.00, -20.12) fwd (-0.59, 0.00, -0.80) front Kitchen back OuterRing facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (-11.63, 0.00, -22.13) fwd (-0.47, 0.00, -0.89) front Kitchen back OuterRing facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (-8.15, 0.00, -23.63) fwd (-0.33, 0.00, -0.95) front Kitchen back OuterRing facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (-4.49, 0.00, -24.59) fwd (-0.18, 0.00, -0.98) front Kitchen back OuterRing facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (-0.72, 0.00, -24.99) fwd (-0.03, 0.00, -1.00) front Kitchen back OuterRing facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m at (0.00, 0.00, -23.25) fwd (1.00, 0.00, 0.00) front OuterRing back OuterRing facing False drawnCut 0/1
-    cut  wall Wall_Pillar at (0.00, 0.00, -25.00) fwd (1.00, 0.00, 0.00) front OuterRing back Kitchen facing True drawnCut 1/1
-    UP   prop Crate_Stack at (-11.30, 0.00, -19.57) fwd (-0.56, 0.00, -0.83) front OuterRing back OuterRing facing False drawnCut 0/1
-    cut  wall Wall_Panel_4m_Vent at (-19.80, 0.00, -41.47) fwd (-0.43, 0.00, -0.90) front - back Kitchen facing True drawnCut 1/1
-        with Lamp_Wall_Cold at (-17.12, 0.00, -42.37)
-    cut  wall Wall_Panel_4m at (-16.14, 0.00, -43.03) fwd (-0.35, 0.00, -0.94) front - back Kitchen facing True drawnCut 1/1
-        with Model at (-15.29, 0.00, -42.00)
-    cut  wall Wall_Pillar at (-18.01, 0.00, -42.33) fwd (-0.39, 0.00, -0.92) front - back Kitchen facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (-14.28, 0.00, -43.73) fwd (-0.31, 0.00, -0.95) front - back Kitchen facing True drawnCut 1/1
-    cut  wall Wall_Panel_4m at (0.00, 0.00, -27.38) fwd (1.00, 0.00, 0.00) front Storage back Kitchen facing True drawnCut 1/1
-        with Model at (-0.60, 0.00, -27.52), Model at (-0.25, 0.00, -29.20), Light_Fill_Warm at (-0.50, 0.00, -27.50)
-    cut  wall Wall_Panel_4m at (0.00, 0.00, -32.13) fwd (1.00, 0.00, 0.00) front Storage back Kitchen facing True drawnCut 1/1
-        with Model at (-0.60, 0.00, -30.67)
-    cut  wall Wall_Pillar at (0.00, 0.00, -25.00) fwd (1.00, 0.00, 0.00) front OuterRing back Kitchen facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (0.00, 0.00, -29.75) fwd (1.00, 0.00, 0.00) front Storage back Kitchen facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (0.00, 0.00, -34.50) fwd (1.00, 0.00, 0.00) front Storage back Kitchen facing True drawnCut 1/1
-    cut  wall Rock_Mass_4m at (-16.23, 0.00, -43.26) fwd (-0.35, 0.00, -0.94) front - back Kitchen facing True drawnCut 1/1
-    UP   prop Kitchen_Counter at (-0.60, 0.00, -27.52) fwd (1.00, 0.00, 0.00) front Storage back Kitchen facing False drawnCut 1/1
-        hangs on Wall_Panel_4m at (0.00, 0.00, -27.38) bounds (-4.00, 0.00, -0.50) (2.13, 5.08, 0.50) cut True
-    UP   prop Kitchen_Counter at (-0.60, 0.00, -30.67) fwd (1.00, 0.00, 0.00) front Storage back Kitchen facing False drawnCut 1/1
-        hangs on Wall_Panel_4m at (0.00, 0.00, -32.13) bounds (-4.00, 0.00, -0.50) (2.13, 5.08, 0.50) cut True
-    UP   prop Light_Post at (-20.00, 0.00, -36.00) fwd (0.00, 0.00, 1.00) front Kitchen back Kitchen facing False drawnCut 0/1
-[lab] section Lab, player (45.00, 0.05, 0.00), camera yaw 45
+    UP   prop Locker_Single at (-23.42, 0.00, 26.01) fwd (-0.67, 0.00, 0.74) front Sleeping back Sleeping facing False drawnCut 0/1
+[lab] section Lab (light 1.00), player (45.00, 0.05, 0.00), camera yaw 45
     view forward used (0.00, 0.00, 1.00), camera (0.00, 0.00, 1.00), level yaw 45
     UP   prop Containment_Tube_Large at (52.00, 0.03, 0.00) fwd (0.00, 0.00, 1.00) front Lab back Lab facing False drawnCut 0/1
+    UP   prop Machine_Column at (46.75, 0.03, 9.09) fwd (0.50, 0.00, -0.87) front Lab back Lab facing False drawnCut 0/1
+    UP   prop Machine_Column at (41.50, 0.03, 0.00) fwd (1.00, 0.00, 0.00) front Lab back Lab facing False drawnCut 0/1
+    cut  prop Machine_Column at (46.75, 0.03, -9.09) fwd (0.50, 0.00, 0.87) front Lab back Lab facing False drawnCut 1/1
     UP   prop Containment_Tube at (39.01, 0.03, 7.50) fwd (0.87, 0.00, -0.50) front Lab back Lab facing False drawnCut 0/1
     UP   prop Containment_Tube at (39.01, 0.03, -7.50) fwd (0.87, 0.00, 0.50) front Lab back Lab facing False drawnCut 0/1
-[storage] section Storage, player (15.00, 0.05, -26.00), camera yaw 45
+[storage] section Storage (light 1.00), player (15.00, 0.05, -26.00), camera yaw 45
     view forward used (0.00, 0.00, 1.00), camera (0.00, 0.00, 1.00), level yaw 45
     UP   wall Wall_Panel_4m_Pipes at (4.52, 0.00, -17.30) fwd (0.25, 0.00, -0.97) front OuterRing back InnerRing facing False drawnCut 0/1
     UP   wall Wall_Panel_4m at (8.29, 0.00, -15.85) fwd (0.46, 0.00, -0.89) front OuterRing back InnerRing facing False drawnCut 0/1
@@ -184,92 +155,60 @@
     UP   prop Crate_Stack at (27.97, 0.00, -21.86) fwd (-0.81, 0.00, 0.58) front Storage back Storage facing False drawnCut 0/1
     UP   prop Crate_Stack at (21.25, 0.00, -36.81) fwd (-0.44, 0.00, 0.90) front Storage back Storage facing False drawnCut 0/1
     UP   prop Light_Post at (14.00, 0.00, -24.25) fwd (0.00, 0.00, 1.00) front Storage back Storage facing False drawnCut 0/1
-[bath] section Bathroom, player (-38.00, 0.05, -14.00), camera yaw 45
+    UP   prop Shelf_Storage at (1.20, 0.00, -25.57) fwd (-0.05, 0.00, 1.00) front OuterRing back Storage facing False drawnCut 0/1
+        hangs on Wall_Panel_4m_Vent at (1.17, 0.00, -24.90) bounds (-2.12, 0.00, -0.50) (2.12, 5.08, 0.50) cut False
+    UP   prop Crate_Stack at (5.12, 0.00, -25.44) fwd (-0.20, 0.00, 0.98) front Storage back Storage facing False drawnCut 0/1
+        hangs on Wall_Panel_4m_Pipes at (4.92, 0.00, -24.44) bounds (-2.12, 0.00, -0.87) (2.12, 5.08, 0.43) cut False
+    UP   prop Server_Rack at (8.84, 0.00, -24.18) fwd (-0.34, 0.00, 0.94) front OuterRing back Storage facing False drawnCut 0/1
+        hangs on Wall_Panel_4m at (8.56, 0.00, -23.41) bounds (-2.12, 0.00, -0.43) (2.12, 5.08, 0.43) cut False
+    UP   prop Shelf_Storage at (12.32, 0.00, -22.44) fwd (-0.48, 0.00, 0.88) front OuterRing back Storage facing False drawnCut 0/1
+        hangs on Wall_Panel_4m at (12.00, 0.00, -21.85) bounds (-2.12, 0.00, -0.43) (2.12, 5.08, 0.43) cut False
+    UP   prop Crate_Stack at (20.21, 0.00, -16.29) fwd (-0.78, 0.00, 0.63) front Storage back Storage facing False drawnCut 0/1
+        hangs on Wall_Panel_4m at (19.41, 0.00, -15.65) bounds (-2.12, 0.00, -0.43) (2.12, 5.08, 0.43) cut False
+[kitchen] section Kitchen (light 1.00), player (-12.00, 0.05, -30.00), camera yaw 45
     view forward used (0.00, 0.00, 1.00), camera (0.00, 0.00, 1.00), level yaw 45
-    cut  wall Wall_Panel_4m_Vent at (-45.78, 0.00, -3.97) fwd (-1.00, 0.00, -0.09) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Wall_Panel_4m at (-45.27, 0.00, -7.92) fwd (-0.99, 0.00, -0.17) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Wall_Panel_4m at (-44.42, 0.00, -11.80) fwd (-0.97, 0.00, -0.26) front - back Bathroom facing True drawnCut 1/1
-        with Lamp_Wall_Cold at (-42.94, 0.00, -15.63), Model at (-43.16, 0.00, -12.38), Model at (-42.55, 0.00, -14.32)
-    cut  wall Wall_Panel_4m_Pipes at (-43.23, 0.00, -15.60) fwd (-0.94, 0.00, -0.34) front - back Bathroom facing True drawnCut 1/1
-        with Model at (-41.86, 0.00, -16.24)
-    cut  wall Wall_Panel_4m_Vent at (-41.72, 0.00, -19.28) fwd (-0.91, 0.00, -0.42) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Wall_Panel_4m at (-39.90, 0.00, -22.81) fwd (-0.87, 0.00, -0.50) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Wall_Panel_4m at (-37.78, 0.00, -26.17) fwd (-0.82, 0.00, -0.57) front - back Bathroom facing True drawnCut 1/1
-        with Lamp_Wall_Cold at (-36.97, 0.00, -26.86)
-    cut  wall Wall_Pillar at (-45.61, 0.00, -5.96) fwd (-0.99, 0.00, -0.13) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (-44.93, 0.00, -9.88) fwd (-0.98, 0.00, -0.21) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (-43.91, 0.00, -13.72) fwd (-0.95, 0.00, -0.30) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (-42.55, 0.00, -17.47) fwd (-0.93, 0.00, -0.38) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (-40.88, 0.00, -21.08) fwd (-0.89, 0.00, -0.46) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (-38.91, 0.00, -24.54) fwd (-0.85, 0.00, -0.53) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (-36.64, 0.00, -27.81) fwd (-0.80, 0.00, -0.60) front - back Bathroom facing True drawnCut 1/1
-    UP   wall Wall_Panel_4m at (-39.22, 0.00, -1.55) fwd (0.89, 0.00, 0.45) front Kitchen back Bathroom facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m at (-37.67, 0.00, -4.66) fwd (0.89, 0.00, 0.45) front Kitchen back Bathroom facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m at (-36.12, 0.00, -7.76) fwd (0.89, 0.00, 0.45) front Kitchen back Bathroom facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (-38.45, 0.00, -3.11) fwd (0.89, 0.00, 0.45) front Kitchen back Bathroom facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (-36.89, 0.00, -6.21) fwd (0.89, 0.00, 0.45) front Kitchen back Bathroom facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (-35.34, 0.00, -9.32) fwd (0.89, 0.00, 0.45) front Kitchen back Bathroom facing False drawnCut 0/1
-    cut  wall Wall_Panel_4m at (-31.88, 0.00, -16.24) fwd (0.89, 0.00, 0.45) front Kitchen back Bathroom facing True drawnCut 1/1
-    cut  wall Wall_Panel_4m at (-30.33, 0.00, -19.34) fwd (0.89, 0.00, 0.45) front Kitchen back Bathroom facing True drawnCut 1/1
-        with Model at (-30.89, 0.00, -19.45)
-    cut  wall Wall_Panel_4m at (-28.78, 0.00, -22.45) fwd (0.89, 0.00, 0.45) front Kitchen back Bathroom facing True drawnCut 1/1
-    UP   wall Wall_Pillar at (-32.66, 0.00, -14.68) fwd (0.89, 0.00, 0.45) front Kitchen back Bathroom facing False drawnCut 0/1
-    cut  wall Wall_Pillar at (-31.11, 0.00, -17.79) fwd (0.89, 0.00, 0.45) front Kitchen back Bathroom facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (-29.55, 0.00, -20.89) fwd (0.89, 0.00, 0.45) front Kitchen back Bathroom facing True drawnCut 1/1
-    cut  wall Rock_Mass_4m at (-46.03, 0.00, -3.99) fwd (-1.00, 0.00, -0.09) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Rock_Mass_4m at (-45.52, 0.00, -7.96) fwd (-0.99, 0.00, -0.17) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Rock_Mass_4m at (-44.66, 0.00, -11.86) fwd (-0.97, 0.00, -0.26) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Rock_Mass_4m at (-43.46, 0.00, -15.68) fwd (-0.94, 0.00, -0.34) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Rock_Mass_4m at (-41.95, 0.00, -19.38) fwd (-0.91, 0.00, -0.42) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Rock_Mass_4m at (-40.11, 0.00, -22.93) fwd (-0.87, 0.00, -0.50) front - back Bathroom facing True drawnCut 1/1
-    cut  wall Rock_Mass_4m at (-37.98, 0.00, -26.32) fwd (-0.82, 0.00, -0.57) front - back Bathroom facing True drawnCut 1/1
-    UP   prop Shower_Stall at (-41.90, 0.00, -1.00) fwd (0.00, 0.00, 1.00) front Bathroom back Bathroom facing False drawnCut 0/1
-        hangs on Wall_Panel_4m_Vent at (-39.70, 0.00, 0.00) bounds (-4.00, 0.00, -0.50) (2.13, 5.08, 0.50) cut False
-    UP   prop Toilet_Stall at (-43.16, 0.00, -12.38) fwd (-0.96, 0.00, -0.28) front Bathroom back Bathroom facing False drawnCut 1/1
-        hangs on Wall_Panel_4m at (-44.42, 0.00, -11.80) bounds (-4.00, 0.00, -0.50) (2.13, 5.08, 0.50) cut True
-    UP   prop Toilet_Stall at (-42.55, 0.00, -14.32) fwd (-0.95, 0.00, -0.32) front Bathroom back Bathroom facing False drawnCut 1/1
-        hangs on Wall_Panel_4m at (-44.42, 0.00, -11.80) bounds (-4.00, 0.00, -0.50) (2.13, 5.08, 0.50) cut True
-    UP   prop Toilet_Stall at (-41.86, 0.00, -16.24) fwd (-0.93, 0.00, -0.36) front Bathroom back Bathroom facing False drawnCut 1/1
-        hangs on Wall_Panel_4m_Pipes at (-43.23, 0.00, -15.60) bounds (-4.00, 0.00, -0.87) (2.13, 5.08, 0.50) cut True
-[hub_90] section Hub, player (0.00, 0.05, 6.50), camera yaw 45
-    view forward used (0.00, 0.00, 1.00), camera (0.00, 0.00, 1.00), level yaw 45
-    UP   wall Wall_Panel_4m at (6.80, 0.00, 5.55) fwd (0.78, 0.00, 0.63) front InnerRing back Hub facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m_Vent at (3.74, 0.00, 7.94) fwd (0.43, 0.00, 0.90) front InnerRing back Hub facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m at (-0.06, 0.00, 8.78) fwd (-0.01, 0.00, 1.00) front InnerRing back Hub facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m_Pipes at (-3.85, 0.00, 7.89) fwd (-0.44, 0.00, 0.90) front InnerRing back Hub facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m_B3 at (-6.88, 0.00, 5.45) fwd (-0.78, 0.00, 0.62) front InnerRing back Hub facing False drawnCut 0/1
-    cut  wall Door_Airlock_Locked at (-8.56, 0.00, 1.94) fwd (-0.98, 0.00, 0.22) front InnerRing back Hub facing True drawnCut 1/1
-    cut  wall Door_Airlock_Locked at (-8.56, 0.00, -1.94) fwd (-0.98, 0.00, -0.22) front InnerRing back Hub facing True drawnCut 1/1
-        with Lamp_Wall_Cold at (-6.70, 0.00, -5.31)
-    cut  wall Wall_Panel_4m_B3 at (-6.88, 0.00, -5.45) fwd (-0.78, 0.00, -0.62) front InnerRing back Hub facing True drawnCut 1/1
-    cut  wall Wall_Panel_4m_Pipes at (6.80, 0.00, -5.55) fwd (0.78, 0.00, -0.63) front InnerRing back Hub facing True drawnCut 1/1
-        with Console_Control at (5.09, 0.03, -5.09), Light_Floor_Strip_2m at (8.50, 0.03, -2.20)
-    cut  wall Wall_Pillar at (8.06, 0.00, 4.00) fwd (0.90, 0.00, 0.44) front InnerRing back Hub facing True drawnCut 1/1
-    UP   wall Wall_Pillar at (5.54, 0.00, 7.09) fwd (0.62, 0.00, 0.79) front InnerRing back Hub facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (1.93, 0.00, 8.79) fwd (0.21, 0.00, 0.98) front InnerRing back Hub facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (-2.05, 0.00, 8.76) fwd (-0.23, 0.00, 0.97) front InnerRing back Hub facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (-5.64, 0.00, 7.01) fwd (-0.63, 0.00, 0.78) front InnerRing back Hub facing False drawnCut 0/1
-    cut  wall Wall_Pillar at (-8.12, 0.00, 3.89) fwd (-0.90, 0.00, 0.43) front InnerRing back Hub facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (-9.00, 0.00, 0.00) fwd (-1.00, 0.00, 0.00) front InnerRing back Hub facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (-8.12, 0.00, -3.89) fwd (-0.90, 0.00, -0.43) front InnerRing back Hub facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (8.06, 0.00, -4.00) fwd (0.90, 0.00, -0.44) front InnerRing back Hub facing True drawnCut 1/1
-    cut  prop Reactor_Column at (0.00, 0.53, 0.00) fwd (0.00, 0.00, 1.00) front Hub back Hub facing False drawnCut 1/1
-    cut  wall Wall_Panel_4m_Pipes at (9.03, 0.00, 4.00) fwd (0.00, 0.00, 1.00) front InnerRing back Corridor facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (8.06, 0.00, 4.00) fwd (0.00, 0.00, 1.00) front InnerRing back Hub facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (10.00, 0.00, 4.00) fwd (0.00, 0.00, 1.00) front InnerRing back Corridor facing True drawnCut 1/1
-    cut  wall Wall_Pillar at (8.06, 0.00, -4.00) fwd (0.00, 0.00, 1.00) front Hub back InnerRing facing True drawnCut 1/1
-    UP   wall Wall_Panel_4m at (7.75, 0.00, 16.12) fwd (0.43, 0.00, 0.90) front OuterRing back InnerRing facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m_Pipes at (3.94, 0.00, 17.45) fwd (0.22, 0.00, 0.98) front OuterRing back InnerRing facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m at (-0.07, 0.00, 17.88) fwd (0.00, 0.00, 1.00) front OuterRing back InnerRing facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m_Vent at (-4.08, 0.00, 17.41) fwd (-0.23, 0.00, 0.97) front OuterRing back InnerRing facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m at (-7.88, 0.00, 16.05) fwd (-0.44, 0.00, 0.90) front OuterRing back InnerRing facing False drawnCut 0/1
-    UP   wall Wall_Panel_4m_Pipes at (-11.28, 0.00, 13.88) fwd (-0.63, 0.00, 0.78) front OuterRing back InnerRing facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (9.58, 0.00, 15.24) fwd (0.53, 0.00, 0.85) front OuterRing back InnerRing facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (5.92, 0.00, 17.00) fwd (0.33, 0.00, 0.94) front OuterRing back InnerRing facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (1.96, 0.00, 17.89) fwd (0.11, 0.00, 0.99) front OuterRing back InnerRing facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (-2.11, 0.00, 17.88) fwd (-0.12, 0.00, 0.99) front OuterRing back InnerRing facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (-6.06, 0.00, 16.95) fwd (-0.34, 0.00, 0.94) front OuterRing back InnerRing facing False drawnCut 0/1
-    UP   wall Wall_Pillar at (-9.71, 0.00, 15.16) fwd (-0.54, 0.00, 0.84) front OuterRing back InnerRing facing False drawnCut 0/1
-    UP   prop Light_Post at (8.30, 0.00, 14.38) fwd (-0.87, 0.00, 0.50) front InnerRing back InnerRing facing False drawnCut 0/1
-        hangs on Wall_Panel_4m at (7.75, 0.00, 16.12) bounds (-4.00, 0.00, -0.50) (2.13, 5.08, 0.50) cut False
-    UP   prop Crate_Stack at (-1.38, 0.00, 15.74) fwd (0.15, 0.00, 0.99) front InnerRing back InnerRing facing False drawnCut 0/1
+    UP   wall Wall_Panel_4m at (-16.28, 0.00, -18.88) fwd (-0.65, 0.00, -0.76) front Kitchen back OuterRing facing False drawnCut 0/1
+    UP   wall Wall_Panel_4m_Vent at (-13.24, 0.00, -21.12) fwd (-0.53, 0.00, -0.85) front Kitchen back OuterRing facing False drawnCut 0/1
+    UP   wall Wall_Panel_4m_Pipes at (-9.89, 0.00, -22.88) fwd (-0.40, 0.00, -0.92) front Kitchen back OuterRing facing False drawnCut 0/1
+    UP   wall Wall_Panel_4m at (-6.32, 0.00, -24.11) fwd (-0.25, 0.00, -0.97) front Kitchen back OuterRing facing False drawnCut 0/1
+    UP   wall Wall_Panel_4m at (-2.61, 0.00, -24.79) fwd (-0.10, 0.00, -0.99) front Kitchen back OuterRing facing False drawnCut 0/1
+    UP   wall Wall_Pillar at (-17.71, 0.00, -17.64) fwd (-0.71, 0.00, -0.71) front Kitchen back OuterRing facing False drawnCut 0/1
+    UP   wall Wall_Pillar at (-14.84, 0.00, -20.12) fwd (-0.59, 0.00, -0.80) front Kitchen back OuterRing facing False drawnCut 0/1
+    UP   wall Wall_Pillar at (-11.63, 0.00, -22.13) fwd (-0.47, 0.00, -0.89) front Kitchen back OuterRing facing False drawnCut 0/1
+    UP   wall Wall_Pillar at (-8.15, 0.00, -23.63) fwd (-0.33, 0.00, -0.95) front Kitchen back OuterRing facing False drawnCut 0/1
+    UP   wall Wall_Pillar at (-4.49, 0.00, -24.59) fwd (-0.18, 0.00, -0.98) front Kitchen back OuterRing facing False drawnCut 0/1
+    UP   wall Wall_Pillar at (-0.72, 0.00, -24.99) fwd (-0.03, 0.00, -1.00) front Kitchen back OuterRing facing False drawnCut 0/1
+    UP   wall Wall_Panel_4m at (0.00, 0.00, -23.25) fwd (1.00, 0.00, 0.00) front OuterRing back OuterRing facing False drawnCut 0/1
+    cut  wall Wall_Pillar at (0.00, 0.00, -25.00) fwd (1.00, 0.00, 0.00) front OuterRing back Kitchen facing True drawnCut 1/1
+    UP   prop Crate_Stack at (-11.30, 0.00, -19.57) fwd (-0.56, 0.00, -0.83) front OuterRing back OuterRing facing False drawnCut 0/1
+    cut  wall Wall_Panel_4m_Vent at (-19.80, 0.00, -41.47) fwd (-0.43, 0.00, -0.90) front - back Kitchen facing True drawnCut 1/1
+    cut  wall Wall_Panel_4m at (-16.14, 0.00, -43.03) fwd (-0.35, 0.00, -0.94) front - back Kitchen facing True drawnCut 1/1
+        with Lamp_Wall_Cold at (-17.12, 0.00, -42.37), Model at (-15.29, 0.00, -42.00)
+    cut  wall Wall_Pillar at (-18.01, 0.00, -42.33) fwd (-0.39, 0.00, -0.92) front - back Kitchen facing True drawnCut 1/1
+    cut  wall Wall_Pillar at (-14.28, 0.00, -43.73) fwd (-0.31, 0.00, -0.95) front - back Kitchen facing True drawnCut 1/1
+    cut  wall Wall_Panel_4m at (0.00, 0.00, -27.38) fwd (1.00, 0.00, 0.00) front Storage back Kitchen facing True drawnCut 1/1
+        with Model at (-0.60, 0.00, -27.52), Model at (-0.25, 0.00, -29.20), Light_Fill_Warm at (-0.50, 0.00, -27.50)
+    cut  wall Wall_Panel_4m at (0.00, 0.00, -32.13) fwd (1.00, 0.00, 0.00) front Storage back Kitchen facing True drawnCut 1/1
+        with Model at (-0.60, 0.00, -30.67)
+    cut  wall Wall_Pillar at (0.00, 0.00, -25.00) fwd (1.00, 0.00, 0.00) front OuterRing back Kitchen facing True drawnCut 1/1
+    cut  wall Wall_Pillar at (0.00, 0.00, -29.75) fwd (1.00, 0.00, 0.00) front Storage back Kitchen facing True drawnCut 1/1
+    cut  wall Wall_Pillar at (0.00, 0.00, -34.50) fwd (1.00, 0.00, 0.00) front Storage back Kitchen facing True drawnCut 1/1
+    cut  wall Rock_Mass_4m at (-16.23, 0.00, -43.26) fwd (-0.35, 0.00, -0.94) front - back Kitchen facing True drawnCut 1/1
+    UP   prop Kitchen_Counter at (-0.60, 0.00, -27.52) fwd (1.00, 0.00, 0.00) front Storage back Kitchen facing False drawnCut 1/1
+        hangs on Wall_Panel_4m at (0.00, 0.00, -27.38) bounds (-2.12, 0.00, -0.43) (2.12, 5.08, 0.43) cut True
+    UP   prop Kitchen_Counter at (-0.60, 0.00, -30.67) fwd (1.00, 0.00, 0.00) front Storage back Kitchen facing False drawnCut 1/1
+        hangs on Wall_Panel_4m at (0.00, 0.00, -32.13) bounds (-2.12, 0.00, -0.43) (2.12, 5.08, 0.43) cut True
+    UP   prop Light_Post at (-20.00, 0.00, -36.00) fwd (0.00, 0.00, 1.00) front Kitchen back Kitchen facing False drawnCut 0/1
+    UP   prop Crate_Stack at (-18.70, 0.00, -21.51) fwd (0.93, 0.00, -0.36) front Kitchen back Kitchen facing False drawnCut 0/1
+    UP   prop Kitchen_Counter at (-16.69, 0.00, -19.36) fwd (0.65, 0.00, 0.76) front OuterRing back Kitchen facing False drawnCut 0/1
+        hangs on Wall_Panel_4m at (-16.28, 0.00, -18.88) bounds (-2.12, 0.00, -0.43) (2.12, 5.08, 0.43) cut False
+    UP   prop Fridge at (-13.59, 0.00, -21.69) fwd (0.53, 0.00, 0.85) front OuterRing back Kitchen facing False drawnCut 0/1
+        hangs on Wall_Panel_4m_Vent at (-13.24, 0.00, -21.12) bounds (-2.12, 0.00, -0.50) (2.12, 5.08, 0.50) cut False
+    UP   prop Kitchen_Counter at (-10.14, 0.00, -23.46) fwd (0.40, 0.00, 0.92) front OuterRing back Kitchen facing False drawnCut 0/1
+        hangs on Wall_Panel_4m_Pipes at (-9.89, 0.00, -22.88) bounds (-2.12, 0.00, -0.87) (2.12, 5.08, 0.43) cut False
+    UP   prop Shelf_Storage at (-6.49, 0.00, -24.76) fwd (0.25, 0.00, 0.97) front OuterRing back Kitchen facing False drawnCut 0/1
+        hangs on Wall_Panel_4m at (-6.32, 0.00, -24.11) bounds (-2.12, 0.00, -0.43) (2.12, 5.08, 0.43) cut False
+    UP   prop Kitchen_Counter at (-2.67, 0.00, -25.42) fwd (0.10, 0.00, 0.99) front OuterRing back Kitchen facing False drawnCut 0/1
+        hangs on Wall_Panel_4m at (-2.61, 0.00, -24.79) bounds (-2.12, 0.00, -0.43) (2.12, 5.08, 0.43) cut False
+    UP   prop Shelf_Storage at (1.20, 0.00, -25.57) fwd (-0.05, 0.00, 1.00) front OuterRing back Storage facing False drawnCut 0/1
+        hangs on Wall_Panel_4m_Vent at (1.17, 0.00, -24.90) bounds (-2.12, 0.00, -0.50) (2.12, 5.08, 0.50) cut False

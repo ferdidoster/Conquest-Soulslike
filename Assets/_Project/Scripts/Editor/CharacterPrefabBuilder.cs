@@ -78,6 +78,9 @@ namespace Conquest.EditorTools
             var character = root.GetComponent<ActionCharacter>();
             EditorAssetUtility.Set(character, "inputSource", reader);
             EditorAssetUtility.Set(character, "targetSource", lockOn);
+            var characterSo = new SerializedObject(character);
+            characterSo.FindProperty("moveCancelsRecovery").boolValue = true; // the stick breaks out of recoveries
+            characterSo.ApplyModifiedPropertiesWithoutUndo();
 
             SmoothBlends(root.GetComponent<CharacterAnimator>());
             NanoInjectorBuilder.AttachToPlayer(root); // the heal, its effects and checkpoint respawning
@@ -86,18 +89,19 @@ namespace Conquest.EditorTools
         }
 
         /// <summary>
-        /// Softer transitions for the player: longer cross-fades with a floor, an eased guard layer, damped
-        /// locomotion, and the blend tree starting from standing after an action. Enemies keep the defaults.
+        /// Transitions for the player: a short floor on cross-fades so nothing snaps (but rolls and swings
+        /// still start at once), an eased guard layer, lightly damped locomotion, and the blend tree picking up
+        /// at the character's own speed after an action. Enemies keep the defaults.
         /// </summary>
         private static void SmoothBlends(CharacterAnimator characterAnimator)
         {
             if (characterAnimator == null) return;
             var so = new SerializedObject(characterAnimator);
-            so.FindProperty("crossFadeScale").floatValue = 1.6f;
-            so.FindProperty("minCrossFade").floatValue = 0.12f;
+            so.FindProperty("crossFadeScale").floatValue = 1f;
+            so.FindProperty("minCrossFade").floatValue = 0.06f;
             so.FindProperty("easeGuardBlend").boolValue = true;
             so.FindProperty("resetLocomotionOnReturn").boolValue = true;
-            so.FindProperty("locomotionDamping").floatValue = 0.15f;
+            so.FindProperty("locomotionDamping").floatValue = 0.1f;
             so.FindProperty("guardBlendTime").floatValue = 0.18f;
             so.ApplyModifiedPropertiesWithoutUndo();
         }

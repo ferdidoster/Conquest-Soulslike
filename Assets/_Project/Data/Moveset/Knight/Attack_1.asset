@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Conquest.Combat::Conquest.Combat.AttackData
   animationState: Attack_1
   crossFade: 0.08
+  startAt: 0
   duration: 1.0666667
   activeWindow:
     start: 0.36
@@ -22,6 +23,7 @@ MonoBehaviour:
     start: 0.47999996
     end: 0.95
   dodgeCancelFrom: 0.63
+  moveCancelFrom: 0.7
   cooldown: 0
   trackingUntil: 0.28000003
   tempo:
@@ -102,4 +104,6 @@ MonoBehaviour:
   chargedDamageMultiplier: 1.6
   chargedWeightBonus: 0.8
   next: {fileID: 11400000, guid: fc3ec532c0fa1d745a84ba5819099269, type: 2}
-  defaultsVersion: 7
+  rollAttack: {fileID: 11400000, guid: 9772c15f6dcf55f41a5101d0dca0a618, type: 2}
+  jumpAttack: {fileID: 11400000, guid: 5434a073068a375498fa618b521c9d1c, type: 2}
+  defaultsVersion: 9

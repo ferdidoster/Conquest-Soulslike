@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Conquest.Combat::Conquest.Combat.AttackData
   animationState: Attack_3
   crossFade: 0.08
+  startAt: 0
   duration: 1.8
   activeWindow:
     start: 0.39
@@ -22,6 +23,7 @@ MonoBehaviour:
     start: 0.63
     end: 0.95
   dodgeCancelFrom: 0.58
+  moveCancelFrom: 0.73
   cooldown: 0.35
   trackingUntil: 0.22999999
   tempo:
@@ -74,15 +76,6 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 0.53
-      value: 0.55
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.68
       value: 0.8
       inSlope: 0
       outSlope: 0
@@ -91,8 +84,17 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
+      time: 0.63
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
       time: 1
-      value: 0.95
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -201,4 +203,6 @@ MonoBehaviour:
   chargedDamageMultiplier: 1.6
   chargedWeightBonus: 0.8
   next: {fileID: 0}
-  defaultsVersion: 7
+  rollAttack: {fileID: 0}
+  jumpAttack: {fileID: 0}
+  defaultsVersion: 9

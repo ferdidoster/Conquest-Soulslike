@@ -16,7 +16,16 @@ namespace Conquest.Character.States
 
         public LocomotionState(ActionCharacter character) : base(character) { }
 
-        protected override void OnEnter() => Character.Animator.PlayLocomotion();
+        protected override void OnEnter()
+        {
+            // The legs pick up at the speed the body already has, e.g. when a step cuts a recovery short.
+            Vector3 velocity = Character.Motor.PlanarVelocity;
+            float animMagnitude = ToAnimationMagnitude(Character.Locomotion, velocity.magnitude);
+            Vector3 local = Character.transform.InverseTransformDirection(velocity.normalized) * animMagnitude;
+            Character.Animator.PlayLocomotion(Character.HasTarget
+                ? new Vector2(local.x, local.z)
+                : new Vector2(0f, animMagnitude));
+        }
 
         protected override void OnTick(float dt)
         {

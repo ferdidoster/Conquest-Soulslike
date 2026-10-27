@@ -172,11 +172,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Conquest.Animation::Conquest.Animation.CharacterAnimator
   animator: {fileID: 3491798474524672735}
-  locomotionDamping: 0.15
+  locomotionDamping: 0.1
   guardBlendTime: 0.18
   defaultCrossFade: 0.1
-  crossFadeScale: 1.6
-  minCrossFade: 0.12
+  crossFadeScale: 1
+  minCrossFade: 0.06
   easeGuardBlend: 1
   resetLocomotionOnReturn: 1
 --- !u!114 &43896042999336724
@@ -347,7 +347,8 @@ MonoBehaviour:
       invulnerability:
         start: 0.05
         end: 0.5
-      recoveryFrom: 0.8
+      recoveryFrom: 0.65
+      moveCancelFrom: 0.75
       staminaCost: 20
     backstep:
       duration: 0.5
@@ -387,7 +388,8 @@ MonoBehaviour:
       invulnerability:
         start: 0.05
         end: 0.35
-      recoveryFrom: 0.7
+      recoveryFrom: 0.6
+      moveCancelFrom: 0.7
       staminaCost: 12
   parry:
     duration: 0.8
@@ -432,6 +434,7 @@ MonoBehaviour:
       knockback: 2.5
       keepGuard: 0
   inputBufferTime: 0.35
+  moveCancelsRecovery: 1
 --- !u!114 &4712551598212913754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3071,6 +3074,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8502569861409526208, guid: a23e933fd8a26f144b5575a3898d8a20, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -8479343100705236243, guid: a23e933fd8a26f144b5575a3898d8a20, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -3084,6 +3091,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -6842574968365237240, guid: a23e933fd8a26f144b5575a3898d8a20, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -6427379363061388706, guid: a23e933fd8a26f144b5575a3898d8a20, type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
@@ -3128,6 +3139,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -3174097444209682691, guid: a23e933fd8a26f144b5575a3898d8a20, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2911431260108345962, guid: a23e933fd8a26f144b5575a3898d8a20, type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
@@ -3244,6 +3259,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7003331044548853662, guid: a23e933fd8a26f144b5575a3898d8a20, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7032003562863832044, guid: a23e933fd8a26f144b5575a3898d8a20, type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}

@@ -355,7 +355,8 @@ MonoBehaviour:
       invulnerability:
         start: 0.05
         end: 0.5
-      recoveryFrom: 0.8
+      recoveryFrom: 0.65
+      moveCancelFrom: 0.75
       staminaCost: 20
     backstep:
       duration: 0.5
@@ -395,7 +396,8 @@ MonoBehaviour:
       invulnerability:
         start: 0.05
         end: 0.35
-      recoveryFrom: 0.7
+      recoveryFrom: 0.6
+      moveCancelFrom: 0.7
       staminaCost: 12
   parry:
     duration: 0.8
@@ -440,6 +442,7 @@ MonoBehaviour:
       knockback: 2.5
       keepGuard: 0
   inputBufferTime: 0.35
+  moveCancelsRecovery: 0
 --- !u!114 &7888080766062281987
 MonoBehaviour:
   m_ObjectHideFlags: 0

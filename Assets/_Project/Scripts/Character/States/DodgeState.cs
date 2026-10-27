@@ -35,7 +35,8 @@ namespace Conquest.Character.States
             Character.Motor.SetPlanarVelocityImmediate(_direction * _move.speed.Evaluate(t));
 
             if (t >= _move.recoveryFrom && Character.TryStartBufferedAction()) return;
-            if (IsFinished) Character.EnterLocomotion();
+            if (IsFinished || (t >= _move.moveCancelFrom && Character.WantsToBreakRecovery))
+                Character.EnterLocomotion();
         }
 
         protected override void OnExit() => Character.Receiver.IsInvulnerable = false;

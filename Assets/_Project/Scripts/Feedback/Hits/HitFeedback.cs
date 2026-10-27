@@ -89,7 +89,7 @@ namespace Conquest.Feedback
 
             if (hit.Source != null && hit.Source.TryGetComponent(out IHitStoppable attacker) &&
                 !ReferenceEquals(attacker, _self))
-                attacker.ApplyHitStop(stop * entry.attackerHitStop);
+                attacker.ApplyHitStop(Mathf.Min(stop * entry.attackerHitStop, profile.maxAttackerHitStop));
 
             if (visual == null || stop <= 0f || entry.shudder <= 0f) return;
             _shudderDirection = visual.parent != null ? visual.parent.InverseTransformDirection(direction) : direction;

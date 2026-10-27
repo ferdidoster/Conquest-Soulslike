@@ -37,6 +37,9 @@ namespace Conquest.AI
             IsReady = false;
             SceneManager.sceneUnloaded -= OnSceneUnloaded;
             SceneManager.sceneUnloaded += OnSceneUnloaded;
+            // Leaving Play mode doesn't unload the scene, so drop the NavMesh on quit as well.
+            Application.quitting -= OnQuitting;
+            Application.quitting += OnQuitting;
         }
 
         /// <summary>Builds the NavMesh for the active scene unless that already happened.</summary>
@@ -124,6 +127,12 @@ namespace Conquest.AI
         private static void OnSceneUnloaded(Scene scene)
         {
             if (scene.GetHashCode() != _builtFor) return;
+            Remove();
+            _builtFor = -1;
+        }
+
+        private static void OnQuitting()
+        {
             Remove();
             _builtFor = -1;
         }
