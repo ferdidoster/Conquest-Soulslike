@@ -20,8 +20,9 @@ namespace Conquest.EditorTools
         /// 7: greatsword cooldown: a short pause after a swing before a new one can start, and a later combo window.
         /// 8: fluid recovery: moving cancels the end of a swing (<see cref="AttackData.moveCancelFrom"/>), the
         ///    greatsword recovery no longer drags after the strike, and each moveset has a roll attack.
+        /// 9: a jump attack for each moveset: the heavy's overhead slam, started just before the strike.
         /// </summary>
-        private const int DefaultsVersion = 8;
+        private const int DefaultsVersion = 9;
 
         /// <summary>Forward travel between two clip frames (30 fps), e.g. a step synced to the animation's feet.</summary>
         private readonly struct Step
@@ -53,7 +54,9 @@ namespace Conquest.EditorTools
 
             Link(a1, a2);
             Link(a2, a3);
-            SetRollAttack(a1, CreateRollAttack(folder, a1, startAt: 0.2f));
+            SetRollAttack(a1, CreateFollowUp(folder, "Attack_Roll", a1, startAt: 0.2f, damageScale: 0.85f));
+            SetJumpAttack(a1, heavy, CreateFollowUp(folder, "Attack_Jump", heavy, startAt: heavy.activeWindow.start - 0.1f,
+                damageScale: 0.9f));
             AssetDatabase.SaveAssets();
             return (a1, heavy);
         }
@@ -81,7 +84,9 @@ namespace Conquest.EditorTools
 
             Link(a1, a2);
             Link(a2, a3);
-            SetRollAttack(a1, CreateRollAttack(folder, a1, startAt: 0.22f));
+            SetRollAttack(a1, CreateFollowUp(folder, "Attack_Roll", a1, startAt: 0.22f, damageScale: 0.85f));
+            SetJumpAttack(a1, heavy, CreateFollowUp(folder, "Attack_Jump", heavy, startAt: heavy.activeWindow.start - 0.08f,
+                damageScale: 0.9f));
             AssetDatabase.SaveAssets();
             return (a1, heavy);
         }
@@ -159,12 +164,13 @@ namespace Conquest.EditorTools
         }
 
         /// <summary>
-        /// The attack out of a roll: the chain's first swing started past most of its wind-up
+        /// An attack out of a roll or a jump: <paramref name="source"/> started past most of its wind-up
         /// (<paramref name="startAt"/>), at the clip's own speed and without a charge.
         /// </summary>
-        private static AttackData CreateRollAttack(string folder, AttackData source, float startAt)
+        private static AttackData CreateFollowUp(string folder, string name, AttackData source, float startAt,
+            float damageScale)
         {
-            string path = $"{folder}/Attack_Roll.asset";
+            string path = $"{folder}/{name}.asset";
             var data = AssetDatabase.LoadAssetAtPath<AttackData>(path);
             if (data != null && data.defaultsVersion >= DefaultsVersion) return data;
             if (data == null)
@@ -174,15 +180,16 @@ namespace Conquest.EditorTools
             }
 
             EditorUtility.CopySerialized(source, data);
-            data.name = "Attack_Roll"; // CopySerialized copies the source's name too
+            data.name = name; // CopySerialized copies the source's name too
             data.startAt = startAt;
             data.tempo = new AnimationCurve();
             data.chargeable = false;
             data.cooldown = 0f;
             data.trackingUntil = Mathf.Max(data.trackingUntil, startAt + 0.08f);
-            data.damage = data.guardDamage = source.damage * 0.85f;
+            data.damage = data.guardDamage = source.damage * damageScale;
             data.next = null;
             data.rollAttack = null;
+            data.jumpAttack = null;
             data.defaultsVersion = DefaultsVersion;
             EditorUtility.SetDirty(data);
             return data;
@@ -193,6 +200,17 @@ namespace Conquest.EditorTools
             if (chainStart.rollAttack == rollAttack) return;
             chainStart.rollAttack = rollAttack;
             EditorUtility.SetDirty(chainStart);
+        }
+
+        /// <summary>Either attack button in the air does the jump attack.</summary>
+        private static void SetJumpAttack(AttackData light, AttackData heavy, AttackData jumpAttack)
+        {
+            foreach (AttackData chainStart in new[] { light, heavy })
+            {
+                if (chainStart.jumpAttack == jumpAttack) continue;
+                chainStart.jumpAttack = jumpAttack;
+                EditorUtility.SetDirty(chainStart);
+            }
         }
 
         /// <summary>

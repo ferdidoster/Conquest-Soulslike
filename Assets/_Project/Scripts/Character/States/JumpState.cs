@@ -1,4 +1,5 @@
 using Conquest.Animation;
+using Conquest.Core.Input;
 using UnityEngine;
 
 namespace Conquest.Character.States
@@ -6,6 +7,7 @@ namespace Conquest.Character.States
     /// <summary>
     /// A jump: launches the character to <see cref="JumpSettings.height"/>, keeps the run-up's
     /// momentum with a little steering in the air, and hands back to locomotion on landing.
+    /// An attack pressed in the air becomes the moveset's jump attack.
     /// </summary>
     public sealed class JumpState : CharacterState
     {
@@ -36,8 +38,16 @@ namespace Conquest.Character.States
             Character.Motor.TurnTowards(Character.HasTarget ? Character.DirectionToTarget() : _velocity, dt);
 
             // Give the controller a moment to leave the ground before checking for the landing.
-            if (Elapsed < 0.1f || !Character.Motor.IsGrounded) return;
+            if (Elapsed < 0.1f) return;
+            if (!Character.Motor.IsGrounded)
+            {
+                Character.TryStartBufferedAction(IsAttack);
+                return;
+            }
             if (!Character.TryStartBufferedAction()) Character.EnterLocomotion();
         }
+
+        private static bool IsAttack(CharacterAction action) =>
+            action == CharacterAction.LightAttack || action == CharacterAction.HeavyAttack;
     }
 }

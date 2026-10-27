@@ -70,6 +70,9 @@ namespace Conquest.Combat
         [Tooltip("Performed instead of this attack when it is pressed out of a roll or backstep. " +
                  "Only read on the first attack of a chain.")]
         public AttackData rollAttack;
+        [Tooltip("Performed instead of this attack when it is pressed in the air. Only read on the first " +
+                 "attack of a chain. Empty = the press waits for the landing.")]
+        public AttackData jumpAttack;
 
         /// <summary>Version of the generated defaults; lets the setup tool refresh untouched assets.</summary>
         [HideInInspector] public int defaultsVersion;

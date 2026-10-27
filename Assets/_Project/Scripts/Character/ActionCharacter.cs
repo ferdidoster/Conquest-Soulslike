@@ -293,13 +293,18 @@ namespace Conquest.Character
             switch (action)
             {
                 case CharacterAction.LightAttack:
-                    // Out of a roll or backstep, the light attack becomes the moveset's roll attack.
-                    if (currentAttack == null && _stateMachine.IsIn(_dodgeState) && lightAttack != null &&
-                        lightAttack.rollAttack != null)
-                        return Attack(lightAttack.rollAttack, action);
-                    return Attack(NextInCombo(currentAttack, lightAttack), action);
                 case CharacterAction.HeavyAttack:
-                    return Attack(NextInCombo(currentAttack, heavyAttack), action);
+                    AttackData chainStart = action == CharacterAction.LightAttack ? lightAttack : heavyAttack;
+                    if (currentAttack == null && chainStart != null)
+                    {
+                        // Out of a roll or backstep the attack becomes its roll attack; in the air, its jump
+                        // attack (without one the press waits for the landing).
+                        if (_stateMachine.IsIn(_dodgeState) && chainStart.rollAttack != null)
+                            return Attack(chainStart.rollAttack, action);
+                        if (_stateMachine.IsIn(_jumpState))
+                            return chainStart.jumpAttack != null ? Attack(chainStart.jumpAttack, action) : null;
+                    }
+                    return Attack(NextInCombo(currentAttack, chainStart), action);
                 case CharacterAction.Dodge:
                     return _dodgeState;
                 case CharacterAction.Parry:
