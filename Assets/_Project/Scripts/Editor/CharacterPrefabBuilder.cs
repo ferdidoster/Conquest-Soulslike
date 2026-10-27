@@ -84,6 +84,7 @@ namespace Conquest.EditorTools
 
             SmoothBlends(root.GetComponent<CharacterAnimator>());
             NanoInjectorBuilder.AttachToPlayer(root); // the heal, its effects and checkpoint respawning
+            DataPointsBuilder.AttachToPlayer(root); // collected from enemies, dropped on death
 
             return Save(root, prefabPath);
         }
@@ -115,6 +116,7 @@ namespace Conquest.EditorTools
             var character = root.GetComponent<ActionCharacter>();
             EditorAssetUtility.Set(character, "inputSource", brain);
             EditorAssetUtility.Set(character, "targetSource", brain);
+            DataPointsBuilder.SetReward(root, DataPointsBuilder.RewardFor(prefabPath));
 
             return Save(root, prefabPath);
         }
@@ -133,6 +135,7 @@ namespace Conquest.EditorTools
             root.name = setup.Name;
             if (setup.Model != null) SwapModel(root, setup);
             customize?.Invoke(root);
+            DataPointsBuilder.SetReward(root, DataPointsBuilder.RewardFor(prefabPath));
             return Save(root, prefabPath);
         }
 
