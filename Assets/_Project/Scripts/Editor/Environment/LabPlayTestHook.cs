@@ -26,7 +26,9 @@ namespace Conquest.EditorTools
 
         private static double _nextPoll;
         private static bool _running;
-        private static readonly List<(string name, Vector3 pos, float yaw)> Spots = new List<(string, Vector3, float)>();
+        // name x y z yaw [seconds to wait before the shot, default Settle]
+        private static readonly List<(string name, Vector3 pos, float yaw, float wait)> Spots =
+            new List<(string, Vector3, float, float)>();
         private static int _index;
         private static double _spotStart;
         private static PlayerInputReader _player;
@@ -67,8 +69,8 @@ namespace Conquest.EditorTools
             foreach (string raw in lines)
             {
                 string[] p = raw.Trim().Split(' ');
-                if (p.Length != 5) continue;
-                Spots.Add((p[0], new Vector3(F(p[1]), F(p[2]), F(p[3])), F(p[4])));
+                if (p.Length != 5 && p.Length != 6) continue;
+                Spots.Add((p[0], new Vector3(F(p[1]), F(p[2]), F(p[3])), F(p[4]), p.Length == 6 ? F(p[5]) : Settle));
             }
 
             if (Spots.Count == 0) return;
@@ -123,7 +125,7 @@ namespace Conquest.EditorTools
                 return;
             }
 
-            (string _, Vector3 pos, float yaw) = Spots[_index];
+            var (_, pos, yaw, _) = Spots[_index];
             var controller = _player.GetComponent<CharacterController>();
             if (controller != null) controller.enabled = false;
             _player.transform.position = _level.TransformPoint(pos);
@@ -134,7 +136,7 @@ namespace Conquest.EditorTools
 
         private static void Step()
         {
-            if (_index < 0 || _index >= Spots.Count || EditorApplication.timeSinceStartup - _spotStart < Settle) return;
+            if (_index < 0 || _index >= Spots.Count || EditorApplication.timeSinceStartup - _spotStart < Spots[_index].wait) return;
             Capture(Spots[_index].name);
             Next();
         }
@@ -156,7 +158,8 @@ namespace Conquest.EditorTools
 
             Vector3 eye = camera.transform.position;
             Vector3 to = _player.transform.position + Vector3.up * 1.1f;
-            Log.AppendLine($"[{name}] section {(_sections != null ? _sections.Current : "-")}, player {_level.InverseTransformPoint(_player.transform.position)}, camera yaw {camera.transform.eulerAngles.y:0}");
+            Log.AppendLine($"[{name}] section {(_sections != null ? _sections.Current : "-")}" +
+                           $" (light {(_sections != null ? _sections.TransitionProgress : 1f):0.00}), player {_level.InverseTransformPoint(_player.transform.position)}, camera yaw {camera.transform.eulerAngles.y:0}");
             var seen = new HashSet<Transform>();
             foreach (RaycastHit hit in Physics.SphereCastAll(eye, 0.4f, (to - eye).normalized, (to - eye).magnitude - 0.6f,
                          ~0, QueryTriggerInteraction.Ignore))

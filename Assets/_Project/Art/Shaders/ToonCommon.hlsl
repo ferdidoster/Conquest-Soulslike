@@ -79,11 +79,16 @@ half ToonGrit(float3 positionWS)
 // dimmed toward _ConquestSectionTint (glow partly kept, so lamps still show the way). Kit renderers
 // on rendering layer 8 are dimmed per pixel from the section map, layer 10 dims a whole renderer,
 // and layer 9 marks a cut-away wall, drawn only up to _ConquestCutHeight.
-// _ConquestSection is 0 when sections are off, otherwise the current section index + 1.
+// _ConquestSection is 0 when sections are off, otherwise the current section index + 1;
+// _ConquestSectionPrev is the section the player just left, and _ConquestSectionBlend fades from it
+// (0) to the current one (1), so entering a section lights it up over a moment instead of at once.
 TEXTURE2D(_ConquestSectionMap);
 SAMPLER(sampler_ConquestSectionMap);
 float4x4 _ConquestSectionWorldToMap;
+float4 _ConquestSectionMapSize;     // width, height, 1 / width, 1 / height
 float _ConquestSection;
+float _ConquestSectionPrev;
+float _ConquestSectionBlend;
 float _ConquestSectionHasMap;
 half4 _ConquestSectionTint;
 half _ConquestSectionGlow;
@@ -93,19 +98,37 @@ float _ConquestCutHeight;
 #define CONQUEST_CUT_LAYER (1u << 9)
 #define CONQUEST_DIM_LAYER (1u << 10)
 
-bool ToonOutsideSection(float3 positionWS)
+// How much a point belongs to the shown section, 0..1. The map is read with four taps and blended
+// between cell centres, so the edge of the lit area is a smooth line instead of 0.25 m steps.
+half ToonSectionInside(float3 positionWS)
 {
     if (_ConquestSection < 0.5)
-        return false;
+        return 1.0h;
     uint layer = asuint(unity_RenderingLayer.x);
     if ((layer & CONQUEST_DIM_LAYER) != 0u)
-        return true;
+        return 0.0h;
     if ((layer & CONQUEST_SECTION_LAYER) == 0u || _ConquestSectionHasMap < 0.5)
-        return false;
+        return 1.0h;
     float2 uv = mul(_ConquestSectionWorldToMap, float4(positionWS, 1.0)).xy;
-    float id = SAMPLE_TEXTURE2D_LOD(_ConquestSectionMap, sampler_ConquestSectionMap, saturate(uv), 0).r * 255.0;
-    bool inside = all(uv >= 0.0) && all(uv <= 1.0) && abs(id - _ConquestSection) < 0.5;
-    return !inside;
+    if (any(uv < 0.0) || any(uv > 1.0))
+        return 0.0h;
+
+    float2 t = uv * _ConquestSectionMapSize.xy - 0.5;
+    float2 cell = floor(t);
+    float2 f = t - cell;
+    float prev = _ConquestSectionPrev > 0.5 ? _ConquestSectionPrev : _ConquestSection;
+    float4 now = 0.0, before = 0.0;
+    [unroll] for (int k = 0; k < 4; k++)
+    {
+        float2 offset = float2(k & 1, k >> 1);
+        float2 tap = saturate((cell + offset + 0.5) * _ConquestSectionMapSize.zw);
+        float id = SAMPLE_TEXTURE2D_LOD(_ConquestSectionMap, sampler_ConquestSectionMap, tap, 0).r * 255.0;
+        now[k] = abs(id - _ConquestSection) < 0.5 ? 1.0 : 0.0;
+        before[k] = abs(id - prev) < 0.5 ? 1.0 : 0.0;
+    }
+    float inNow = lerp(lerp(now.x, now.y, f.x), lerp(now.z, now.w, f.x), f.y);
+    float inBefore = lerp(lerp(before.x, before.y, f.x), lerp(before.z, before.w, f.x), f.y);
+    return (half)smoothstep(0.0, 1.0, lerp(inBefore, inNow, _ConquestSectionBlend));
 }
 
 // Cut-away walls: every pass but the shadow caster, so they still cast their full shadow.
@@ -117,9 +140,11 @@ void ToonSectionClip(float3 positionWS)
 
 half3 ToonSectionShade(half3 color, half3 emission, float3 positionWS)
 {
-    if (!ToonOutsideSection(positionWS))
+    half inside = ToonSectionInside(positionWS);
+    if (inside >= 0.999h)
         return color;
-    return (color - emission) * _ConquestSectionTint.rgb + emission * _ConquestSectionGlow;
+    half3 dimmed = (color - emission) * _ConquestSectionTint.rgb + emission * _ConquestSectionGlow;
+    return lerp(dimmed, color, inside);
 }
 
 #endif

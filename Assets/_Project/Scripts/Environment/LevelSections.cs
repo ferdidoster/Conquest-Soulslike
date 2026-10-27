@@ -35,6 +35,8 @@ namespace Conquest.Environment
         [SerializeField] private Color dimTint = new Color(0.2f, 0.23f, 0.32f, 1f);
         [Tooltip("How much of their glow lamps and screens keep outside the current section.")]
         [SerializeField, Range(0f, 1f)] private float glowKept = 0.75f;
+        [Tooltip("Seconds the light takes to come up in a section the player enters (and to dim in the one left). 0 = at once.")]
+        [SerializeField, Min(0f)] private float transitionTime = 0.7f;
         [Tooltip("Hide characters (enemies) that stand in another section.")]
         [SerializeField] private bool hideCharacters = true;
 
@@ -68,6 +70,9 @@ namespace Conquest.Environment
         public event Action<string> SectionChanged;
 
         private static readonly int SectionId = Shader.PropertyToID("_ConquestSection");
+        private static readonly int PrevId = Shader.PropertyToID("_ConquestSectionPrev");
+        private static readonly int BlendId = Shader.PropertyToID("_ConquestSectionBlend");
+        private static readonly int MapSizeId = Shader.PropertyToID("_ConquestSectionMapSize");
         private static readonly int HasMapId = Shader.PropertyToID("_ConquestSectionHasMap");
         private static readonly int MapId = Shader.PropertyToID("_ConquestSectionMap");
         private static readonly int MatrixId = Shader.PropertyToID("_ConquestSectionWorldToMap");
@@ -83,6 +88,8 @@ namespace Conquest.Environment
         private Vector3[] _centres = Array.Empty<Vector3>();
         private Texture2D _mapTexture;
         private int _current = -1;
+        private int _previous = -1;
+        private float _fade = 1f;          // 0 = still showing _previous, 1 = fully _current
         private Vector3 _viewForward;
         private Vector3 _cutFrom;
         private float _nextCharacterCheck;
@@ -125,6 +132,9 @@ namespace Conquest.Environment
         /// <summary>Name of the section the player is in, or null when sections are off.</summary>
         public string Current => _current >= 0 && _current < sectionNames.Length ? sectionNames[_current] : null;
 
+        /// <summary>How far the light has come up in the current section, 0..1 (1 = settled).</summary>
+        public float TransitionProgress => _fade;
+
         private bool HasMap => mapWidth > 0 && cells.Length == mapWidth * mapHeight;
 
         private void Start() => Collect();
@@ -134,6 +144,7 @@ namespace Conquest.Environment
             if (!sectionsEnabled || target == null) return;
             int section = Locate(target.position);
             if (section >= 0 && section != _current) Show(section);
+            if (_fade < 1f) StepFade(Time.deltaTime);
 
             // the third-person camera turns: re-pick the walls that face it
             Camera view = Camera.main;
@@ -215,6 +226,13 @@ namespace Conquest.Environment
         public void Show(int section, Vector3? viewForward = null)
         {
             Collect();
+            // in play, fade over from the section just left; in edit mode (and the first time) switch at once
+            bool fade = Application.isPlaying && transitionTime > 0f && _current >= 0 && _current != section;
+            if (fade && section == _previous && _fade < 1f)
+                _fade = 1f - _fade;        // stepped back mid-fade: run the same fade the other way
+            else
+                _fade = fade ? 0f : 1f;
+            _previous = fade ? _current : section;
             _current = section;
             int bit = 1 << section;
 
@@ -235,6 +253,8 @@ namespace Conquest.Environment
         {
             if (!_collected) return;
             _current = -1;
+            _previous = -1;
+            _fade = 1f;
             foreach (Renderer r in _renderers) SetLayer(r, DimLayer, false);
             foreach (Wall wall in _walls)
             {
@@ -272,6 +292,7 @@ namespace Conquest.Environment
                 toMap.SetRow(1, (toLocal.GetRow(2) - new Vector4(0f, 0f, 0f, mapOrigin.y)) / (mapHeight * cellSize));
                 Shader.SetGlobalTexture(MapId, _mapTexture);
                 Shader.SetGlobalMatrix(MatrixId, toMap);
+                Shader.SetGlobalVector(MapSizeId, new Vector4(mapWidth, mapHeight, 1f / mapWidth, 1f / mapHeight));
             }
 
             Shader.SetGlobalFloat(HasMapId, HasMap ? 1f : 0f);
@@ -279,6 +300,19 @@ namespace Conquest.Environment
             Shader.SetGlobalFloat(GlowId, glowKept);
             Shader.SetGlobalFloat(CutHeightId, transform.position.y + cutHeight);
             Shader.SetGlobalFloat(SectionId, _current + 1f);
+            SetFadeGlobals();
+        }
+
+        private void StepFade(float deltaTime)
+        {
+            _fade = transitionTime > 0f ? Mathf.Min(1f, _fade + deltaTime / transitionTime) : 1f;
+            SetFadeGlobals();
+        }
+
+        private void SetFadeGlobals()
+        {
+            Shader.SetGlobalFloat(PrevId, _previous + 1f);
+            Shader.SetGlobalFloat(BlendId, Mathf.SmoothStep(0f, 1f, _fade));
         }
 
         // ------------------------------------------------------------------ cut-away walls

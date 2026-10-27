@@ -86,7 +86,9 @@ Shader "Conquest/Toon Flat"
                 Light mainLight = GetMainLight(TransformWorldToShadowCoord(input.positionWS));
                 half ndl = dot(normalWS, mainLight.direction);
                 half lit = smoothstep(_ShadowThreshold - _ShadowSoftness, _ShadowThreshold + _ShadowSoftness, ndl);
-                lit = min(lit, smoothstep(0.35, 0.65, mainLight.shadowAttenuation));
+                // a wide ramp over the soft-filtered shadow map: the shadow edge stays a clean toon line
+                // but is anti-aliased instead of showing the shadow map's texels
+                lit = min(lit, smoothstep(0.08, 0.92, mainLight.shadowAttenuation));
                 half3 lighting = lerp(_ShadowColor.rgb, half3(1, 1, 1), lit) * mainLight.color;
                 lighting += SampleSH(normalWS) * 0.2;
                 half3 color = albedo * lighting;
