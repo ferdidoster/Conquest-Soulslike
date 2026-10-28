@@ -30,6 +30,18 @@ namespace Conquest.CameraSystem
         [SerializeField, Tooltip("Pitch while locked on, before looking down at close targets.")]
         private float lockOnPitch = 12f;
 
+        [Header("Auto-follow")]
+        [SerializeField, Tooltip("When not locked on, swing the camera round behind the way the player walks.")]
+        private bool autoFollow = true;
+        [SerializeField, Tooltip("Degrees per second the camera turns while running sideways at full speed.")]
+        private float autoFollowTurnSpeed = 90f;
+        [SerializeField, Tooltip("Player speed (m/s) at which the camera turns at full rate.")]
+        private float autoFollowFullSpeed = 4f;
+        [SerializeField, Tooltip("Below this speed (m/s) the camera stays put.")]
+        private float autoFollowMinSpeed = 0.5f;
+        [SerializeField, Tooltip("Seconds after moving the camera by hand before auto-follow takes over again.")]
+        private float autoFollowDelay = 1f;
+
         [Header("Collision")]
         [SerializeField] private LayerMask collisionMask = 1;
         [SerializeField] private float collisionRadius = 0.25f;
@@ -40,6 +52,8 @@ namespace Conquest.CameraSystem
         private Vector3 _pivotVelocity;
         private float _yaw;
         private float _pitch = 15f;
+        private Vector3 _lastFollowPosition;
+        private float _lastManualLookTime = float.NegativeInfinity;
 
         private void Awake()
         {
@@ -53,6 +67,7 @@ namespace Conquest.CameraSystem
             _targets = targets;
             _yaw = follow.eulerAngles.y;
             _pivot = follow.position + pivotOffset;
+            _lastFollowPosition = follow.position;
         }
 
         private void LateUpdate()
@@ -63,8 +78,15 @@ namespace Conquest.CameraSystem
             Vector3 desiredPivot = followTarget.position + pivotOffset;
             _pivot = Vector3.SmoothDamp(_pivot, desiredPivot, ref _pivotVelocity, followSmoothTime);
 
+            Vector3 moved = followTarget.position - _lastFollowPosition;
+            _lastFollowPosition = followTarget.position;
+
             if (_targets != null && _targets.HasTarget) FrameTarget(_targets.CurrentTarget, dt);
-            else Orbit();
+            else
+            {
+                Orbit();
+                AutoFollow(moved, dt);
+            }
 
             Quaternion rotation = Quaternion.Euler(_pitch, _yaw, 0f);
             Vector3 back = rotation * Vector3.back;
@@ -79,8 +101,25 @@ namespace Conquest.CameraSystem
         {
             if (_look == null) return;
             Vector2 delta = _look.LookDelta;
+            if (delta.sqrMagnitude > 0.0001f) _lastManualLookTime = Time.time;
             _yaw += delta.x;
             _pitch = Mathf.Clamp(_pitch - delta.y, minPitch, maxPitch);
+        }
+
+        // Souls-style auto-follow: the camera turns hardest when the player runs sideways and not at
+        // all when they run straight at it, so it swings round behind them instead of spinning.
+        private void AutoFollow(Vector3 moved, float dt)
+        {
+            if (!autoFollow || dt <= 0f || Time.time - _lastManualLookTime < autoFollowDelay) return;
+
+            Vector3 flat = new Vector3(moved.x, 0f, moved.z);
+            float speed = flat.magnitude / dt;
+            if (speed < autoFollowMinSpeed) return;
+
+            float angle = Mathf.DeltaAngle(_yaw, Quaternion.LookRotation(flat).eulerAngles.y);
+            float sideways = Mathf.Sin(angle * Mathf.Deg2Rad);
+            float step = autoFollowTurnSpeed * sideways * Mathf.Clamp01(speed / autoFollowFullSpeed) * dt;
+            _yaw += Mathf.Clamp(step, -Mathf.Abs(angle), Mathf.Abs(angle));
         }
 
         private void FrameTarget(ITargetable target, float dt)
