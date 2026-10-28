@@ -16,12 +16,14 @@ namespace Conquest.Targeting
         private Transform eyes;
         [SerializeField] private float acquireDistance = 20f;
         [SerializeField] private float keepDistance = 25f;
-        [SerializeField, Range(0f, 180f)] private float acquireViewAngle = 60f;
+        [SerializeField, Range(0f, 180f), Tooltip("Only used when no camera is found; with a camera, any on-screen target can be picked.")]
+        private float acquireViewAngle = 60f;
         [SerializeField] private LayerMask occlusionMask = 1;
         [SerializeField, Tooltip("Seconds without line of sight before the lock breaks.")]
         private float lostSightTimeout = 1.5f;
 
         private float _hiddenTime;
+        private Camera _viewCamera;
 
         public ITargetable CurrentTarget { get; private set; }
         public bool HasTarget => CurrentTarget != null;
@@ -31,7 +33,11 @@ namespace Conquest.Targeting
 
         private Vector3 EyePosition => eyes != null ? eyes.position : transform.position + Vector3.up * 1.6f;
 
-        public void SetView(Transform viewTransform) => view = viewTransform;
+        public void SetView(Transform viewTransform)
+        {
+            view = viewTransform;
+            _viewCamera = null;
+        }
 
         public void Toggle()
         {
@@ -79,9 +85,11 @@ namespace Conquest.Targeting
 
         private TargetSelector.Query BuildQuery(float distance, float angle)
         {
-            Transform v = view != null ? view : transform;
+            Camera cam = ResolveCamera();
+            Transform v = cam != null ? cam.transform : view != null ? view : transform;
             return new TargetSelector.Query
             {
+                ViewCamera = cam,
                 Origin = EyePosition,
                 ViewForward = v.forward,
                 MaxDistance = distance,
@@ -89,6 +97,15 @@ namespace Conquest.Targeting
                 OcclusionMask = occlusionMask,
                 Ignore = gameObject,
             };
+        }
+
+        // The camera on the view transform, or the main camera. Picking by the camera (not the
+        // character's facing) means lock-on grabs what the player is looking at on screen.
+        private Camera ResolveCamera()
+        {
+            if (_viewCamera != null && _viewCamera.isActiveAndEnabled) return _viewCamera;
+            _viewCamera = view != null && view.TryGetComponent(out Camera own) ? own : Camera.main;
+            return _viewCamera;
         }
     }
 }
