@@ -24,24 +24,11 @@ namespace Conquest.CameraSystem.Cinemachine
         [SerializeField] private LockOnController lockOn;
         [SerializeField] private Transform player;
 
-        [Header("Isometric auto-follow")]
-        [SerializeField, Tooltip("When not locked on, slowly turn the isometric view behind the way the player walks.")]
-        private bool followWalkDirection = true;
-        [SerializeField, Range(0f, 1f), Tooltip("Turn rate as a share of the rig's turn speed, at full sideways run.")]
-        private float followWalkStrength = 0.8f;
-        [SerializeField, Tooltip("Player speed (m/s) at which the view turns at full rate.")]
-        private float isometricFollowFullSpeed = 4f;
-        [SerializeField, Tooltip("Seconds after turning the view by hand before auto-follow takes over again.")]
-        private float isometricFollowDelay = 1f;
-
         [Header("Input")]
         [SerializeField] private InputAction toggleMode = new InputAction("ToggleCameraMode", InputActionType.Button);
         [SerializeField] private InputAction rotateIsometric = new InputAction("RotateIsometric", InputActionType.Value);
 
         public CameraMode Mode { get; private set; }
-
-        private Vector3 _lastPlayerPosition;
-        private float _lastManualTurnTime = float.NegativeInfinity;
 
         private void Reset()
         {
@@ -70,11 +57,7 @@ namespace Conquest.CameraSystem.Cinemachine
             rotateIsometric.Disable();
         }
 
-        private void Start()
-        {
-            if (player != null) _lastPlayerPosition = player.position;
-            SetMode(startMode);
-        }
+        private void Start() => SetMode(startMode);
 
         public void SetMode(CameraMode mode)
         {
@@ -93,39 +76,9 @@ namespace Conquest.CameraSystem.Cinemachine
         // Hold Z / C to turn the isometric view around the player.
         private void Update()
         {
-            Vector3 moved = Vector3.zero;
-            if (player != null)
-            {
-                moved = player.position - _lastPlayerPosition;
-                _lastPlayerPosition = player.position;
-            }
-
             if (Mode != CameraMode.Isometric || isometric == null) return;
             float direction = rotateIsometric.ReadValue<float>();
-            if (Mathf.Abs(direction) > 0.1f)
-            {
-                isometric.Turn(direction);
-                _lastManualTurnTime = Time.time;
-            }
-            else AutoFollowIsometric(moved);
-        }
-
-        // Turns the view round to look the way the player walks, all the way round if they walk
-        // toward the camera. Full turn rate beyond 30 degrees off, easing in below that.
-        private void AutoFollowIsometric(Vector3 moved)
-        {
-            float dt = Time.deltaTime;
-            if (!followWalkDirection || player == null || dt <= 0f) return;
-            if (lockOn != null && lockOn.HasTarget) return;
-            if (Time.time - _lastManualTurnTime < isometricFollowDelay) return;
-
-            Vector3 flat = new Vector3(moved.x, 0f, moved.z);
-            float speed = flat.magnitude / dt;
-            if (speed < 0.5f) return;
-
-            float angle = Mathf.DeltaAngle(isometric.Yaw, Quaternion.LookRotation(flat).eulerAngles.y);
-            float turn = Mathf.Clamp(angle / 30f, -1f, 1f);
-            isometric.Turn(turn * followWalkStrength * Mathf.Clamp01(speed / isometricFollowFullSpeed));
+            if (Mathf.Abs(direction) > 0.1f) isometric.Turn(direction);
         }
     }
 }
