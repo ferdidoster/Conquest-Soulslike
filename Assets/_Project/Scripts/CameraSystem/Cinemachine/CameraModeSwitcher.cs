@@ -26,9 +26,9 @@ namespace Conquest.CameraSystem.Cinemachine
 
         [Header("Isometric auto-follow")]
         [SerializeField, Tooltip("When not locked on, slowly turn the isometric view behind the way the player walks.")]
-        private bool autoFollowIsometric;
+        private bool autoFollowIsometric = true;
         [SerializeField, Range(0f, 1f), Tooltip("Turn rate as a share of the rig's turn speed, at full sideways run.")]
-        private float isometricFollowStrength = 0.4f;
+        private float isometricFollowStrength = 0.6f;
         [SerializeField, Tooltip("Player speed (m/s) at which the view turns at full rate.")]
         private float isometricFollowFullSpeed = 4f;
         [SerializeField, Tooltip("Seconds after turning the view by hand before auto-follow takes over again.")]

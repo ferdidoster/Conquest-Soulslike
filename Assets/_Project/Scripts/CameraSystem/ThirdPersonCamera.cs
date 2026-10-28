@@ -40,7 +40,9 @@ namespace Conquest.CameraSystem
         [SerializeField, Tooltip("Below this speed (m/s) the camera stays put.")]
         private float autoFollowMinSpeed = 0.5f;
         [SerializeField, Tooltip("Seconds after moving the camera by hand before auto-follow takes over again.")]
-        private float autoFollowDelay = 1f;
+        private float autoFollowDelay = 0.5f;
+        [SerializeField, Tooltip("Look input (degrees per frame) below this counts as a resting mouse or stick, not manual control.")]
+        private float manualLookThreshold = 0.5f;
 
         [Header("Collision")]
         [SerializeField] private LayerMask collisionMask = 1;
@@ -101,7 +103,7 @@ namespace Conquest.CameraSystem
         {
             if (_look == null) return;
             Vector2 delta = _look.LookDelta;
-            if (delta.sqrMagnitude > 0.0001f) _lastManualLookTime = Time.time;
+            if (delta.magnitude > manualLookThreshold) _lastManualLookTime = Time.time;
             _yaw += delta.x;
             _pitch = Mathf.Clamp(_pitch - delta.y, minPitch, maxPitch);
         }
