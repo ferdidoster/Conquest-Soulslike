@@ -28,7 +28,7 @@ namespace Conquest.CameraSystem.Cinemachine
         [SerializeField, Tooltip("When not locked on, slowly turn the isometric view behind the way the player walks.")]
         private bool autoFollowIsometric = true;
         [SerializeField, Range(0f, 1f), Tooltip("Turn rate as a share of the rig's turn speed, at full sideways run.")]
-        private float isometricFollowStrength = 0.6f;
+        private float isometricFollowStrength = 0.8f;
         [SerializeField, Tooltip("Player speed (m/s) at which the view turns at full rate.")]
         private float isometricFollowFullSpeed = 4f;
         [SerializeField, Tooltip("Seconds after turning the view by hand before auto-follow takes over again.")]
@@ -110,8 +110,8 @@ namespace Conquest.CameraSystem.Cinemachine
             else AutoFollowIsometric(moved);
         }
 
-        // Same idea as the third-person auto-follow: turn when running sideways, never when running
-        // straight at the camera.
+        // Turns the view round to look the way the player walks, all the way round if they walk
+        // toward the camera. Full turn rate beyond 30 degrees off, easing in below that.
         private void AutoFollowIsometric(Vector3 moved)
         {
             float dt = Time.deltaTime;
@@ -124,8 +124,8 @@ namespace Conquest.CameraSystem.Cinemachine
             if (speed < 0.5f) return;
 
             float angle = Mathf.DeltaAngle(isometric.Yaw, Quaternion.LookRotation(flat).eulerAngles.y);
-            float sideways = Mathf.Sin(angle * Mathf.Deg2Rad);
-            isometric.Turn(sideways * isometricFollowStrength * Mathf.Clamp01(speed / isometricFollowFullSpeed));
+            float turn = Mathf.Clamp(angle / 30f, -1f, 1f);
+            isometric.Turn(turn * isometricFollowStrength * Mathf.Clamp01(speed / isometricFollowFullSpeed));
         }
     }
 }

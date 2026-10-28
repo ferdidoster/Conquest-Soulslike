@@ -24,6 +24,8 @@ namespace Conquest.Player
         [SerializeField, Tooltip("Degrees per pixel of mouse movement.")] private float mouseSensitivity = 0.12f;
         [SerializeField, Tooltip("Degrees per second at full stick.")] private float stickSensitivity = 200f;
         [SerializeField] private bool invertY;
+        [SerializeField, Tooltip("Keep walking the same way while the camera auto-turns, until the move input is released or changed.")]
+        private bool holdMoveDirection = true;
 
         [Header("Dodge / Sprint")]
         [SerializeField, Tooltip("Holding dodge longer than this sprints instead of rolling.")]
@@ -37,6 +39,9 @@ namespace Conquest.Player
         private InputAction _move, _walk, _lookMouse, _lookStick, _light, _heavy, _block, _parry, _jump, _dodge,
             _heal, _sprint, _sprintToggle, _lockOn, _switchScroll;
         private float _dodgePressedAt = -1f;
+        private Vector3 _moveForward = Vector3.forward;
+        private Vector3 _moveRight = Vector3.right;
+        private Vector2 _heldMove;
         private bool _sprintToggled;
         private bool _stickFlickReady = true;
 
@@ -101,7 +106,6 @@ namespace Conquest.Player
             Vector2 move = Vector2.ClampMagnitude(_move.ReadValue<Vector2>(), 1f);
             if (move.magnitude < sprintToggleStopThreshold) _sprintToggled = false;
             if (_walk.IsPressed()) move *= 0.5f;
-            MoveDirection = view != null ? move.RelativeTo(view) : new Vector3(move.x, 0f, move.y);
 
             Vector2 stick = _lookStick.ReadValue<Vector2>();
             bool lockedOn = lockOn != null && lockOn.HasTarget;
@@ -118,6 +122,28 @@ namespace Conquest.Player
                 if (invertY) look.y = -look.y;
                 LookDelta = look;
             }
+
+            UpdateMoveFrame(move, lockedOn);
+            MoveDirection = Vector3.ClampMagnitude(_moveForward * move.y + _moveRight * move.x, 1f);
+        }
+
+        // Movement is relative to the camera, but while the camera turns on its own to follow the
+        // player, the directions are held so walking doesn't curve with it. They catch up with the
+        // camera when the input is released or changed, the camera is turned by hand, or locked on.
+        private void UpdateMoveFrame(Vector2 move, bool lockedOn)
+        {
+            bool idle = move.sqrMagnitude < 0.01f;
+            bool changed = Vector2.Angle(move, _heldMove) > 30f;
+            bool manualLook = LookDelta.magnitude > 0.5f;
+            if (!holdMoveDirection || lockedOn || idle || changed || manualLook) RefreshMoveFrame();
+            if (!idle) _heldMove = move;
+        }
+
+        private void RefreshMoveFrame()
+        {
+            if (view == null) return;
+            _moveForward = view.forward.FlatNormalized();
+            _moveRight = view.right.FlatNormalized();
         }
 
         private void HandleStickFlick(float x)
