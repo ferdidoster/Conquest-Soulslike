@@ -31,11 +31,24 @@ namespace Conquest.CameraSystem.Cinemachine
         [SerializeField, Tooltip("Orthographic size (half the visible height in metres).")]
         private float orthographicSize = 6.5f;
 
+        [Header("Look ahead")]
+        [SerializeField, Tooltip("Metres the view slides ahead of the player in the direction they walk.")]
+        private float walkLookAhead = 2.5f;
+        [SerializeField, Tooltip("Player speed (m/s) at which the view leads by the full distance.")]
+        private float walkLookAheadFullSpeed = 4f;
+        [SerializeField, Tooltip("Seconds the view takes to slide ahead or back.")]
+        private float walkLookAheadSmoothing = 0.6f;
+
         private const int ActivePriority = 20;
         private const int InactivePriority = 0;
 
         private float _shownYaw;
         private float _yawVelocity;
+        private CinemachinePositionComposer _followComposer;
+        private Vector3 _baseTargetOffset;
+        private Vector3 _lastPlayerPosition;
+        private Vector3 _lookAhead;
+        private Vector3 _lookAheadVelocity;
 
         /// <summary>The yaw the view is turning to.</summary>
         public float Yaw => yaw;
@@ -44,10 +57,14 @@ namespace Conquest.CameraSystem.Cinemachine
         {
             _shownYaw = yaw;
             ApplyView();
+            if (followCamera != null && followCamera.TryGetComponent(out _followComposer))
+                _baseTargetOffset = _followComposer.TargetOffset;
+            if (player != null) _lastPlayerPosition = player.position;
         }
 
         private void LateUpdate()
         {
+            UpdateLookAhead();
             if (Mathf.Approximately(_shownYaw, yaw)) return;
             _shownYaw = Mathf.SmoothDampAngle(_shownYaw, yaw, ref _yawVelocity, turnSmoothing);
             if (Mathf.Abs(Mathf.DeltaAngle(_shownYaw, yaw)) < 0.01f) _shownYaw = yaw;
@@ -99,6 +116,28 @@ namespace Conquest.CameraSystem.Cinemachine
                 cam.Lens.FarClipPlane = distance * 4f;
                 if (cam.TryGetComponent(out CinemachinePositionComposer composer)) composer.CameraDistance = distance;
             }
+        }
+
+        // Slides the view ahead of the player in the way they walk so they see what is coming.
+        // The view never rotates, so the controls stay the same.
+        private void UpdateLookAhead()
+        {
+            if (_followComposer == null || player == null) return;
+            float dt = Time.deltaTime;
+            if (dt <= 0f) return;
+
+            Vector3 moved = player.position - _lastPlayerPosition;
+            _lastPlayerPosition = player.position;
+            moved.y = 0f;
+            float speed = moved.magnitude / dt;
+
+            Vector3 target = speed > 0.5f
+                ? moved.normalized * (walkLookAhead * Mathf.Clamp01(speed / walkLookAheadFullSpeed))
+                : Vector3.zero;
+            _lookAhead = Vector3.SmoothDamp(_lookAhead, target, ref _lookAheadVelocity, walkLookAheadSmoothing);
+
+            // The composer's offset is in the player's local space.
+            _followComposer.TargetOffset = _baseTargetOffset + player.InverseTransformDirection(_lookAhead);
         }
 
         private void OnTargetChanged(ITargetable target)
